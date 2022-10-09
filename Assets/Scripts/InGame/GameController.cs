@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
 
     IEnumerator tttt()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(100f);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

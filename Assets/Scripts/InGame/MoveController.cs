@@ -29,7 +29,7 @@ public class MoveController : MonoBehaviour
     private CharacterController charController;
 
     //카메라설정
-    [SerializeField] private float mouseSensitivity = 150;
+    [SerializeField] private float mouseSensitivity = 300;
     private Vector3 moveDir = Vector3.zero;
     private Camera cam;
     [SerializeField] private GameObject dashEffect;

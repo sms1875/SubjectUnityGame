@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/InGame/Forest.unity
     guid: cc535cbdd09ff1a41899e75202fbec7d
   - enabled: 1
+    path: Assets/Scenes/InGame/ForestBoss.unity
+    guid: 1009944c5b57d964f9a9cb8ccd0c7a92
+  - enabled: 1
     path: Assets/Scenes/InGame/Temple.unity
     guid: 7c0c941c1b5324e439148f65cd8fbd0b
   - enabled: 1
