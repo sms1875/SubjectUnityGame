@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 3c6f43702beaadd4aa6bffd064a3a4ee
+  - enabled: 1
+    path: Assets/Scenes/MainMap_Chess.unity
+    guid: 81a45e50db0637945b57d852002611c7
+  - enabled: 1
+    path: Assets/Scenes/InGame/Test.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/InGame/Forest.unity
+    guid: cc535cbdd09ff1a41899e75202fbec7d
+  - enabled: 1
+    path: Assets/Scenes/InGame/Temple.unity
+    guid: 7c0c941c1b5324e439148f65cd8fbd0b
+  - enabled: 1
+    path: Assets/Scenes/InGame/Wasteland.unity
+    guid: 18f25b4cda3b67a49bce4520bf8908ea
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: ec2c181ef143e3840b635d63d7ce871f
+  - enabled: 1
+    path: Assets/Scenes/MainMap_ChessOriginal.unity
+    guid: 78a8088ecebc4134684379c5d993cc6f
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: b94ceb995c3c00749b5b4b6670612fe9, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: f0b69038378ded74abf7fff240a25782, type: 2}
