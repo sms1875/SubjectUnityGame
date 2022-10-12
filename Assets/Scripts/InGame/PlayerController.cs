@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     public AudioClip[] PlayerSoundClip;
 
     public static PlayerController instance;
-
     private void Awake()
     {
         PlayerController.instance = this;
@@ -112,6 +111,93 @@ public class PlayerController : MonoBehaviour
         if (currentHp <= 0)
         {
             Debug.Log("사망했습니다");
+        }
+    }
+
+
+    // 몬스터 공격 상호작용(?)
+    private bool isStunned;  // 몬스터에게 공격 받으면 카메라 및 움직임 조작 불가
+
+    private float originWalkSpeed;
+    private float originRunSpeed;
+    private float originCrouchSpeed;
+    private float originRunBuildUpSpeed;
+    private float originJumpSpeed;
+
+    // Awake에서 원래속도 받아오기
+    //    originWalkSpeed = walkSpeed;
+    //    originRunSpeed = runSpeed;
+    //    originCrouchSpeed = crouchSpeed;
+    //    originRunBuildUpSpeed = runBuildUpSpeed;
+    //    originJumpSpeed = jumpSpeed;
+    public void SpeedDown()
+    {
+        //movementSpeed /= 2;
+        //walkSpeed = originWalkSpeed / 2;
+        //runSpeed = originRunSpeed / 2;
+        //crouchSpeed = originCrouchSpeed / 2;
+        //runBuildUpSpeed = originRunBuildUpSpeed / 2;
+        //jumpSpeed = originJumpSpeed / 2;
+    }
+
+    public void SpeedReset()
+    {
+        //walkSpeed = originWalkSpeed;
+        //runSpeed = originRunSpeed;
+        //crouchSpeed = originCrouchSpeed;
+        //runBuildUpSpeed = originRunBuildUpSpeed;
+        //jumpSpeed = originJumpSpeed;
+    }
+
+    public void OnStun(float time)
+    {
+        StartCoroutine("Stunned", time);
+    }
+
+    private IEnumerator Stunned(float time)
+    {
+        isStunned = true;
+
+        yield return new WaitForSeconds(time);
+
+        isStunned = false;
+    }
+
+    public IEnumerator OnBounce(Vector3 direction)
+    {
+        isStunned = true;
+
+        float currentTime = 0;
+        while (true)
+        {
+            if (currentTime >= 1)
+            {
+                break;
+            }
+            charController.Move(direction * -15f * Time.deltaTime);
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+
+        isStunned = false;
+    }
+
+    public IEnumerator Shake(float time, float intensity, float speed)
+    {
+        Transform cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        Vector3 originPosition = cam.localPosition;
+        float currentTime = 0;
+        while (true)
+        {
+            if (currentTime >= time)
+            {
+                cam.localPosition = originPosition;
+                yield break;
+            }
+            Vector3 randomPoint = originPosition + Random.insideUnitSphere * intensity;
+            cam.localPosition = Vector3.Lerp(cam.localPosition, randomPoint, Time.deltaTime * speed);
+            currentTime += Time.deltaTime;
+            yield return null;
         }
     }
 }

@@ -190,15 +190,15 @@ public class MapManager : MonoBehaviour
             switch (lastSceneNum)
             {
                 case 3:
-                    LoadingSceneManager.LoadScene("ForestBoss");
+                    LoadingSceneManager.LoadScene("Temple 3");
                     //StartCoroutine(LoadEventScene(2));
                     break;
                 case 4:
-                    LoadingSceneManager.LoadScene("ForestBoss");
+                    LoadingSceneManager.LoadScene("Temple 3");
                     //StartCoroutine(LoadEventScene(2));
                     break;
                 case 5:
-                    LoadingSceneManager.LoadScene("ForestBoss");
+                    LoadingSceneManager.LoadScene("Temple 3");
                     //StartCoroutine(LoadEventScene(2));
                     break;
             }

@@ -3,21 +3,46 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DirectGroup
+  - Ball
+  - SunBoss
+  - SunBossLing
+  - MidBoss1
+  - Wall
+  - Pillar
+  - Enemy
+  - Floor
+  - Turret
+  - Stage1_Boss
+  - Stage1_Boss_Head
+  - EnemyHead
+  - MidBoss2_Head
+  - MidBoss2
+  - Baby
+  - Egg
+  - Missile
+  - MidBoss3
+  - MidBoss1_Head
+  - Enemy_Head
+  - SpawnerGroup
+  - SpaceShip
+  - Spawner
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Floor
   - Water
   - UI
-  - 
-  - 
+  - Wall
+  - Player
   - Weapon
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - InterEgg
+  - SpaceShip
+  - InterActive
   - 
   - 
   - 

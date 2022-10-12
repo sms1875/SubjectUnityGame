@@ -16,15 +16,18 @@ public class MemoryPool
     private GameObject poolObject; // 오브젝트 풀링에서 관리하는 게임 오브젝트 프리펩
     private List<PoolItem> poolItemList; // 관리되는 모든 오브젝트를 저장하는 리스트
 
+    private bool isDontDestroyOnLoad;
+
     public int MaxCount => maxCount; // 외부에서 현재 리스트에 등록되어있는 오브젝트 개수 확인을 위한 프로퍼티
     public int ActiveCount => activeCount; // 외부에서 현재 활성화 되어있는 오브젝트 개수 확인을 위한 프로퍼티
 
-    public MemoryPool(GameObject poolObject)
+    public MemoryPool(GameObject poolObject, bool isDontDestroyOnLoad = true, int increaseCount = 100)
     {
+        this.isDontDestroyOnLoad = isDontDestroyOnLoad;
+        this.increaseCount = increaseCount;
         maxCount = 0;
         activeCount = 0;
         this.poolObject = poolObject;
-
         poolItemList = new List<PoolItem>();
 
         InstantiateObjects();
@@ -40,8 +43,11 @@ public class MemoryPool
             PoolItem poolItem = new PoolItem();
             poolItem.isActive = false;
             poolItem.gameObject = GameObject.Instantiate(poolObject);
+            if (isDontDestroyOnLoad)
+            {
+                GameObject.DontDestroyOnLoad(poolItem.gameObject); // 씬 이동시 임팩트 메모리풀 사라지지 않게 함 Han
+            }
             poolItem.gameObject.SetActive(false);
-            
             poolItemList.Add(poolItem);
         }
     }
