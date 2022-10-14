@@ -594,7 +594,7 @@ public class MidBossFSM_1 : MonoBehaviour
     private IEnumerator OnDie()
     {
         GameManager.isBoss = false;
-        forestBoss.Clear();
+        forestBoss.BossDead();
         yield return new WaitForSeconds(5f);
 
         gameObject.SetActive(false);
