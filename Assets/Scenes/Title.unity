@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapData: {fileID: 84671221}
   playerData: {fileID: 84671222}
+  mouseSensitivity: 300
 --- !u!4 &84671220
 Transform:
   m_ObjectHideFlags: 0

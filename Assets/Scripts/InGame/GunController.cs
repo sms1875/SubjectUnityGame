@@ -19,6 +19,8 @@ public class GunController : MonoBehaviour
     private bool isFire = false;
     public  bool isChangeWeapon = false;
 
+    private WaitForSeconds gunDelay=new WaitForSeconds(0.01f);
+
     // 필요한 컴포넌트
     //[SerializeField] private Crosshair theCrosshair;
 
@@ -117,7 +119,11 @@ public class GunController : MonoBehaviour
         }
         //PlaySE(currentGun.fire_Sound); // 사운드
         //StartCoroutine(RetroActionCoroutine()); // 반동
-        yield return new WaitForSeconds(currentGun.fireRate);
+        while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Fire"))//공격중
+        {
+            yield return null;
+        }
+        yield return gunDelay;
         isFire = false;
     }
 
@@ -138,12 +144,22 @@ public class GunController : MonoBehaviour
         {
             while (currentGun.currentBulletCount < currentGun.reloadBulletCount && isReload)
             {
+                /*
+                while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Reload_Ammo")|| 
+                    !weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Reload_Enry"))
+                {
+                    yield return null;
+                }*/
                 yield return new WaitForSeconds(currentGun.reloadTime);//재장전 시간
                 currentGun.currentBulletCount += 1;
             }
         }
         else
-        {
+        {/*
+            while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Reload"))
+            {
+                yield return null;
+            }*/
             yield return new WaitForSeconds(currentGun.reloadTime);//재장전 시간
             currentGun.currentBulletCount = currentGun.reloadBulletCount;
         }
@@ -253,13 +269,14 @@ public class GunController : MonoBehaviour
         weaponAnim.SetBool("Change", true);
 
         CancelPreWeaponAction();
-
+        Debug.Log("1");
         yield return new WaitForSeconds(currentGun.outWeaponTime);
+        /*
         while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Out"))
         {
             yield return null;
-        }
-
+        }*/
+        Debug.Log("2");
         if (gunObj != null)//현재 무기 비활성화
             gunObj.gameObject.SetActive(false);
 
@@ -270,14 +287,19 @@ public class GunController : MonoBehaviour
         gunObj.gameObject.SetActive(true);//교체한 무기 활성화
         //gunObj.GetComponent<Gun>().init(currentGun);
         currentGun = gunObj.GetComponent<Gun>();
- 
 
+        Debug.Log("3");
         //교체한 총 애니메이션 설정
-        setGunAnimation();      
+        setGunAnimation();
+        /*
+        while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Get"))
+        {
+            yield return null;
+        }*/
         yield return new WaitForSeconds(currentGun.getWeaponTime);//무기 꺼내는 딜레이
         weaponAnim.SetBool("Change", false);
         weaponAnim.SetTrigger(_name);
-
+        Debug.Log("4");
 
         isChangeWeapon = false;
         isActivate = true;//무기 활성화

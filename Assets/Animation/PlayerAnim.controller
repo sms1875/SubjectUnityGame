@@ -69,32 +69,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &-9109165642952270100
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: armature_LMG_Muzzle
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -1575695169847938541, guid: 0febe361a423bc34d912e4523b2507e4, type: 3}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1107 &-9092628698374382148
 AnimatorStateMachine:
   serializedVersion: 6
@@ -206,7 +180,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SG1_Out
-  m_Speed: -1
+  m_Speed: -7.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1062551868727669117}
@@ -258,7 +232,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Runing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2086594782479888785}
@@ -287,7 +261,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SG2_Run_Runing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2614135226940410580}
@@ -316,7 +290,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_LMG_Out
-  m_Speed: -1
+  m_Speed: -5.8
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -9148146600527184248}
@@ -343,7 +317,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_LMG_Reload
-  m_Speed: 1
+  m_Speed: 1.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5388578131399378554}
@@ -444,7 +418,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SG2_Out
-  m_Speed: -1
+  m_Speed: -6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8045406385361562383}
@@ -856,7 +830,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_LMG_Get
-  m_Speed: 1
+  m_Speed: 5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -9089817027921406237}
@@ -883,7 +857,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SMG_Fire
-  m_Speed: 1
+  m_Speed: 4.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3200006984503792429}
@@ -982,7 +956,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -2490541423503798445}
-    m_Position: {x: 210, y: 550, z: 0}
+    m_Position: {x: 220, y: 550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1911813127745287527}
     m_Position: {x: 310, y: 310, z: 0}
@@ -1069,7 +1043,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_HG1_Reload
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1473099554334961077}
@@ -1148,7 +1122,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Reload
-  m_Speed: 1
+  m_Speed: 0.95
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1408859040480541572}
@@ -1222,7 +1196,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SG1_Reload_Ammo
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2846740803901448181}
@@ -1275,7 +1249,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR2_Get
-  m_Speed: 1
+  m_Speed: 4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1827806845827617250}
@@ -1428,7 +1402,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_DMR2_Reload
-  m_Speed: 1
+  m_Speed: 1.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4656735283804394053}
@@ -1534,7 +1508,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_HG1_Get
-  m_Speed: 1
+  m_Speed: 4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4385750698356025206}
@@ -1583,7 +1557,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Runing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1639786063503673404}
@@ -1805,7 +1779,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Fire
-  m_Speed: 1
+  m_Speed: 1.1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5250535042475416480}
@@ -1915,7 +1889,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Runing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 771668113978358780}
@@ -2117,7 +2091,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR2_Get
-  m_Speed: 1
+  m_Speed: 3.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2573825604790584651}
@@ -2188,9 +2162,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -8244220060890766166}
     m_Position: {x: 30, y: 410, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -9109165642952270100}
-    m_Position: {x: 210, y: 610, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -2504,7 +2475,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_LMG_Fire
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 9147461567166347284}
@@ -2633,7 +2604,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR2_Out
-  m_Speed: -1
+  m_Speed: -4.8
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6150947328397937813}
@@ -3438,7 +3409,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SMG_Out
-  m_Speed: -1
+  m_Speed: -6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7331104043845554781}
@@ -3581,7 +3552,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_HG1_Run_Runing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1384262238259397423}
@@ -3800,7 +3771,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Fire
-  m_Speed: 1
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2971991111715920908}
@@ -3827,7 +3798,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Reload
-  m_Speed: 1
+  m_Speed: 1.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8050236815350782320}
@@ -3879,7 +3850,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR2_Out
-  m_Speed: -1
+  m_Speed: -5.7
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7142748178975228316}
@@ -4203,7 +4174,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_DMR2_Out
-  m_Speed: -1
+  m_Speed: -6.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4477593810034296443}
@@ -4230,7 +4201,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SMG_Get
-  m_Speed: 1
+  m_Speed: 4.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -9131479290072975179}
@@ -4447,7 +4418,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SMG_Reload
-  m_Speed: 1
+  m_Speed: 1.6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7825552687434392398}
@@ -4605,7 +4576,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Runing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2004038822306039667}
@@ -4656,7 +4627,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SG1_Get
-  m_Speed: 1
+  m_Speed: 6.4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8731931837022351700}
@@ -4825,7 +4796,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_HG1_Fire
-  m_Speed: 1
+  m_Speed: 2.1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 943734772150516485}
@@ -4852,7 +4823,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_DMR2_Run_Runing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6997865587331945961}
@@ -5134,7 +5105,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR2_Get
-  m_Speed: 1
+  m_Speed: 5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3437813853131609686}
@@ -5356,7 +5327,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SG2_Get
-  m_Speed: 1
+  m_Speed: 4.8
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7284016502422879563}
@@ -5383,7 +5354,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SG1_Reload_Entry
-  m_Speed: 1
+  m_Speed: 0.4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4048005415240988405}
@@ -5482,7 +5453,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Runing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7979364978458373903}
@@ -5536,7 +5507,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Fire
-  m_Speed: 1
+  m_Speed: 3.6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -9048416710452031455}
@@ -5563,7 +5534,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR2_Out
-  m_Speed: -1
+  m_Speed: -5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4903802360208724471}
@@ -5626,7 +5597,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SMG_Run_Runing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4798422392038088245}
@@ -5702,7 +5673,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Reload
-  m_Speed: 1
+  m_Speed: 1.6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5948226467803721905}
@@ -5975,7 +5946,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_HG1_Out
-  m_Speed: -1
+  m_Speed: -5.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3546947676763518638}
@@ -6129,7 +6100,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_LMG_Run_Runing
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2833483001819635343}
@@ -6180,7 +6151,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_SG2_Reload
-  m_Speed: 1
+  m_Speed: 1.4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6566658725084423274}
@@ -6259,7 +6230,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Entry
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1471512632674358650}
@@ -6360,7 +6331,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_DMR2_Get
-  m_Speed: 1
+  m_Speed: 4.6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2278437846179606524}
