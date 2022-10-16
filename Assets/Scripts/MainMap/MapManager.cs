@@ -191,31 +191,16 @@ public class MapManager : MonoBehaviour
             {
                 case 3:
                     LoadingSceneManager.LoadScene("Temple2");
-                    //StartCoroutine(LoadEventScene(2));
                     break;
                 case 4:
                     LoadingSceneManager.LoadScene("Temple2");
-                    //StartCoroutine(LoadEventScene(2));
                     break;
                 case 5:
                     LoadingSceneManager.LoadScene("Temple2");
-                    //StartCoroutine(LoadEventScene(2));
                     break;
             }
 
         }
     }
 
-    IEnumerator LoadEventScene(int sceneNum)
-    {
-        //로딩 화면 추가
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneNum);
-
-        while (!asyncLoad.isDone)
-        {
-            Debug.Log("loading : " + asyncLoad.progress * 100 + "%");
-            yield return null;
-        }
-    }
 }

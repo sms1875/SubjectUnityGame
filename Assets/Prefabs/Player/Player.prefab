@@ -8088,7 +8088,7 @@ MonoBehaviour:
   isRun: 0
   isCrouch: 0
   isGround: 0
-  anim: {fileID: 0}
+  anim: {fileID: 9213654749812275863}
   charController: {fileID: 7744162546840634187}
   currentHp: 0
   currentDp: 0
@@ -8152,7 +8152,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7744162546840634180}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 680dee61e71be9a4dbc9e3905989234f, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 0febe361a423bc34d912e4523b2507e4, type: 3}
   m_Controller: {fileID: 9100000, guid: e59d2d5bb86fa9b48b950521039a9eae, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

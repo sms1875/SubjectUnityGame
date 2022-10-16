@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 0febe361a423bc34d912e4523b2507e4
 ModelImporter:
-  serializedVersion: 21202
+  serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: 4008512730020203299
@@ -229,7 +229,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'RightUpperLeg' not found\n"
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -237,7 +238,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -293,7 +294,517 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Player Hand(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Armature
+      parentName: Player Hand(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hub
+      parentName: Armature
+      position: {x: 2.4319326e-14, y: 1.532, z: -3.3203678e-21}
+      rotation: {x: 0.49999997, y: -0.50000006, z: -0.5, w: 0.5}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000005}
+    - name: LArmCollarbone
+      parentName: Hub
+      position: {x: 0.0000000024110982, y: -0.007628508, z: 0.055159997}
+      rotation: {x: 0.000000029802322, y: 0.7071068, z: 0.7071068, w: -0.000000038231065}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999997}
+    - name: LArm1
+      parentName: LArmCollarbone
+      position: {x: -0.000000013679203, y: 0.15421, z: 0.0000000045288835}
+      rotation: {x: -0.10722981, y: 0.14653707, z: 0.60170305, w: 0.777806}
+      scale: {x: 0.9999997, y: 1.0000004, z: 1.0000001}
+    - name: LArm21
+      parentName: LArm1
+      position: {x: -0.00000015258789, y: 0.2749542, z: -0.000000028610229}
+      rotation: {x: 0.060497474, y: -0.18111224, z: 0.07496443, w: 0.9787332}
+      scale: {x: 1.0000002, y: 1.0000004, z: 0.9999994}
+    - name: LArm22
+      parentName: LArm21
+      position: {x: 0.000000095367426, y: 0.1582479, z: 0.00000013947486}
+      rotation: {x: 0.00009080767, y: -0.000012621282, z: -0.00028552857, w: 1}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000001}
+    - name: LArmPalm
+      parentName: LArm22
+      position: {x: -0.0000000333786, y: 0.15821554, z: 0.00000008940697}
+      rotation: {x: 0.1635433, y: -0.3749753, z: -0.41352105, w: 0.8134172}
+      scale: {x: 1.0000023, y: 1.0000002, z: 1.0000005}
+    - name: LArmDigit11
+      parentName: LArmPalm
+      position: {x: 0.011367812, y: 0.035887353, z: 0.043605976}
+      rotation: {x: 0.35416886, y: -0.15845092, z: 0.1677277, w: 0.90626997}
+      scale: {x: 1.0000042, y: 1.0000032, z: 0.9999927}
+    - name: LArmDigit12
+      parentName: LArmDigit11
+      position: {x: 0.000020103455, y: 0.04971111, z: -0.0000019848346}
+      rotation: {x: -0.000022739165, y: -0.0005590616, z: -0.0009752583, w: 0.99999934}
+      scale: {x: 1.0000029, y: 1.0000033, z: 0.9999954}
+    - name: LArmDigit13
+      parentName: LArmDigit12
+      position: {x: -0.000035886762, y: 0.038690284, z: -0.0000016719102}
+      rotation: {x: 0.006405343, y: 0.012905885, z: -0.06712946, w: 0.9976403}
+      scale: {x: 1.0000017, y: 1.0000042, z: 0.9999947}
+    - name: LArmDigit13_end
+      parentName: LArmDigit13
+      position: {x: -0, y: 0.038648903, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LArmDigit21
+      parentName: LArmPalm
+      position: {x: 0.008498945, y: 0.13888669, z: 0.047818612}
+      rotation: {x: 0.100969, y: -0.077121064, z: 0.042307246, w: 0.9909934}
+      scale: {x: 1.000001, y: 1.0000001, z: 0.99999994}
+    - name: LArmDigit22
+      parentName: LArmDigit21
+      position: {x: -0.000009701252, y: 0.038320873, z: -0.0000051903726}
+      rotation: {x: -0.00006141512, y: 0.00016161795, z: 0.00032223985, w: 1}
+      scale: {x: 1.0000017, y: 0.999999, z: 1}
+    - name: LArmDigit23
+      parentName: LArmDigit22
+      position: {x: -0.0000003489852, y: 0.029988548, z: 0.000000014305114}
+      rotation: {x: 0.00959305, y: -0.014200867, z: 0.017093504, w: 0.9997071}
+      scale: {x: 1.0000031, y: 1.0000001, z: 1.0000011}
+    - name: LArmDigit23_end
+      parentName: LArmDigit23
+      position: {x: -0, y: 0.029986233, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LArmDigit31
+      parentName: LArmPalm
+      position: {x: 0.0056169126, y: 0.14557017, z: 0.017681064}
+      rotation: {x: 0.049408447, y: -0.049719024, z: 0.10093912, w: 0.9924203}
+      scale: {x: 1.000002, y: 0.99999934, z: 0.9999997}
+    - name: LArmDigit32
+      parentName: LArmDigit31
+      position: {x: -0.00000025391577, y: 0.037543498, z: -0.00000015735625}
+      rotation: {x: 0.000018317249, y: 0.0000044591716, z: 0.00022404705, w: 1}
+      scale: {x: 1.0000033, y: 0.9999988, z: 1.0000004}
+    - name: LArmDigit33
+      parentName: LArmDigit32
+      position: {x: 0.00000013113022, y: 0.034244474, z: -0.00000018119812}
+      rotation: {x: 0.008698438, y: -0.01705667, z: -0.008431021, w: 0.9997812}
+      scale: {x: 1.0000029, y: 0.99999785, z: 0.9999997}
+    - name: LArmDigit33_end
+      parentName: LArmDigit33
+      position: {x: -0, y: 0.034261156, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LArmDigit41
+      parentName: LArmPalm
+      position: {x: -0.01016799, y: 0.14351484, z: -0.01353749}
+      rotation: {x: -0.011747333, y: 0.0030270808, z: 0.094339535, w: 0.9954662}
+      scale: {x: 1.0000023, y: 0.9999997, z: 1.0000001}
+    - name: LArmDigit42
+      parentName: LArmDigit41
+      position: {x: -0.00000009775162, y: 0.032037344, z: -0.00000021219253}
+      rotation: {x: 0.00013030317, y: -0.00021199156, z: 0.00039713676, w: 0.9999999}
+      scale: {x: 1.0000014, y: 0.99999774, z: 1}
+    - name: LArmDigit43
+      parentName: LArmDigit42
+      position: {x: -0.00000020503997, y: 0.032170735, z: -0.000000052452087}
+      rotation: {x: -0.0020666122, y: 0.0068371445, z: 0.024044633, w: 0.9996854}
+      scale: {x: 1.0000038, y: 0.9999986, z: 1.0000004}
+    - name: LArmDigit43_end
+      parentName: LArmDigit43
+      position: {x: -0, y: 0.032146595, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LArmDigit51
+      parentName: LArmPalm
+      position: {x: -0.018627461, y: 0.1362659, z: -0.04107584}
+      rotation: {x: -0.07208565, y: 0.04863365, z: 0.102478355, w: 0.9909272}
+      scale: {x: 1.0000021, y: 0.9999986, z: 1.0000007}
+    - name: LArmDigit52
+      parentName: LArmDigit51
+      position: {x: -0.00000013828277, y: 0.02205735, z: -0.00000006198883}
+      rotation: {x: 0.000017806886, y: 0.000059213482, z: 0.0011944174, w: 0.99999934}
+      scale: {x: 1.0000021, y: 0.99999857, z: 0.9999997}
+    - name: LArmDigit53
+      parentName: LArmDigit52
+      position: {x: 0.00000005483627, y: 0.022153433, z: -0.000000019073486}
+      rotation: {x: 0.014458024, y: -0.0247285, z: 0.055444814, w: 0.9980508}
+      scale: {x: 1.0000037, y: 0.99999774, z: 1.0000002}
+    - name: LArmDigit53_end
+      parentName: LArmDigit53
+      position: {x: -0, y: 0.022162616, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RArmCollarbone
+      parentName: Hub
+      position: {x: -0.0000000024110982, y: -0.007628508, z: -0.055159997}
+      rotation: {x: -0.00000007505573, y: 0.7071068, z: -0.70710677, w: 0.000000029802319}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000007}
+    - name: RArm1
+      parentName: RArmCollarbone
+      position: {x: 0.000000019997692, y: 0.15421002, z: -0.0000000333786}
+      rotation: {x: -0.12860782, y: -0.18236984, z: -0.5268588, w: 0.8201348}
+      scale: {x: 0.9999996, y: 1.0000018, z: 1.0000013}
+    - name: RArm21
+      parentName: RArm1
+      position: {x: -0.0000004212558, y: 0.2749539, z: 0.00000020034611}
+      rotation: {x: -0.20348243, y: 0.1495878, z: -0.006102996, w: 0.9675645}
+      scale: {x: 0.99999976, y: 0.9999998, z: 1}
+    - name: RArm22
+      parentName: RArm21
+      position: {x: 0.00000014871358, y: 0.15824755, z: 0.0000005507469}
+      rotation: {x: -0.00009083748, y: 0.000012695789, z: -0.00028565526, w: 1}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000004}
+    - name: RArmPalm
+      parentName: RArm22
+      position: {x: 0.000000030994414, y: 0.15821643, z: 0.0000001835823}
+      rotation: {x: 0.1752514, y: 0.17925383, z: -0.12859799, w: 0.9594882}
+      scale: {x: 0.99999934, y: 1.0000024, z: 1.0000027}
+    - name: RArmDigit11
+      parentName: RArmPalm
+      position: {x: 0.011367965, y: 0.035887383, z: -0.043605972}
+      rotation: {x: -0.3599198, y: -0.26861176, z: -0.74053615, w: 0.49991167}
+      scale: {x: 0.9999991, y: 1.0000019, z: 1.000001}
+    - name: RArmDigit12
+      parentName: RArmDigit11
+      position: {x: 0.000000118613244, y: 0.04972675, z: -0.00000027656554}
+      rotation: {x: 0.00004562734, y: -0.0006034819, z: -0.0012370716, w: 0.99999905}
+      scale: {x: 0.99999857, y: 1.0000031, z: 1.0000005}
+    - name: RArmDigit13
+      parentName: RArmDigit12
+      position: {x: -0.0000002002716, y: 0.038645238, z: -0.000000057220458}
+      rotation: {x: -0.0064636213, y: -0.011638777, z: -0.06635122, w: 0.9977075}
+      scale: {x: 0.9999991, y: 1.0000002, z: 1.000001}
+    - name: RArmDigit13_end
+      parentName: RArmDigit13
+      position: {x: -0, y: 0.038673416, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RArmDigit21
+      parentName: RArmPalm
+      position: {x: 0.008499405, y: 0.13888747, z: -0.047818616}
+      rotation: {x: -0.1009689, y: 0.077120975, z: 0.042307176, w: 0.9909934}
+      scale: {x: 0.9999978, y: 1.0000002, z: 1.0000008}
+    - name: RArmDigit22
+      parentName: RArmDigit21
+      position: {x: 0.00000025749205, y: 0.038317766, z: 0.000000033974647}
+      rotation: {x: 0.0001477673, y: -0.00034042436, z: 0.00048232154, w: 0.9999999}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000015}
+    - name: RArmDigit23
+      parentName: RArmDigit22
+      position: {x: -0.000000076293944, y: 0.02999197, z: 0.00000015735625}
+      rotation: {x: -0.009674141, y: 0.014382849, z: 0.016933918, w: 0.9997064}
+      scale: {x: 0.99999994, y: 1.0000005, z: 1.0000014}
+    - name: RArmDigit23_end
+      parentName: RArmDigit23
+      position: {x: -0, y: 0.029986233, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RArmDigit31
+      parentName: RArmPalm
+      position: {x: 0.007933817, y: 0.147652, z: -0.016188765}
+      rotation: {x: -0.049408577, y: 0.049719103, z: 0.100939155, w: 0.9924204}
+      scale: {x: 1.0000005, y: 1, z: 1.0000011}
+    - name: RArmDigit32
+      parentName: RArmDigit31
+      position: {x: -0.00011031151, y: 0.037954483, z: -0.0001082468}
+      rotation: {x: -0.000018008051, y: -0.0000047869976, z: 0.00022413183, w: 1}
+      scale: {x: 0.9999997, y: 1.0000017, z: 1.0000017}
+    - name: RArmDigit33
+      parentName: RArmDigit32
+      position: {x: -0.002656226, y: 0.03318369, z: -0.0008942842}
+      rotation: {x: -0.008681068, y: 0.019137336, z: -0.008449197, w: 0.9997435}
+      scale: {x: 0.99999934, y: 0.99999946, z: 1.0000004}
+    - name: RArmDigit33_end
+      parentName: RArmDigit33
+      position: {x: -0, y: 0.034261156, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RArmDigit41
+      parentName: RArmPalm
+      position: {x: -0.010927147, y: 0.14153528, z: 0.012705273}
+      rotation: {x: -0.008626923, y: -0.010151487, z: 0.44100186, w: 0.8974073}
+      scale: {x: 1.0000014, y: 0.9999996, z: 1.0000007}
+    - name: RArmDigit42
+      parentName: RArmDigit41
+      position: {x: 0.00013427735, y: 0.031640194, z: 0.00013152837}
+      rotation: {x: -0.013104337, y: -0.0018892708, z: 0.15187737, w: 0.9883107}
+      scale: {x: 0.99999994, y: 1.0000019, z: 1.0000014}
+    - name: RArmDigit43
+      parentName: RArmDigit42
+      position: {x: 0.0026728725, y: 0.03339261, z: 0.0006953755}
+      rotation: {x: 0.0020666053, y: -0.00683731, z: 0.024044702, w: 0.9996854}
+      scale: {x: 0.9999996, y: 1.0000005, z: 0.99999934}
+    - name: RArmDigit43_end
+      parentName: RArmDigit43
+      position: {x: -0, y: 0.032146595, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RArmDigit51
+      parentName: RArmPalm
+      position: {x: -0.02018461, y: 0.13616592, z: 0.04041692}
+      rotation: {x: 0.07208547, y: -0.048633654, z: 0.10247836, w: 0.99092716}
+      scale: {x: 1.0000018, y: 0.9999991, z: 1}
+    - name: RArmDigit52
+      parentName: RArmDigit51
+      position: {x: -0.00000009059906, y: 0.022057295, z: -0.000000025629996}
+      rotation: {x: -0.00001759827, y: -0.000059250735, z: 0.0011945454, w: 0.99999934}
+      scale: {x: 1.0000001, y: 1.0000012, z: 1.0000002}
+    - name: RArmDigit53
+      parentName: RArmDigit52
+      position: {x: 0.000000102519984, y: 0.022153534, z: 0.00000024341045}
+      rotation: {x: -0.014458058, y: 0.024728496, z: 0.055444717, w: 0.9980508}
+      scale: {x: 0.9999997, y: 1.0000023, z: 1}
+    - name: RArmDigit53_end
+      parentName: RArmDigit53
+      position: {x: -0, y: 0.022162616, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Weapon
+      parentName: RArmPalm
+      position: {x: -0.035190973, y: 0.14523017, z: -0.05453835}
+      rotation: {x: -0.72717434, y: -0.18757655, z: 0.5035537, w: 0.4271607}
+      scale: {x: 0.9999977, y: 0.99999946, z: 1.0000021}
+    - name: Knife
+      parentName: Weapon
+      position: {x: 0.0000016403197, y: -0.00061828614, z: -0.00000030517577}
+      rotation: {x: -0.7071068, y: 0.000000021073426, z: 0.0000000368785, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: LMG_Muzzle
+      parentName: Weapon
+      position: {x: 0.0000017929077, y: 0.4192966, z: 0.5684108}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: LMG_pt1
+      parentName: Weapon
+      position: {x: 0.0000037002562, y: 0.39226237, z: 0.5698139}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: LMG_pt2
+      parentName: Weapon
+      position: {x: 0.0000037002562, y: 0.39226237, z: 0.5698139}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: SG1_body
+      parentName: Weapon
+      position: {x: 0.0000011825562, y: -0.066562764, z: 0.008126716}
+      rotation: {x: -0.7071068, y: 0.000000021073426, z: 0.0000000368785, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: SR1_Scope
+      parentName: Weapon
+      position: {x: 0.0000011444091, y: -0.056113854, z: 0.030185623}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: SR1_Body
+      parentName: Weapon
+      position: {x: 0.0000011444091, y: -0.056113854, z: 0.030185623}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: DMR2_Body
+      parentName: Weapon
+      position: {x: 0.000001373291, y: -0.028249664, z: 0.018575706}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: DMR2_ironsight
+      parentName: Weapon
+      position: {x: 0.000001373291, y: -0.028249664, z: 0.018575706}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: SMG1_Muzzle
+      parentName: Weapon
+      position: {x: 0.0000014495849, y: -0.04566467, z: -0.018576182}
+      rotation: {x: -0.74556637, y: 0.000000022359636, z: 0.000000027949545, w: 0.66643137}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: SMG1_Body2
+      parentName: Weapon
+      position: {x: 0.0000014495849, y: -0.04566467, z: -0.018576182}
+      rotation: {x: -0.74556637, y: 0.000000022359636, z: 0.000000027949545, w: 0.66643137}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: SMG1_Handle
+      parentName: Weapon
+      position: {x: 0.0000014495849, y: -0.04566467, z: -0.018576182}
+      rotation: {x: -0.74556637, y: 0.000000022359636, z: 0.000000027949545, w: 0.66643137}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: SMG1_Scope_Mount
+      parentName: Weapon
+      position: {x: 0.0000014495849, y: -0.04566467, z: -0.018576182}
+      rotation: {x: -0.74556637, y: 0.000000022359636, z: 0.000000027949545, w: 0.66643137}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: SMG1_Scope
+      parentName: Weapon
+      position: {x: 0.0000014495849, y: -0.04566467, z: -0.018576164}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: SMG1_Body1
+      parentName: Weapon
+      position: {x: 0.0000014495849, y: -0.04566467, z: -0.018576182}
+      rotation: {x: -0.74556637, y: 0.000000022359636, z: 0.000000027949545, w: 0.66643137}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: DMR1_Body
+      parentName: Weapon
+      position: {x: 0.000001373291, y: -0.037537538, z: -0.00000030517577}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: DMR1_Dangler
+      parentName: Weapon
+      position: {x: 0.000001373291, y: -0.037537538, z: -0.00000030517577}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: DMR1_Part
+      parentName: Weapon
+      position: {x: 0.000001373291, y: -0.037537538, z: -0.00000030517577}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: AR2_Part
+      parentName: Weapon
+      position: {x: 0.0000012969971, y: -0.047986563, z: -0.00000030517577}
+      rotation: {x: -0.7071068, y: 0.00000002107341, z: 0.00000002634175, w: 0.7071067}
+      scale: {x: 1.0000015, y: 1, z: 1}
+    - name: AR2_Body
+      parentName: Weapon
+      position: {x: 0.0000012969971, y: -0.047986563, z: -0.00000030517577}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: AR2_dangler
+      parentName: Weapon
+      position: {x: 0.000001373291, y: -0.0479866, z: -0.0000002670288}
+      rotation: {x: -0.7071068, y: 0.000000021073316, z: 0.00000001580496, w: 0.7071067}
+      scale: {x: 1.0000105, y: 1, z: 1}
+    - name: AR1_Trigger
+      parentName: Weapon
+      position: {x: 0.0000011444091, y: -0.05634571, z: 0.030650139}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: AR1_Body
+      parentName: Weapon
+      position: {x: 0.0000011444091, y: -0.05634571, z: 0.030650139}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: HG1_Body
+      parentName: Weapon
+      position: {x: 0.000001335144, y: -0.05355961, z: -0.009752616}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: SG2_pt3
+      parentName: Weapon
+      position: {x: 0.0000015258788, y: 0.13347027, z: -0.022480164}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: SG2_pt1
+      parentName: Weapon
+      position: {x: 0.000001411438, y: 0.1328488, z: -0.021356735}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: SG2_Rotator
+      parentName: Weapon
+      position: {x: 0.000001411438, y: 0.1328488, z: -0.021356735}
+      rotation: {x: -0.7071068, y: 0.000000031610142, z: 0.000000026341784, w: 0.7071067}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: Item_inject_2
+      parentName: Weapon
+      position: {x: 0.012277298, y: 0.0000051498414, z: -0.000001411438}
+      rotation: {x: -0.5000026, y: -0.4999992, z: 0.49999738, w: 0.50000083}
+      scale: {x: 100, y: 100.00009, z: 99.99996}
+    - name: Item_Flashbang
+      parentName: Weapon
+      position: {x: 0.00066936493, y: 0.018231735, z: -0.10556324}
+      rotation: {x: 1, y: -0.0000032112014, z: 0.000001884996, w: 0.00000031392253}
+      scale: {x: 0.9999996, y: 0.99999994, z: 1.000001}
+    - name: Item_Grenade
+      parentName: Weapon
+      position: {x: -0.000006408691, y: 0.019707184, z: -0.03628353}
+      rotation: {x: 1, y: -0.0000032234198, z: 0.000001883506, w: 0.00000019471327}
+      scale: {x: 99.99997, y: 99.99999, z: 100.0001}
+    - name: Mag
+      parentName: Weapon
+      position: {x: 0.000000014305114, y: -0.04999998, z: -0.0000003082305}
+      rotation: {x: -1, y: 0.00000005960463, z: -0.000000089406946, w: 0.00000046193588}
+      scale: {x: 0.99999946, y: 1.0000006, z: 1.0000002}
+    - name: SG1_Cocker
+      parentName: Mag
+      position: {x: -0.0000063323973, y: 0.061449774, z: -0.008125496}
+      rotation: {x: 0.70710605, y: 0.0000035719418, z: 0.0000010431354, w: 0.70710754}
+      scale: {x: 0.99999976, y: 1.0000007, z: 1.0000001}
+    - name: SR1_Ammo
+      parentName: Mag
+      position: {x: -0.0000059890745, y: 0.0040964507, z: -0.030184248}
+      rotation: {x: 0.70710605, y: 0.0000035719418, z: 0.0000010431354, w: 0.70710754}
+      scale: {x: 0.99999976, y: 1.0000007, z: 1.0000001}
+    - name: DMR2_Ammo
+      parentName: Mag
+      position: {x: -0.000006904602, y: -0.027668571, z: -0.018574446}
+      rotation: {x: 0.70710605, y: 0.0000035719418, z: 0.0000010431354, w: 0.70710754}
+      scale: {x: 0.99999976, y: 1.0000007, z: 1.0000001}
+    - name: SMG1_Ammo_Cartrage
+      parentName: Mag
+      position: {x: 0.03515606, y: -0.012319831, z: -0.0007019043}
+      rotation: {x: 0.6835931, y: 0.21689329, z: -0.20274279, w: 0.6667482}
+      scale: {x: 0.99999964, y: 1.0000008, z: 1}
+    - name: DMR1_Ammo
+      parentName: Mag
+      position: {x: -0.000005493164, y: -0.0151762385, z: 0.0000017547607}
+      rotation: {x: 0.70710605, y: 0.0000035666742, z: 0.0000010326006, w: 0.70710754}
+      scale: {x: 0.9999989, y: 1.0000007, z: 1.0000001}
+    - name: AR2_Ammo
+      parentName: Mag
+      position: {x: -0.0000056076046, y: -0.008210335, z: 0.0000017166137}
+      rotation: {x: 0.70710605, y: 0.000003561401, z: 0.0000010431263, w: 0.70710754}
+      scale: {x: 1.0000033, y: 1.0000007, z: 1.0000001}
+    - name: AR1_Ammo
+      parentName: Mag
+      position: {x: -0.0000060653683, y: 0.011294365, z: -0.030648688}
+      rotation: {x: 0.70710605, y: 0.0000035719418, z: 0.0000010431354, w: 0.70710754}
+      scale: {x: 0.99999976, y: 1.0000007, z: 1.0000001}
+    - name: HG1_Ammo
+      parentName: Mag
+      position: {x: -0.000005760193, y: 0.0041352464, z: 0.009754047}
+      rotation: {x: 0.70710605, y: 0.0000035719418, z: 0.0000010431354, w: 0.70710754}
+      scale: {x: 0.99999976, y: 1.0000007, z: 1.0000001}
+    - name: SG2_Ammo_Case
+      parentName: Mag
+      position: {x: -0.0000035285948, y: -0.31258616, z: -0.04830532}
+      rotation: {x: 0.49242273, y: 0.0000032187027, z: 0.0000020143652, w: 0.87035614}
+      scale: {x: 0.99999976, y: 1.0000004, z: 1.0000004}
+    - name: SG2_Ammo_Case_base
+      parentName: Mag
+      position: {x: -0.0000035285948, y: -0.31258616, z: -0.04830532}
+      rotation: {x: 0.49242273, y: 0.0000032187027, z: 0.0000020143652, w: 0.87035614}
+      scale: {x: 0.99999976, y: 1.0000004, z: 1.0000004}
+    - name: SG2_Ammo_tubes
+      parentName: Mag
+      position: {x: -0.0000035285948, y: -0.31258616, z: -0.04830532}
+      rotation: {x: 0.49242273, y: 0.0000032187027, z: 0.0000020143652, w: 0.87035614}
+      scale: {x: 0.99999976, y: 1.0000004, z: 1.0000004}
+    - name: SMG1_Ammo
+      parentName: Mag
+      position: {x: -0.027950248, y: -0.17563224, z: 0.06786394}
+      rotation: {x: 0.6623567, y: 0.08004193, z: -0.14396864, w: 0.73085564}
+      scale: {x: 0.9999996, y: 1.0000008, z: 1.0000001}
+    - name: Mag_end
+      parentName: Mag
+      position: {x: -0, y: 0.099999994, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: 000Body_Glove
+      parentName: Player Hand(Clone)
+      position: {x: -0.004881363, y: 1.2248344, z: 0.27743855}
+      rotation: {x: -0.7071067, y: 0.000000013170891, z: -0.000000010536712, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: 000Body_Arm
+      parentName: Player Hand(Clone)
+      position: {x: -0.0014041233, y: 1.3241802, z: 0.14543052}
+      rotation: {x: -0.7071067, y: 3.292718e-10, z: 0.0000000026341775, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "\uCE74\uBA54\uB77C"
+      parentName: Player Hand(Clone)
+      position: {x: -0, y: 1.67, z: -0.085}
+      rotation: {x: -3.5527137e-15, y: -0.000000029802322, z: 0.000000043711395, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Item_Injector
+      parentName: Player Hand(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000015454313, y: 0.70710677, z: -0.000000015454312, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -304,14 +815,15 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
