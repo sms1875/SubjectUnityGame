@@ -9,6 +9,8 @@ public class DataManager : MonoBehaviour
     public MapData mapData;
     public PlayerData playerData;
 
+    public float mouseSensitivity = 300;
+
     private void Awake()
     {
         DataManager.instance=this;

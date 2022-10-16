@@ -10,13 +10,13 @@ public class MapManager : MonoBehaviour
 
     public int playerNowPoint_X, playerNowPoint_Y;
     public Transform Player;
-    public GameObject playerMoving;
     bool isPlayerReady = false;
 
     public bool isMove = false;
     public bool isKight=false;
 
     public bool isPlayerWalk = false;
+    public bool isEvent = false;
 
     public int size;
     public GameObject[] Tile;
@@ -142,7 +142,7 @@ public class MapManager : MonoBehaviour
         {
             Debug.Log("이벤트 발생");
             StartCoroutine(MovingPlayer(x, y));
-            EventSceneLoad();
+            isEvent = true;
         }
     }
 
@@ -150,7 +150,7 @@ public class MapManager : MonoBehaviour
     { 
         isMove = true;
         isPlayerWalk = true;
-        playerMoving.GetComponent<Player>().checkPlayerWalk();
+        MainMapCharacter.instance.checkPlayerWalk();
         //플레이어 애니메이션으로 천천히 이동시키기
 
         MapData.instance._tile[playerNowPoint_X, playerNowPoint_Y] = TileType.Empty;
@@ -158,14 +158,16 @@ public class MapManager : MonoBehaviour
         playerNowPoint_X = x;
         playerNowPoint_Y = y;
         MapData.instance._tile[playerNowPoint_X, playerNowPoint_Y] = TileType.Player;
+
         yield return new WaitForSeconds(2.3f);
 
+
         isPlayerWalk = false;
-        playerMoving.GetComponent<Player>().checkPlayerWalk();
+        MainMapCharacter.instance.checkPlayerWalk();
 
         //플레이어 이동에 걸리는 시간
         yield return new WaitForSeconds(1f);
-
+        if(isEvent) EventSceneLoad();
         //--몬스터 이동 함수--
 
 

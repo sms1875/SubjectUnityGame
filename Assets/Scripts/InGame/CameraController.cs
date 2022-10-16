@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    float mouseSpeed = 300;
     float mouseY;
 
     void Update()
     {
 
-        mouseY += Input.GetAxis("Mouse Y") * mouseSpeed * Time.deltaTime;
+        mouseY += Input.GetAxis("Mouse Y") * DataManager.instance.mouseSensitivity * Time.deltaTime;
 
         //범위 제한(변수,최소값,최대값)
         mouseY = Mathf.Clamp(mouseY, -55f, 55f);

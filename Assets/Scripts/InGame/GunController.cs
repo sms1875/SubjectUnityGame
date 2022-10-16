@@ -50,7 +50,7 @@ public class GunController : MonoBehaviour
         currentGun = PlayerController.instance.currentGunList[0];
         gunObj = GameObject.Find("Weapon").transform.Find(currentGun.name);
         gunObj.gameObject.SetActive(true);
-        gunObj.GetComponent<Gun>().init(currentGun);//원본 초기화
+        //gunObj.GetComponent<Gun>().init(currentGun);//원본 초기화
         currentGun = gunObj.GetComponent<Gun>();
         setGunAnimation();
         checkItem();
@@ -254,7 +254,11 @@ public class GunController : MonoBehaviour
 
         CancelPreWeaponAction();
 
-        yield return new WaitForSeconds(currentGun.outWeaponTime);//무기 넣는 딜레이
+        yield return new WaitForSeconds(currentGun.outWeaponTime);
+        while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Out"))
+        {
+            yield return null;
+        }
 
         if (gunObj != null)//현재 무기 비활성화
             gunObj.gameObject.SetActive(false);
@@ -263,21 +267,20 @@ public class GunController : MonoBehaviour
 
         gunObj = GameObject.Find("Weapon").transform.Find(currentGun.name);
 
-
         gunObj.gameObject.SetActive(true);//교체한 무기 활성화
-        gunObj.GetComponent<Gun>().init(currentGun);
+        //gunObj.GetComponent<Gun>().init(currentGun);
         currentGun = gunObj.GetComponent<Gun>();
+ 
 
         //교체한 총 애니메이션 설정
-        setGunAnimation();
+        setGunAnimation();      
+        yield return new WaitForSeconds(currentGun.getWeaponTime);//무기 꺼내는 딜레이
         weaponAnim.SetBool("Change", false);
         weaponAnim.SetTrigger(_name);
 
-        yield return new WaitForSeconds(currentGun.getWeaponTime);//무기 꺼내는 딜레이
 
         isChangeWeapon = false;
         isActivate = true;//무기 활성화
-        //changeWeaponTime = changeWeaponDelayTime+ changeWeaponEndDelayTime+0.1f;//총 교체 딜레이
     }
 
     // 무기 행동 취소 함수.

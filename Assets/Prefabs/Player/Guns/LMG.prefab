@@ -308,7 +308,7 @@ MonoBehaviour:
   outWeaponTime: 0.35
   damage: 20
   reloadBulletCount: 100
-  currentBulletCount: 0
+  currentBulletCount: 100
   maxBulletCount: 200
   carryBulletCount: 0
   retroActionForce: 0

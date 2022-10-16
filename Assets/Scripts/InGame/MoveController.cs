@@ -29,7 +29,6 @@ public class MoveController : MonoBehaviour
     private CharacterController charController;
 
     //카메라설정
-    [SerializeField] private float mouseSensitivity = 300;
     private Vector3 moveDir = Vector3.zero;
     private Camera cam;
     [SerializeField] private GameObject dashEffect;
@@ -136,7 +135,7 @@ public class MoveController : MonoBehaviour
 
     private void CameraRotation()//캐릭터 좌우회전
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * DataManager.instance.mouseSensitivity * Time.deltaTime;
         transform.Rotate(Vector3.up * mouseX);
     }
 
