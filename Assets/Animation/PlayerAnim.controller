@@ -971,7 +971,7 @@ AnimatorStateMachine:
     m_Position: {x: 930, y: 430, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3074441466862206392}
-    m_Position: {x: 690, y: 540, z: 0}
+    m_Position: {x: 680, y: 540, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6917210271545642296}
     m_Position: {x: 30, y: 410, z: 0}
@@ -1298,7 +1298,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Entry
-  m_Speed: 2
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1998862576356516454}
@@ -1313,7 +1313,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: -3369817150727333379, guid: 0febe361a423bc34d912e4523b2507e4, type: 3}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: getWeaponTime
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -1557,7 +1557,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Runing
-  m_Speed: 2
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1639786063503673404}
@@ -2395,7 +2395,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Entry
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7814873992567356104}
@@ -4576,7 +4576,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Runing
-  m_Speed: 2
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2004038822306039667}
@@ -5453,7 +5453,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Runing
-  m_Speed: 2
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7979364978458373903}
@@ -6230,7 +6230,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: armature_AR1_Run_Entry
-  m_Speed: 2
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1471512632674358650}
