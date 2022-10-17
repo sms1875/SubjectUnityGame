@@ -98,7 +98,7 @@ public class M_PistolTop : MonoBehaviour
                 StartCoroutine("OnShoot", 5);
             }
 
-            to = new Vector3(target.position.x, target.position.y + 3, target.position.z);
+            to = new Vector3(target.position.x, target.position.y + 0.3f, target.position.z);
 
             from = new Vector3(topPistol.position.x, topPistol.position.y, topPistol.position.z);
             topPistol.rotation = Quaternion.RotateTowards(topPistol.rotation, Quaternion.LookRotation(to - from), 20 * Time.deltaTime);

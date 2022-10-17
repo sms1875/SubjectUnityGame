@@ -186,7 +186,7 @@ public class MidBossFSM_2 : MonoBehaviour
 
         Collider[] colls = Physics.OverlapSphere(transform.position, 100f, LayerMask.GetMask("InterActive"));
 
-        if(colls.Length == 0) // 주변에 상호작용할 상자가 없음 다시 패턴을 정함
+        if (colls.Length == 0) // 주변에 상호작용할 상자가 없음 다시 패턴을 정함
         {
             Debug.Log("NoInteractiveStone");
             StartCoroutine("Think");
@@ -196,10 +196,10 @@ public class MidBossFSM_2 : MonoBehaviour
         int shortestIndex = 0;
         float shortestDistance = Vector3.Distance(colls[shortestIndex].transform.position, transform.position);
 
-        for (int i = 1; i < colls.Length ; i++) // 가장 짧은 거리에 있는 상호작용할 오브젝트 선별
+        for (int i = 1; i < colls.Length; i++) // 가장 짧은 거리에 있는 상호작용할 오브젝트 선별
         {
             float distance = Vector3.Distance(colls[i].transform.position, transform.position);
-            if(shortestDistance > distance)
+            if (shortestDistance > distance)
             {
                 shortestIndex = i;
                 shortestDistance = distance;
@@ -223,6 +223,12 @@ public class MidBossFSM_2 : MonoBehaviour
             {
                 navMeshAgent.speed = 0;
                 navMeshAgent.ResetPath();
+                if (rockProjectile.midBoss2 != transform)
+                {
+                    yield return new WaitForSeconds(1f);
+
+                    StartCoroutine("Think");
+                }
                 animator.SetTrigger("onIdle");
                 animator.SetTrigger("onGet"); // 줍기 애니메이션
 
@@ -290,7 +296,7 @@ public class MidBossFSM_2 : MonoBehaviour
         isLook = false;
         rushCharge = 0f;
         Vector3 direction = (transform.position - target.position).normalized;
-        Vector3 rushPoint = target.position + direction * -10;
+        Vector3 rushPoint = target.position + direction * -rushOverDistance;
 
         navMeshAgent.acceleration = 15f;
         navMeshAgent.speed = rushSpeed;
@@ -324,8 +330,10 @@ public class MidBossFSM_2 : MonoBehaviour
             }
             else if (Vector3.Distance(rushPoint, new Vector3(transform.position.x, 0, transform.position.z)) <= 0.1f)
             {
+                rushAttackTrigger.SetActive(false);
                 animator.SetBool("isRush", false);
                 rushAttackTrigger.SetActive(false);
+                navMeshAgent.ResetPath();
                 navMeshAgent.speed = 0;
                 navMeshAgent.acceleration = 8f;
 
@@ -333,8 +341,10 @@ public class MidBossFSM_2 : MonoBehaviour
             }
             else if (currentTime > 3)
             {
+                rushAttackTrigger.SetActive(false);
                 animator.SetBool("isRush", false);
                 rushAttackTrigger.SetActive(false);
+                navMeshAgent.ResetPath();
                 navMeshAgent.speed = 0;
                 navMeshAgent.acceleration = 8f;
 
@@ -478,7 +488,7 @@ public class MidBossFSM_2 : MonoBehaviour
 
         currentHealth -= damage;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             currentHealth = 0;
             isLook = false;

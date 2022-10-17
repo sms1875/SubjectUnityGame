@@ -10,6 +10,7 @@ public class RockProjectile : MonoBehaviour
     private bool isStop = true;
     private bool isHitted;
     public bool isEnter;
+    public Transform midBoss2;
 
     public AudioClip hitClip;
     public AudioClip crashClip;
@@ -59,6 +60,7 @@ public class RockProjectile : MonoBehaviour
         if (other.CompareTag("MidBoss2"))
         {
             isEnter = true;
+            midBoss2 = other.transform;
         }
     }
 

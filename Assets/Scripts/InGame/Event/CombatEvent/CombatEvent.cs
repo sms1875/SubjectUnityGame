@@ -33,5 +33,20 @@ public class CombatEvent : MonoBehaviour
         {
             gameObject.GetComponent<EnemyFSM>().TakeDamage(10000);
         }
+        GameObject[] baby = GameObject.FindGameObjectsWithTag("Baby");
+        foreach (GameObject gameObject in baby)
+        {
+            gameObject.GetComponent<MidBoss1_Baby>().TakeDamage(10000);
+        }
+        GameObject[] midBoss2 = GameObject.FindGameObjectsWithTag("MidBoss2");
+        foreach (GameObject gameObject in midBoss2)
+        {
+            gameObject.GetComponent<MidBossFSM_2>().TakeDamage(10000);
+        }
+        GameObject[] turrets = GameObject.FindGameObjectsWithTag("Turret");
+        foreach (GameObject gameObject in midBoss2)
+        {
+            gameObject.GetComponent<Turret>().TakeDamage(10000);
+        }
     }
 }

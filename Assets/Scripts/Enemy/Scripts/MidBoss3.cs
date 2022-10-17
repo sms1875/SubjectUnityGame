@@ -45,6 +45,7 @@ public class MidBoss3 : MonoBehaviour
             {
                 renderer.material = destroyMat;
             }
+            RobotBoss.cnt--;
             Invoke("ActiveFalse", 3f);
         }
     }

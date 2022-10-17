@@ -30,7 +30,7 @@ public class M_MissileTop : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine("OnGuidedMissile");
+        Invoke("SetUp", 10f);
     }
 
     private void LateUpdate()
@@ -39,6 +39,11 @@ public class M_MissileTop : MonoBehaviour
         {
             StopAllCoroutines();
         }
+    }
+
+    private void SetUp()
+    {
+        StartCoroutine("OnGuidedMissile");
     }
 
     private IEnumerator Think()

@@ -50,7 +50,7 @@ public class M_MissileLeg : MidBoss3
 
 
         rangePosition = Vector3.zero;
-        rangeScale = Vector3.one * 50f;
+        rangeScale = Vector3.one * 70f;
 
 
         wanderJitter = Random.Range(wanderJitterMin, wanderJitterMax);
