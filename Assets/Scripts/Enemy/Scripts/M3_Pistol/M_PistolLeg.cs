@@ -19,11 +19,19 @@ public class M_PistolLeg : MidBoss3
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
         top.destination = destination;
+
+        turretGroups = GameObject.FindGameObjectsWithTag("Turret");
+        foreach (GameObject turret in turretGroups)
+        {
+            turret.SetActive(false);
+        }
     }
 
     private void OnEnable()
     {
-        StartCoroutine("Think");
+        anim.SetTrigger("OnMove");
+        nav.SetDestination(destination);
+        Invoke("SetUp", 10f);
     }
 
     private void Update()
@@ -33,6 +41,13 @@ public class M_PistolLeg : MidBoss3
             StopAllCoroutines();
             top.isDead = true;
         }
+    }
+
+    private void SetUp()
+    {
+        anim.SetTrigger("OnIdle");
+        nav.ResetPath();
+        StartCoroutine("Think");
     }
 
     private IEnumerator Think()
@@ -52,6 +67,7 @@ public class M_PistolLeg : MidBoss3
             {
                 audio.Stop();
                 int rand = Random.Range(0, 2);
+                rand = 1;
                 if (rand == 0)
                 {
                     StartCoroutine("Pattern2");
@@ -62,7 +78,7 @@ public class M_PistolLeg : MidBoss3
                 }
                 yield break;
             }
-            if(distance < 1f)
+            if(distance < 5f)
             {
                 audio.Stop();
                 StartCoroutine("Pattern3");

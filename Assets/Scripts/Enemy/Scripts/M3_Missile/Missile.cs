@@ -56,18 +56,13 @@ public class Missile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Wall") || collision.transform.CompareTag("Floor"))
+        if (collision.transform.CompareTag("Wall") || collision.transform.CompareTag("Floor") || collision.transform.CompareTag("Player"))
         {
             if (isVeneer)
             {
                 veneerMemoryPool.SetVeneer();
             }
 
-            GameObject clone = Instantiate(destroyImpact, transform.position, transform.rotation);
-            memoryPool.DeactivatePoolItem(transform.parent.gameObject);
-        }
-        if (!isVeneer && collision.transform.CompareTag("MidBoss3"))
-        {
             GameObject clone = Instantiate(destroyImpact, transform.position, transform.rotation);
             memoryPool.DeactivatePoolItem(transform.parent.gameObject);
         }

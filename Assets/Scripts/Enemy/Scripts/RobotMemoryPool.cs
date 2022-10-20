@@ -19,8 +19,8 @@ public class RobotMemoryPool : MonoBehaviour
     private void Awake()
     {
         memoryPools = new MemoryPool[2];
-        memoryPools[0] = new MemoryPool(bullet, false);
-        memoryPools[1] = new MemoryPool(shotEffect, false);
+        memoryPools[0] = new MemoryPool(bullet, false, 10);
+        memoryPools[1] = new MemoryPool(shotEffect, false, 10);
     }
 
     public void Shoot(int index = -1, float x = 999, float y = 999, float z = 999)
