@@ -80,67 +80,75 @@ public class GunController : MonoBehaviour
     {
         if (isActivate)
         {
-            Fire();
             TryReload();
+            Fire(); 
             Aim();
         }
     }
 
     private void Fire()
     {
+      
         if (Input.GetButton("Fire1") && !isFire)
         {
-            if (isReload)
+            if (isReload&& currentGun.name == "SG1")
             {
                 CancelReload();
-                if (currentGun.name == "SG1")//샷건 장전
-                    weaponAnim.SetTrigger("ReloadEnd");//애니메이션설정
+                weaponAnim.SetTrigger("ReloadEnd");//애니메이션설정
             }
-            if (currentGun.currentBulletCount > 0)
-                StartCoroutine(Shoot());
-            else
+            if (!isReload)
             {
-                Debug.Log("장전된 총알이 없습니다");//총알이 없어 찰칵거리는 효과음 출력
+                if (currentGun.currentBulletCount > 0)
+                {
+                    Debug.Log("1");
+                    StartCoroutine(Shoot());
+                }
+                else
+                {
+                    Debug.Log("장전된 총알이 없습니다");//총알이 없어 찰칵거리는 효과음 출력
+                }
             }
         }
     }
 
     IEnumerator Shoot()
     {
-        isFire = true;
         if (!PlayerController.instance.isRun && weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Idle"))//달리기판단,Idle에서만 사격
         {
+            isFire = true;
             weaponAnim.SetTrigger("Fire");//애니메이션 설정
             Hit(); // RayCast 사격
             currentGun.MuzzleFlash(); // 이펙트
             currentGun.currentBulletCount--;//총알감소
-            //currentGun.anim.SetBool("Run", false);
-            //playerController.makeRunFalse();//걷기상태로 변하게 변경
+                                            //currentGun.anim.SetBool("Run", false);
+                                            //playerController.makeRunFalse();//걷기상태로 변하게 변경
+
+            //PlaySE(currentGun.fire_Sound); // 사운드
+            //StartCoroutine(RetroActionCoroutine()); // 반동
+            /*
+            while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Fire"))//공격중
+            {
+                yield return null;
+            }*/
+            yield return new WaitForSeconds(currentGun.fireRate);
+            isFire = false;
         }
-        //PlaySE(currentGun.fire_Sound); // 사운드
-        //StartCoroutine(RetroActionCoroutine()); // 반동
-        /*
-        while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Fire"))//공격중
-        {
-            yield return null;
-        }*/
-        yield return new WaitForSeconds(currentGun.fireRate);
-        isFire = false;
     }
 
     private void TryReload()//재장전
     {
+       
         if (Input.GetKeyDown(KeyCode.R) && !isReload && currentGun.currentBulletCount < currentGun.reloadBulletCount)
-        {
-            isReload = true;
-            weaponAnim.SetTrigger("Reload");//애니메이션설정
+        { Debug.Log("2");
+
             StartCoroutine(ReloadCoroutine());
         }
     }
 
     IEnumerator ReloadCoroutine()
-    {
-
+    {            
+            weaponAnim.SetTrigger("Reload");//애니메이션설정
+        isReload = true;
         if (currentGun.name == "SG1")//샷건 장전
         {
             while (currentGun.currentBulletCount < currentGun.reloadBulletCount && isReload)

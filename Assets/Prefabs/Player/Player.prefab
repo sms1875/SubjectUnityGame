@@ -8127,7 +8127,6 @@ MonoBehaviour:
   jumpKey: 32
   dashkey: 306
   crouchKey: 99
-  mouseSensitivity: 150
   dashEffect: {fileID: 7129020989491313146}
 --- !u!114 &2672813471390591718
 MonoBehaviour:
@@ -8870,7 +8869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5975017000795182757, guid: ff8c287c3d6d276409504d9a6c9e03c4, type: 3}
       propertyPath: m_Name
-      value: SMG1
+      value: SMG
       objectReference: {fileID: 0}
     - target: {fileID: 5975017000795182757, guid: ff8c287c3d6d276409504d9a6c9e03c4, type: 3}
       propertyPath: m_IsActive

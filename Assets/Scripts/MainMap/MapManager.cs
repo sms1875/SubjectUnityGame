@@ -192,13 +192,13 @@ public class MapManager : MonoBehaviour
             switch (lastSceneNum)
             {
                 case 3:
-                    LoadingSceneManager.LoadScene("Temple2");
+                    LoadingSceneManager.LoadScene("Test");
                     break;
                 case 4:
-                    LoadingSceneManager.LoadScene("Temple2");
+                    LoadingSceneManager.LoadScene("Test");
                     break;
                 case 5:
-                    LoadingSceneManager.LoadScene("Temple2");
+                    LoadingSceneManager.LoadScene("Test");
                     break;
             }
 
