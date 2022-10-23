@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class BossFSM : MonoBehaviour
+public class BossFSM : CombatEvent
 {
     public float maxHealth_Phase1 = 100;
     public float maxHealth_Phase2 = 100;
@@ -511,7 +511,7 @@ public class BossFSM : MonoBehaviour
             float distance = Vector3.Distance(target.position, transform.position);
             currentTime += Time.deltaTime;
 
-            if (distance <= 6f)
+            if (distance <= 2.5f)
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.speed = 0;
@@ -567,7 +567,7 @@ public class BossFSM : MonoBehaviour
             float distance = Vector3.Distance(target.position, transform.position);
             currentTime += Time.deltaTime;
 
-            if (distance <= 9f)
+            if (distance <= 3.5f)
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.speed = 0;
@@ -648,8 +648,8 @@ public class BossFSM : MonoBehaviour
             veneerPattern.SetActive(false);
             fireZone.SetActive(false);
             StopAllCoroutines();
-
-            Invoke("OnDIe", 5f);
+            Clear();
+            Invoke("OnDIe", 10f);
         }
     }
 
