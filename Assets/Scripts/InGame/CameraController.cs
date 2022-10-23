@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public static CameraController instance;
+
     float mouseY;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Update()
     {
@@ -17,5 +24,10 @@ public class CameraController : MonoBehaviour
         //로컬 회전값
         transform.localEulerAngles = new Vector3(-mouseY, 0, 0);
 
+    }
+
+    public void ReBoundY(float value)
+    {
+        mouseY += value;
     }
 }

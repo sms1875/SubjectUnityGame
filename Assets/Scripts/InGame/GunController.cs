@@ -117,6 +117,7 @@ public class GunController : MonoBehaviour
         {
             isFire = true;
             weaponAnim.SetTrigger("Fire");//애니메이션 설정
+            CameraController.instance.ReBoundY(0.3f);
             Hit(); // RayCast 사격
             currentGun.MuzzleFlash(); // 이펙트
             currentGun.currentBulletCount--;//총알감소
