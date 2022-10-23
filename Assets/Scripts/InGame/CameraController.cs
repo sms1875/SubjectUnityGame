@@ -7,10 +7,12 @@ public class CameraController : MonoBehaviour
     public static CameraController instance;
 
     float mouseY;
+    Camera cam;
 
     private void Awake()
     {
         instance = this;
+        cam = gameObject.GetComponentInChildren<Camera>();
     }
 
     void Update()
@@ -29,5 +31,6 @@ public class CameraController : MonoBehaviour
     public void ReBoundY(float value)
     {
         mouseY += value;
+        //cam.fieldOfView += 5;
     }
 }

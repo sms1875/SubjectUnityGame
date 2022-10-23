@@ -100,7 +100,6 @@ public class GunController : MonoBehaviour
             {
                 if (currentGun.currentBulletCount > 0)
                 {
-                    Debug.Log("1");
                     StartCoroutine(Shoot());
                 }
                 else
@@ -117,12 +116,13 @@ public class GunController : MonoBehaviour
         {
             isFire = true;
             weaponAnim.SetTrigger("Fire");//애니메이션 설정
-            CameraController.instance.ReBoundY(0.3f);
             Hit(); // RayCast 사격
+
             currentGun.MuzzleFlash(); // 이펙트
-            currentGun.currentBulletCount--;//총알감소
-                                            //currentGun.anim.SetBool("Run", false);
-                                            //playerController.makeRunFalse();//걷기상태로 변하게 변경
+            currentGun.currentBulletCount--; //총알감소
+
+            CameraController.instance.ReBoundY(currentGun.boundY);
+            MoveController.instance.ReBoundX(currentGun.boundX);
 
             //PlaySE(currentGun.fire_Sound); // 사운드
             //StartCoroutine(RetroActionCoroutine()); // 반동
@@ -140,8 +140,7 @@ public class GunController : MonoBehaviour
     {
        
         if (Input.GetKeyDown(KeyCode.R) && !isReload && currentGun.currentBulletCount < currentGun.reloadBulletCount)
-        { Debug.Log("2");
-
+        { 
             StartCoroutine(ReloadCoroutine());
         }
     }
