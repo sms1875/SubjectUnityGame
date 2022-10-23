@@ -93,7 +93,7 @@ public class VeneerProjectile : MonoBehaviour
                 boxCollider.size = new Vector3(0.1f, 0.1f, 0.1f);
 
                 sphereCollider.enabled = true;
-                transform.localPosition = new Vector3(transform.localPosition.x, 0.8f, transform.localPosition.z);
+                transform.localPosition = new Vector3(transform.localPosition.x, -0.5f, transform.localPosition.z);
                 transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
                 veneer.SetActive(true);
                 BAF.enabled = true;
