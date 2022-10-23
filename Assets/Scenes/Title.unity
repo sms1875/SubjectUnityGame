@@ -210,7 +210,7 @@ MonoBehaviour:
   DashGauge: 60
   currentGunList:
   - {fileID: 8610580873015053894, guid: f89050d0cf4778d4ab935024f37f3dbf, type: 3}
-  - {fileID: 8908570677130191007, guid: 4c242d4a2e0140b46882ea49b5415a5f, type: 3}
+  - {fileID: 6841279124519385517, guid: a0fb95b247ffba740bdcd20b0f042d7a, type: 3}
 --- !u!114 &84671223
 MonoBehaviour:
   m_ObjectHideFlags: 0
