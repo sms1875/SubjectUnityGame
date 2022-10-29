@@ -306,6 +306,8 @@ MonoBehaviour:
   reloadTime: 5
   getWeaponTime: 0.4
   outWeaponTime: 0.35
+  boundX: 0.8
+  boundY: 0.8
   damage: 20
   reloadBulletCount: 100
   currentBulletCount: 100
