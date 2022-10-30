@@ -165,7 +165,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 3fcdb23bde063e94fa0b60ccf87604d6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -176,7 +176,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -191,6 +191,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.107854635
+      value: 0.35679936
+      inSlope: -0.7042491
+      outSlope: -0.7042491
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3997977
+      value: 0.19143605
+      inSlope: -0.7395643
+      outSlope: -0.7395643
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.60951763
+      value: 0.0000061653554
+      inSlope: -0.000030605595
+      outSlope: -0.000030605595
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.31579384
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -1332,6 +1359,103 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.25, z: 0.1}
   m_Center: {x: 0.1, y: -0.1, z: 0}
+--- !u!1 &1342394780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342394784}
+  - component: {fileID: 1342394783}
+  - component: {fileID: 1342394782}
+  - component: {fileID: 1342394781}
+  m_Layer: 3
+  m_Name: Floor
+  m_TagString: Floor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1342394781
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342394780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1342394782
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342394780}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1342394783
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342394780}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1342394784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342394780}
+  m_LocalRotation: {x: 0.6532816, y: 0.2705979, z: 0.27059788, w: 0.65328145}
+  m_LocalPosition: {x: 0, y: 0, z: -3.0532064}
+  m_LocalScale: {x: 15, y: 0.1, z: 15}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2085599660}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1352655808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5030419543288286117, guid: d55b34958ee60f7468311ef7e83a7027, type: 3}
@@ -1487,7 +1611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 68451963582677384, guid: 9ce1b7d00a9dcba4fbc5c8e8432a9b64, type: 3}
       propertyPath: beamRate
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 68451963582677384, guid: 9ce1b7d00a9dcba4fbc5c8e8432a9b64, type: 3}
       propertyPath: runSpeed
@@ -1495,7 +1619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 68451963582677384, guid: 9ce1b7d00a9dcba4fbc5c8e8432a9b64, type: 3}
       propertyPath: rushRate
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 68451963582677384, guid: 9ce1b7d00a9dcba4fbc5c8e8432a9b64, type: 3}
       propertyPath: bigBreath
@@ -1535,11 +1659,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 68451963582677384, guid: 9ce1b7d00a9dcba4fbc5c8e8432a9b64, type: 3}
       propertyPath: bossMeleePatterns.Array.data[0].weight
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 68451963582677384, guid: 9ce1b7d00a9dcba4fbc5c8e8432a9b64, type: 3}
       propertyPath: bossMeleePatterns.Array.data[1].weight
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 68451963582677384, guid: 9ce1b7d00a9dcba4fbc5c8e8432a9b64, type: 3}
       propertyPath: bossMeleePatterns.Array.data[2].weight
@@ -2129,6 +2253,11 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.5000001}
   m_TimeToStationary: 0.5
+--- !u!4 &2085599660 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5476828513197384693, guid: ac476d222bb96494184854fc68fb0b70, type: 3}
+  m_PrefabInstance: {fileID: 647136124}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2128317051
 PrefabInstance:
   m_ObjectHideFlags: 0

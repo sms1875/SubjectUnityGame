@@ -41,7 +41,7 @@ public class VeneerMissile : MonoBehaviour
             missile.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
             missile.RotateAround(halfPoint, transform.right, (45 * acceleration) * Time.deltaTime);
 
-            acceleration += 0.004f;
+            acceleration += 0.001f;
 
             yield return null;
         }

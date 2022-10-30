@@ -46,6 +46,7 @@ public class MidBoss1_Egg : MonoBehaviour
     private IEnumerator Up()
     {
         audio.clip = readyClip;
+        audio.volume = 0.1f;
         audio.Play();
         float intensity = 0f;
         while (true)
@@ -95,6 +96,7 @@ public class MidBoss1_Egg : MonoBehaviour
     {
         audio.Stop();
         audio.clip = spawnClip;
+        audio.volume = 0.1f;
         float intensity = 0f;
         while (true)
         {

@@ -12,6 +12,8 @@ public class MidBoss1_AudioController : MonoBehaviour
     public AudioClip shoutClip;
     public AudioClip acidClip;
     public AudioClip dieClip;
+    public float stepVolume = 0.1f;
+    public float reapVolume = 0.1f;
 
     private AudioSource audio;
 
@@ -29,6 +31,7 @@ public class MidBoss1_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = stepClip;
+        audio.volume = stepVolume;
         audio.Play();
     }
 
@@ -36,6 +39,7 @@ public class MidBoss1_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = reapClip;
+        audio.volume = reapVolume;
         audio.Play();
     }
 
@@ -43,6 +47,7 @@ public class MidBoss1_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = gasClip;
+        audio.volume = 0.07f;
         audio.Play();
     }
 
@@ -50,6 +55,7 @@ public class MidBoss1_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = jumpClip;
+        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -57,6 +63,7 @@ public class MidBoss1_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = landClip;
+        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -64,6 +71,7 @@ public class MidBoss1_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = shoutClip;
+        audio.volume = 0.2f;
         audio.Play();
     }
 
@@ -71,6 +79,7 @@ public class MidBoss1_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = acidClip;
+        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -78,6 +87,7 @@ public class MidBoss1_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = dieClip;
+        audio.volume = 0.1f;
         audio.Play();
     }
 }

@@ -129,7 +129,7 @@ public class BossFSM : CombatEvent
         Ray ray = new Ray(transform.position + transform.up, transform.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 100f, ~LayerMask.GetMask("Stage1_Boss")))
+        if (Physics.Raycast(ray, out hit, 100f, ~LayerMask.GetMask("Stage1_Boss", "Enemy")))
         {
             viewTf = hit.transform;
         }
@@ -649,7 +649,7 @@ public class BossFSM : CombatEvent
             fireZone.SetActive(false);
             StopAllCoroutines();
             Clear();
-            Invoke("OnDIe", 10f);
+            Invoke("OnDie", 10f);
         }
     }
 
@@ -675,7 +675,7 @@ public class BossFSM : CombatEvent
         StartCoroutine("Think");
     }
 
-    private void OnDIe()
+    private void OnDie()
     {
         gameObject.SetActive(false);
     } 
