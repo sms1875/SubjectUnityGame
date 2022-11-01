@@ -34,7 +34,6 @@ public class MidBoss4_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = stepClip;
-        audio.volume = 0.02f;
         audio.Play();
     }
 
@@ -42,7 +41,6 @@ public class MidBoss4_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = punchClip;
-        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -50,16 +48,18 @@ public class MidBoss4_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = kickClip;
-        audio.volume = 0.07f;
         audio.Play();
     }
-
+    /// <summary>
+    /// ////////////////
+    /// </summary>
     public void OnRushSound()
     {
-        audio.Stop();
-        audio.clip = rushClip;
-        audio.volume = 0.1f;
-        audio.Play();
+
+            audio.Stop();
+            audio.clip = rushClip;
+            audio.Play();
+
     }
 
     public void OnCrashSound()
@@ -68,7 +68,6 @@ public class MidBoss4_AudioController : MonoBehaviour
         {
             audio.Stop();
             audio.clip = crashClip;
-            audio.volume = 0.1f;
             audio.Play();
         }
     }
@@ -77,7 +76,6 @@ public class MidBoss4_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = jumpClip;
-        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -85,7 +83,6 @@ public class MidBoss4_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = landClip;
-        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -93,7 +90,6 @@ public class MidBoss4_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = breathClip1;
-        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -101,7 +97,6 @@ public class MidBoss4_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = breathClip2;
-        audio.volume = 0.02f;
         audio.Play();
     }
 
@@ -111,14 +106,12 @@ public class MidBoss4_AudioController : MonoBehaviour
         {
             audio.Stop();
             audio.clip = breathClip3;
-            audio.volume = 0.1f;
             audio.Play();
         }
         else
         {
             if (!audio.isPlaying)
             {
-                audio.volume = 0.1f;
                 audio.Play();
             }
         }
@@ -128,7 +121,6 @@ public class MidBoss4_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = breathChargeClip;
-        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -136,7 +128,6 @@ public class MidBoss4_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = kneeClip;
-        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -144,7 +135,6 @@ public class MidBoss4_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = dieClip;
-        audio.volume = 0.1f;
         audio.Play();
     }
 }

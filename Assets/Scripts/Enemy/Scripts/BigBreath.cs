@@ -40,24 +40,15 @@ public class BigBreath : MonoBehaviour
         while (true)
         {
             currentTime += Time.deltaTime;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 500f, ~LayerMask.GetMask("Stage1_Boss", "Player", "Breath", "Floor")))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 500f, ~LayerMask.GetMask("Stage1_Boss", "Player", "Breath")))
             {
                 trigger.localPosition = new Vector3(0, 2, hit.distance/6f + 2);
                 trigger.localScale = new Vector3(3, 3, hit.distance - 9);
-                if (hit.transform.CompareTag("Wall"))
-                {
-                    var main = ps.main;
-                    main.startSpeed = hit.distance;
-                }
-                else
-                {
-                    var main = ps.main;
-                    main.startSpeed = hit.distance / 3;
-                }
+                ps.startSpeed = hit.distance / 3;
                 if (hit.transform.CompareTag("Pillar") && !isSetUp)
                 {
                     isSetUp = true;
-                    hit.transform.GetComponent<Pillar>().SetUp(holdingTime - currentTime);
+                    //hit.transform.GetComponent<Pillar>().SetUp(holdingTime - currentTime);
                 }
             }
 

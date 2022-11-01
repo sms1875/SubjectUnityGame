@@ -74,6 +74,16 @@ public class GunController : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Alpha2) && currentGun.name != PlayerController.instance.currentGunList[1].name)
                 StartCoroutine(ChangeWeaponCoroutine("GUN", PlayerController.instance.currentGunList[1].name));
         }
+        /*
+        if (isActivate)
+        {
+            if (!Inventory.inventoryActivated)
+            {
+                Fire();
+                ReloadCoroutine();
+            }
+        }
+        */
     }
 
     private void FixedUpdate()
@@ -100,6 +110,7 @@ public class GunController : MonoBehaviour
             {
                 if (currentGun.currentBulletCount > 0)
                 {
+                    Debug.Log("1");
                     StartCoroutine(Shoot());
                 }
                 else
@@ -117,12 +128,10 @@ public class GunController : MonoBehaviour
             isFire = true;
             weaponAnim.SetTrigger("Fire");//애니메이션 설정
             Hit(); // RayCast 사격
-
             currentGun.MuzzleFlash(); // 이펙트
-            currentGun.currentBulletCount--; //총알감소
-
-            CameraController.instance.ReBoundY(currentGun.boundY);
-            MoveController.instance.ReBoundX(currentGun.boundX);
+            currentGun.currentBulletCount--;//총알감소
+                                            //currentGun.anim.SetBool("Run", false);
+                                            //playerController.makeRunFalse();//걷기상태로 변하게 변경
 
             //PlaySE(currentGun.fire_Sound); // 사운드
             //StartCoroutine(RetroActionCoroutine()); // 반동
@@ -140,7 +149,8 @@ public class GunController : MonoBehaviour
     {
        
         if (Input.GetKeyDown(KeyCode.R) && !isReload && currentGun.currentBulletCount < currentGun.reloadBulletCount)
-        { 
+        { Debug.Log("2");
+
             StartCoroutine(ReloadCoroutine());
         }
     }

@@ -13,7 +13,6 @@ public class Missile : MonoBehaviour
     private Vector3 startLocalRotation;
 
     public bool isVeneer;
-    private bool isRecognizeEnemy;
 
     private VeneerMemoryPool veneerMemoryPool;
 
@@ -25,16 +24,6 @@ public class Missile : MonoBehaviour
         {
             veneerMemoryPool = GetComponent<VeneerMemoryPool>();
         }
-    }
-
-    private void OnEnable()
-    {
-        Invoke("OnRecognizeEnemy", 3f);
-    }
-
-    private void OnRecognizeEnemy()
-    {
-        isRecognizeEnemy = true;
     }
 
     public void GetMemoryPool(MemoryPool memoryPool, float health, float damage, GameObject destroyImpact)
@@ -67,32 +56,17 @@ public class Missile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!isRecognizeEnemy)
+        if (collision.transform.CompareTag("Wall") || collision.transform.CompareTag("Floor") || collision.transform.CompareTag("Player"))
         {
-            if (collision.transform.CompareTag("Wall") || collision.transform.CompareTag("Floor") || collision.transform.CompareTag("Player"))
+            if (isVeneer)
             {
-                if (isVeneer)
-                {
-                    veneerMemoryPool.SetVeneer();
-                }
-
-                GameObject clone = Instantiate(destroyImpact, transform.position, transform.rotation);
-                memoryPool.DeactivatePoolItem(transform.parent.gameObject);
+                veneerMemoryPool.SetVeneer();
             }
-        }
-        else
-        {
-            if (collision.transform.CompareTag("Wall") || collision.transform.CompareTag("Floor") || collision.transform.CompareTag("Player") || collision.transform.CompareTag("Enemy"))
-            {
-                if (isVeneer)
-                {
-                    veneerMemoryPool.SetVeneer();
-                }
 
-                GameObject clone = Instantiate(destroyImpact, transform.position, transform.rotation);
-                memoryPool.DeactivatePoolItem(transform.parent.gameObject);
-            }
+            GameObject clone = Instantiate(destroyImpact, transform.position, transform.rotation);
+            memoryPool.DeactivatePoolItem(transform.parent.gameObject);
         }
+        //memoryPool.DeactivatePoolItem(transform.parent.gameObject);
     }
 
     private void OnDisable()
@@ -115,7 +89,5 @@ public class Missile : MonoBehaviour
         }
         transform.localPosition = startLocalPosition;
         transform.localRotation = Quaternion.Euler(startLocalRotation);
-
-        isRecognizeEnemy = false;
     }
 }

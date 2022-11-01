@@ -51,5 +51,5 @@ EditorBuildSettings:
     path: Assets/Scenes/InGame/TempleBoss.unity
     guid: 5f9efef352db8474588d9e830270a063
   m_configObjects:
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 8d4f365fc611d1d4d8fed1e42ccf4468, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: b94ceb995c3c00749b5b4b6670612fe9, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: f0b69038378ded74abf7fff240a25782, type: 2}

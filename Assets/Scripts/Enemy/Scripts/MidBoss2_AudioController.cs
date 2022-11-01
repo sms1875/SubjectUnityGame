@@ -28,7 +28,6 @@ public class MidBoss2_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = stepClip;
-        audio.volume = 0.08f;
         audio.Play();
     }
 
@@ -36,7 +35,6 @@ public class MidBoss2_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = rushStepClip;
-        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -44,7 +42,6 @@ public class MidBoss2_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = punchClip;
-        audio.volume = 0.03f;
         audio.Play();
     }
 
@@ -52,7 +49,6 @@ public class MidBoss2_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = shoutClip;
-        audio.volume = 0.03f;
         audio.Play();
     }
 
@@ -60,7 +56,6 @@ public class MidBoss2_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = throwClip;
-        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -68,7 +63,6 @@ public class MidBoss2_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = crashClip;
-        audio.volume = 0.1f;
         audio.Play();
     }
 
@@ -76,7 +70,6 @@ public class MidBoss2_AudioController : MonoBehaviour
     {
         audio.Stop();
         audio.clip = dieClip;
-        audio.volume = 0.1f;
         audio.Play();
     }
 }

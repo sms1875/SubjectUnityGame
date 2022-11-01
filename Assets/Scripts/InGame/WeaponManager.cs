@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-/*
 public class WeaponManager : MonoBehaviour
 {
+    /*
     // 무기 중복 교체 실행 방지.
     public static bool isChangeWeapon = false;
 
@@ -44,22 +43,29 @@ public class WeaponManager : MonoBehaviour
     {
         if (!isChangeWeapon && !theGunController.GetGunFire())
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1)&& currentWeapon.gameObject.name != "AR1")
+            if (Input.GetKeyDown(KeyCode.Alpha1) && currentWeapon.gameObject.name != "AR1")
                 StartCoroutine(ChangeWeaponCoroutine("GUN", "AR1"));
-            else if (Input.GetKeyDown(KeyCode.Alpha2)&& currentWeapon.gameObject.name!= "AR2")
+            else if (Input.GetKeyDown(KeyCode.Alpha2) && currentWeapon.gameObject.name != "AR2")
                 StartCoroutine(ChangeWeaponCoroutine("GUN", "AR2"));
+        }
+        if (!Inventory.inventoryActivated)
+        {
+            if (!isChangeWeapon)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1)) StartCoroutine(ChangeWeaponCoroutine());
+            }
         }
         //changeGunCalc();
     }
 
-   /* private void changeGunCalc()//무기 교체 딜레이
-    {
-        if (changeWeaponTime > 0)
-        {
-            changeWeaponTime -= Time.deltaTime / 2;
-        }
-    }*/
-/*
+    /* private void changeGunCalc()//무기 교체 딜레이
+     {
+         if (changeWeaponTime > 0)
+         {
+             changeWeaponTime -= Time.deltaTime / 2;
+         }
+     }*/
+    /*
     // 무기 교체 코루틴.
     public IEnumerator ChangeWeaponCoroutine(string _type, string _name)
     {
@@ -103,5 +109,5 @@ public class WeaponManager : MonoBehaviour
     {
         theGunController.GunChange(gunDictionary[_name]);
     }
+    */
 }
-*/

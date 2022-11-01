@@ -22,10 +22,6 @@ public class Gun : MonoBehaviour {
     public float getWeaponTime; // 무기 꺼내기 속도
     public float outWeaponTime; // 무기 넣기 속도
 
-    //반동
-    public float boundX = 1f;
-    public float boundY = 1f;
-
     // public bool isAutomaic; // 연사총인가
 
     public int damage; // 총의 데미지.

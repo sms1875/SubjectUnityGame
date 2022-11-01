@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip[] PlayerSoundClip;
 
     public static PlayerController instance;
+
+    [SerializeField] private Inventory inventory;
+
     private void Awake()
     {
         PlayerController.instance = this;
@@ -39,8 +42,8 @@ public class PlayerController : MonoBehaviour
         GameController.instance.Result();
     }
 
-   //초기화
-   private void init()
+    //초기화
+    private void init()
     {
         charController = GetComponent<CharacterController>();
         //theCrosshair = FindObjectOfType<Crosshair>();
@@ -65,6 +68,13 @@ public class PlayerController : MonoBehaviour
         {
             currentDashGauge += 0.1f;
         }
+    /*
+        if (!Inventory.inventoryActivated)
+        {
+            CameraRotation();
+            CharacterRotation();
+        }
+    */
     }
 
     private void FixedUpdate()
@@ -200,4 +210,20 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
     }
+
+    /*
+    private void ItemPickUp()
+    {
+        if (pickupActivated)
+        {
+            if(hitInfo.transform != null)
+            {
+                Debug.Log(hitInfo.transform.GetComponet<ItemPickUp>().item.itemName + "획득 했습니다.");
+                theInventory.AcquireItem(hitInfo.transform.GetComponet<ItemPickUp>().item);
+                Destroy(hitInfo.transform.gameObject);
+                ItemInfoDisappear();
+            }
+        }
+    }
+    */
 }

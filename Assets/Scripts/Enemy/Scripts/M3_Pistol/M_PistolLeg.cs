@@ -67,7 +67,7 @@ public class M_PistolLeg : MidBoss3
             {
                 audio.Stop();
                 int rand = Random.Range(0, 2);
-
+                rand = 1;
                 if (rand == 0)
                 {
                     StartCoroutine("Pattern2");

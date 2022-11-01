@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
+
     //속도관련 설정
     private float movementSpeed;
     [SerializeField] private float walkSpeed = 5f, runSpeed = 7f, crouchSpeed = 3f;
@@ -32,13 +33,7 @@ public class MoveController : MonoBehaviour
     private Camera cam;
     [SerializeField] private GameObject dashEffect;
 
-
-    public static MoveController instance;
-
-    private void Awake()
-    {
-        instance = this;
-    }
+    // Start is called before the first frame update
     void Start()
     {
         charController = PlayerController.instance.charController;
@@ -141,12 +136,6 @@ public class MoveController : MonoBehaviour
     private void CameraRotation()//캐릭터 좌우회전
     {
         float mouseX = Input.GetAxis("Mouse X") * DataManager.instance.mouseSensitivity * Time.deltaTime;
-        transform.Rotate(Vector3.up * mouseX);
-    }
-
-    public void ReBoundX(float value)
-    {
-        float mouseX = Random.Range(-value,value);
         transform.Rotate(Vector3.up * mouseX);
     }
 

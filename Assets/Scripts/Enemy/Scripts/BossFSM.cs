@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class BossFSM : CombatEvent
+public class BossFSM : MonoBehaviour
 {
     public float maxHealth_Phase1 = 100;
     public float maxHealth_Phase2 = 100;
@@ -129,7 +129,7 @@ public class BossFSM : CombatEvent
         Ray ray = new Ray(transform.position + transform.up, transform.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 100f, ~LayerMask.GetMask("Stage1_Boss", "Enemy")))
+        if (Physics.Raycast(ray, out hit, 100f, ~LayerMask.GetMask("Stage1_Boss")))
         {
             viewTf = hit.transform;
         }
@@ -511,7 +511,7 @@ public class BossFSM : CombatEvent
             float distance = Vector3.Distance(target.position, transform.position);
             currentTime += Time.deltaTime;
 
-            if (distance <= 2.5f)
+            if (distance <= 6f)
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.speed = 0;
@@ -567,7 +567,7 @@ public class BossFSM : CombatEvent
             float distance = Vector3.Distance(target.position, transform.position);
             currentTime += Time.deltaTime;
 
-            if (distance <= 3.5f)
+            if (distance <= 9f)
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.speed = 0;
@@ -648,8 +648,8 @@ public class BossFSM : CombatEvent
             veneerPattern.SetActive(false);
             fireZone.SetActive(false);
             StopAllCoroutines();
-            Clear();
-            Invoke("OnDie", 10f);
+
+            Invoke("OnDIe", 5f);
         }
     }
 
@@ -675,7 +675,7 @@ public class BossFSM : CombatEvent
         StartCoroutine("Think");
     }
 
-    private void OnDie()
+    private void OnDIe()
     {
         gameObject.SetActive(false);
     } 

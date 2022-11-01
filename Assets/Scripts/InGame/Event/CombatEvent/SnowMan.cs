@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class SnowMan : CombatEvent
 {
-    public AudioClip jumpClip;
-    public AudioClip landClip;
-
     private float health = 1000f;
     private float maxHealth = 1000f;
 
@@ -17,12 +14,10 @@ public class SnowMan : CombatEvent
     private float angle;
 
     private Rigidbody rigid;
-    private AudioSource audioSource;
 
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
     }
     private void FixedUpdate()
     {
@@ -64,10 +59,7 @@ public class SnowMan : CombatEvent
 
         else
         {
-            audioSource.Stop();
-            audioSource.clip = jumpClip;
-            audioSource.volume = 0.06f;
-            audioSource.Play();
+            Debug.Log("Jump");
             rigid.AddForce((transform.forward + Vector3.up) * 5f, ForceMode.Impulse);
             spinTime = 0;
             isGround = false;
@@ -79,10 +71,6 @@ public class SnowMan : CombatEvent
     {
         if (collision.transform.CompareTag("Floor"))
         {
-            audioSource.Stop();
-            audioSource.clip = landClip;
-            audioSource.volume = 0.03f;
-            audioSource.Play();
             isGround = true;
         }
     }
