@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
-    [SerializeField] private Inventory inventory;
+    // [SerializeField] private Inventory inventory;
 
     private void Awake()
     {
