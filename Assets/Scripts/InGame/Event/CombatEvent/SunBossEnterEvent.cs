@@ -17,10 +17,15 @@ public class SunBossEnterEvent : MonoBehaviour
             other.GetComponent<PlayerController>().Shake(10, 2, 2);
             powder.SetActive(true);
             voice.SetActive(true);
-            whiteOut.SetActive(true);
             isEnter = true;
+            Invoke("SetOnWhiteOut", 9f);
             Invoke("BossScene", 11f);
         }
+    }
+
+    private void SetOnWhiteOut()
+    {
+        whiteOut.SetActive(true);
     }
 
     private void BossScene()

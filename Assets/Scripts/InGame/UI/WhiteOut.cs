@@ -17,9 +17,9 @@ public class WhiteOut : MonoBehaviour
 
     private void Update()
     {
-        if (color.a <= 0.99)
+        if (color.a <= 0.99f)
         {
-            color.a += 0.004f;
+            color.a += 0.05f;
             image.color = color;
         }
     }
