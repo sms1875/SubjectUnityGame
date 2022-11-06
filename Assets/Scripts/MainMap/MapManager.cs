@@ -78,6 +78,11 @@ public class MapManager : MonoBehaviour
             }
         }
 
+        if(Input.GetKeyDown("k"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
+        {
+            Debug.Log("추진기 디버그 준비");
+            ItemData.instance.Scout_Thruster = true;
+        }
     }
     public void ViewWay(bool moveLikeKnight)
     {

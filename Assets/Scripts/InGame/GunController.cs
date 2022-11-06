@@ -59,14 +59,16 @@ public class GunController : MonoBehaviour
     }
     void checkItem()
     {
-        if (ItemData.instance.IncreaseDamage)
+        if (ItemData.instance.Buff_IncreaseDamage)
         {
-            ItemData.instance.DamageUp();
+            ItemData.instance.IncreaseDamage();
         }
     }
 
     void Update()
     {
+        TryReload();
+
         if (!isChangeWeapon && !isFire)//무기교체
         {
             if (Input.GetKeyDown(KeyCode.Alpha1) && currentGun.name != PlayerController.instance.currentGunList[0].name)
@@ -90,7 +92,7 @@ public class GunController : MonoBehaviour
     {
         if (isActivate)
         {
-            TryReload();
+            
             Fire(); 
             Aim();
         }
