@@ -7,16 +7,27 @@ public class EnemyAudioController : MonoBehaviour
     [Header("Audio Clip")]
     [SerializeField]
     private AudioClip walkClip;
+    public float walkVolume = 1f;
+
     [SerializeField]
-    private AudioClip purSuitClip;
+    private AudioClip pursuitClip;
+    public float pursuitVolume = 1f;
+
     [SerializeField]
     private AudioClip attackClip;
+    public float attackVolume = 1f;
+
     [SerializeField]
     private AudioClip hitClip;
+    public float hitVolume = 1f;
+
     [SerializeField]
     private AudioClip dieClip;
+    public float dieVolume = 1f;
+
     [SerializeField]
     private AudioClip shoutClip;
+    public float shoutVolume = 1f;
 
     private AudioSource audioSource;
 
@@ -34,15 +45,15 @@ public class EnemyAudioController : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.clip = walkClip;
-        audioSource.volume = 0.01f;
+        audioSource.volume = walkVolume;
         audioSource.Play();
     }
 
     public void OnPurSuitSound()
     {
         audioSource.Stop();
-        audioSource.clip = purSuitClip;
-        audioSource.volume = 0.05f;
+        audioSource.clip = pursuitClip;
+        audioSource.volume = pursuitVolume;
         audioSource.Play();
     }
 
@@ -50,7 +61,7 @@ public class EnemyAudioController : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.clip = attackClip;
-        audioSource.volume = 0.1f;
+        audioSource.volume = attackVolume;
         audioSource.Play();
     }
 
@@ -58,7 +69,7 @@ public class EnemyAudioController : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.clip = hitClip;
-        audioSource.volume = 0.1f;
+        audioSource.volume = hitVolume;
         audioSource.Play();
     }
 
@@ -66,7 +77,7 @@ public class EnemyAudioController : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.clip = dieClip;
-        audioSource.volume = 0.1f;
+        audioSource.volume = dieVolume;
         audioSource.Play();
     }
 
@@ -74,7 +85,7 @@ public class EnemyAudioController : MonoBehaviour
     {
         audioSource.Stop();
         audioSource.clip = shoutClip;
-        audioSource.volume = 1f;
+        audioSource.volume = shoutVolume;
         audioSource.Play();
     }
 }

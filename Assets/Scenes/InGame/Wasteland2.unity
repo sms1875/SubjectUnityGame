@@ -534,6 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   isEnter: 0
+  midBoss2: {fileID: 0}
   hitClip: {fileID: 8300000, guid: 33dbb330a9f49b44fa05932e98bb9e38, type: 3}
   crashClip: {fileID: 8300000, guid: a997aa31a5bcb3047954ec2484002cc2, type: 3}
 --- !u!82 &46357402
@@ -559,7 +560,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -574,6 +575,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.069587335
+      value: 0.14913034
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.32694393
+      value: 0.05954869
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -943,6 +971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   isEnter: 0
+  midBoss2: {fileID: 0}
   hitClip: {fileID: 8300000, guid: 33dbb330a9f49b44fa05932e98bb9e38, type: 3}
   crashClip: {fileID: 8300000, guid: a997aa31a5bcb3047954ec2484002cc2, type: 3}
 --- !u!82 &94389403
@@ -968,7 +997,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -983,6 +1012,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.069587335
+      value: 0.14913034
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.32694393
+      value: 0.05954869
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -1501,6 +1557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   isEnter: 0
+  midBoss2: {fileID: 0}
   hitClip: {fileID: 8300000, guid: 33dbb330a9f49b44fa05932e98bb9e38, type: 3}
   crashClip: {fileID: 8300000, guid: a997aa31a5bcb3047954ec2484002cc2, type: 3}
 --- !u!208 &159773246
@@ -1542,7 +1599,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1557,6 +1614,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.069587335
+      value: 0.14913034
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.32694393
+      value: 0.05954869
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -3334,7 +3418,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -3349,6 +3433,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.069587335
+      value: 0.14913034
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.32694393
+      value: 0.05954869
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -3437,6 +3548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   isEnter: 0
+  midBoss2: {fileID: 0}
   hitClip: {fileID: 8300000, guid: 33dbb330a9f49b44fa05932e98bb9e38, type: 3}
   crashClip: {fileID: 8300000, guid: a997aa31a5bcb3047954ec2484002cc2, type: 3}
 --- !u!65 &504085395
@@ -3936,6 +4048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   isEnter: 0
+  midBoss2: {fileID: 0}
   hitClip: {fileID: 8300000, guid: 33dbb330a9f49b44fa05932e98bb9e38, type: 3}
   crashClip: {fileID: 8300000, guid: a997aa31a5bcb3047954ec2484002cc2, type: 3}
 --- !u!208 &598317003
@@ -3977,7 +4090,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -3992,6 +4105,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.069587335
+      value: 0.14913034
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.32694393
+      value: 0.05954869
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -4865,6 +5005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 899080884}
+  - component: {fileID: 899080885}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -4890,6 +5031,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &899080885
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899080883}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 3fcdb23bde063e94fa0b60ccf87604d6, type: 2}
+  m_audioClip: {fileID: 8300000, guid: d5c4bddedc8fbee4e8d16f86c21b6bbe, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.4
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1053223241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5221,7 +5458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 126ab9b59e7225d4ca724e16ba8cf62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepClip: {fileID: 0}
+  stepClip: {fileID: 8300000, guid: d37ee3782dcc8b4488afed4710b750b3, type: 3}
   rushStepClip: {fileID: 8300000, guid: f060937d422af534b92e4e5b883c6cbd, type: 3}
   punchClip: {fileID: 8300000, guid: 6ab5e8c848b6bde438cfa34e1a41ac53, type: 3}
   shoutClip: {fileID: 8300000, guid: cfb74c5b617063141a33bae1beb6e7c6, type: 3}
@@ -5240,7 +5477,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 3fcdb23bde063e94fa0b60ccf87604d6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5251,7 +5488,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -5266,6 +5503,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.10728417
+      value: 0.3533845
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.39837033
+      value: 0.193765
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -6207,6 +6471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   isEnter: 0
+  midBoss2: {fileID: 0}
   hitClip: {fileID: 8300000, guid: 33dbb330a9f49b44fa05932e98bb9e38, type: 3}
   crashClip: {fileID: 8300000, guid: a997aa31a5bcb3047954ec2484002cc2, type: 3}
 --- !u!208 &1408122791
@@ -6248,7 +6513,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -6263,6 +6528,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.069587335
+      value: 0.14913034
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.32694393
+      value: 0.05954869
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -6499,6 +6791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   isEnter: 0
+  midBoss2: {fileID: 0}
   hitClip: {fileID: 8300000, guid: 33dbb330a9f49b44fa05932e98bb9e38, type: 3}
   crashClip: {fileID: 8300000, guid: a997aa31a5bcb3047954ec2484002cc2, type: 3}
 --- !u!82 &1424837958
@@ -6524,7 +6817,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -6539,6 +6832,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.069587335
+      value: 0.14913034
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.32694393
+      value: 0.05954869
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -6827,6 +7147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   isEnter: 0
+  midBoss2: {fileID: 0}
   hitClip: {fileID: 8300000, guid: 33dbb330a9f49b44fa05932e98bb9e38, type: 3}
   crashClip: {fileID: 8300000, guid: a997aa31a5bcb3047954ec2484002cc2, type: 3}
 --- !u!82 &1500287848
@@ -6852,7 +7173,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -6867,6 +7188,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.069587335
+      value: 0.14913034
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.32694393
+      value: 0.05954869
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -7229,6 +7577,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5601396217235478662, guid: efe52e3f7f4dff54ebce30fbf831e2b7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 40071ca657b1d9a4093395ba15cc43c0, type: 2}
     - target: {fileID: 7343222982470018617, guid: efe52e3f7f4dff54ebce30fbf831e2b7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -8418,6 +8770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   isEnter: 0
+  midBoss2: {fileID: 0}
   hitClip: {fileID: 8300000, guid: 33dbb330a9f49b44fa05932e98bb9e38, type: 3}
   crashClip: {fileID: 8300000, guid: a997aa31a5bcb3047954ec2484002cc2, type: 3}
 --- !u!82 &1792578628
@@ -8443,7 +8796,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -8458,6 +8811,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.069587335
+      value: 0.14913034
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.32694393
+      value: 0.05954869
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -9042,6 +9422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   isEnter: 0
+  midBoss2: {fileID: 0}
   hitClip: {fileID: 8300000, guid: 33dbb330a9f49b44fa05932e98bb9e38, type: 3}
   crashClip: {fileID: 8300000, guid: a997aa31a5bcb3047954ec2484002cc2, type: 3}
 --- !u!208 &1927245069
@@ -9083,7 +9464,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -9098,6 +9479,33 @@ AudioSource:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.069587335
+      value: 0.14913034
+      inSlope: -0.92570424
+      outSlope: -0.92570424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.32694393
+      value: 0.05954869
+      inSlope: -0.5450271
+      outSlope: -0.5450271
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6088831
+      value: 0.010227874
+      inSlope: -0.085498616
+      outSlope: -0.085498616
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3295438
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1

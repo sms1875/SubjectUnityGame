@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class BossFSM : MonoBehaviour
+public class BossFSM : CombatEvent
 {
     public float maxHealth_Phase1 = 100;
     public float maxHealth_Phase2 = 100;
@@ -129,7 +129,7 @@ public class BossFSM : MonoBehaviour
         Ray ray = new Ray(transform.position + transform.up, transform.forward);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 100f, ~LayerMask.GetMask("Stage1_Boss")))
+        if (Physics.Raycast(ray, out hit, 100f, ~LayerMask.GetMask("Stage1_Boss", "Enemy")))
         {
             viewTf = hit.transform;
         }
@@ -211,7 +211,7 @@ public class BossFSM : MonoBehaviour
                         break;
                     case "KickORPunch":
                         int random = Random.Range(0, 2); // 0or1 50%
-                        if(random == 0)
+                        if (random == 0)
                         {
                             StartCoroutine("Kick");
                         }
@@ -263,7 +263,7 @@ public class BossFSM : MonoBehaviour
     {
         warningText.text = "!고열발생!";
 
-        for(int i =0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             warningUI.localPosition = Vector3.zero;
             yield return new WaitForSeconds(0.3f);
@@ -338,7 +338,7 @@ public class BossFSM : MonoBehaviour
 
                 break;
             }
-            else if(amountOfMovement >= distance + rushOverDistance)
+            else if (amountOfMovement >= distance + rushOverDistance)
             {
                 animator.SetBool("isRush", false);
                 rushAttackTrigger.SetActive(false);
@@ -373,7 +373,7 @@ public class BossFSM : MonoBehaviour
                         isRun = false;
                         animator.SetTrigger("onIdle");
                     }
-                    
+
                     break;
                 }
                 else if (!isRun)
@@ -511,7 +511,7 @@ public class BossFSM : MonoBehaviour
             float distance = Vector3.Distance(target.position, transform.position);
             currentTime += Time.deltaTime;
 
-            if (distance <= 6f)
+            if (distance <= 2.5f)
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.speed = 0;
@@ -519,13 +519,13 @@ public class BossFSM : MonoBehaviour
                 isRun = false;
                 animator.SetTrigger("onKick");
                 break;
-            }           
+            }
             else if (!isRun)
             {
                 isRun = true;
                 animator.SetTrigger("onRun");
             }
-            else if(distance > meleeRange)
+            else if (distance > meleeRange)
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.speed = 0;
@@ -567,7 +567,7 @@ public class BossFSM : MonoBehaviour
             float distance = Vector3.Distance(target.position, transform.position);
             currentTime += Time.deltaTime;
 
-            if (distance <= 9f)
+            if (distance <= 3.5f)
             {
                 navMeshAgent.ResetPath();
                 navMeshAgent.speed = 0;
@@ -625,7 +625,7 @@ public class BossFSM : MonoBehaviour
 
         if (currentHealth <= 0 && !isPhase2)
         {
-            if(navMeshAgent.enabled == true) navMeshAgent.ResetPath();
+            if (navMeshAgent.enabled == true) navMeshAgent.ResetPath();
             isInvincibility = true;
             currentHealth = maxHealth_Phase2;
             isRun = false;
@@ -638,7 +638,7 @@ public class BossFSM : MonoBehaviour
 
             StartCoroutine("OnPhase2");
         }
-        else if(currentHealth <=0 && isPhase2)
+        else if (currentHealth <= 0 && isPhase2)
         {
             currentHealth = 0;
             animator.SetTrigger("onDie");
@@ -648,8 +648,8 @@ public class BossFSM : MonoBehaviour
             veneerPattern.SetActive(false);
             fireZone.SetActive(false);
             StopAllCoroutines();
-
-            Invoke("OnDIe", 5f);
+            Clear();
+            Invoke("OnDie", 10f);
         }
     }
 
@@ -675,10 +675,10 @@ public class BossFSM : MonoBehaviour
         StartCoroutine("Think");
     }
 
-    private void OnDIe()
+    private void OnDie()
     {
         gameObject.SetActive(false);
-    } 
+    }
 
     private void OnDrawGizmos() // Debug Range View
     {

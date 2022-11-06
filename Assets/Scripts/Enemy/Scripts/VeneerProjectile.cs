@@ -53,7 +53,7 @@ public class VeneerProjectile : MonoBehaviour
                 transform.localPosition = new Vector3(0, 0, 0);
                 gameObject.SetActive(false);
             }
-            else if(isGround == true && currentTime >= veneerHoldingTime)
+            else if (isGround == true && currentTime >= veneerHoldingTime)
             {
                 transform.localPosition = new Vector3(0, 0, 0);
                 isGround = false;
@@ -77,7 +77,7 @@ public class VeneerProjectile : MonoBehaviour
             if (other.CompareTag("Player") && isHit == false)
             {
                 isHit = true;
-                Debug.Log("플레이어에게" + projectileDamage + "의 피해를 줌");
+                other.GetComponent<PlayerController>().TakeDamage((int)projectileDamage);
             }
             else if (other.CompareTag("Floor"))
             {
@@ -93,7 +93,7 @@ public class VeneerProjectile : MonoBehaviour
                 boxCollider.size = new Vector3(0.1f, 0.1f, 0.1f);
 
                 sphereCollider.enabled = true;
-                transform.localPosition = new Vector3(transform.localPosition.x, 0.8f, transform.localPosition.z);
+                transform.localPosition = new Vector3(transform.localPosition.x, -0.5f, transform.localPosition.z);
                 transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
                 veneer.SetActive(true);
                 BAF.enabled = true;

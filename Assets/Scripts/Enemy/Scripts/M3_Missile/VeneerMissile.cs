@@ -26,7 +26,7 @@ public class VeneerMissile : MonoBehaviour
     private IEnumerator Move(Vector3 point)
     {
         int rand = Random.Range(0, 2);
-        if(rand == 0)
+        if (rand == 0)
         {
             rand = -1;
         }
@@ -41,7 +41,7 @@ public class VeneerMissile : MonoBehaviour
             missile.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
             missile.RotateAround(halfPoint, transform.right, (45 * acceleration) * Time.deltaTime);
 
-            acceleration += 0.004f;
+            acceleration += 0.001f;
 
             yield return null;
         }

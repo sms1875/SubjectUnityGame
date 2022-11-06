@@ -67,7 +67,7 @@ public class M_PistolLeg : MidBoss3
             {
                 audio.Stop();
                 int rand = Random.Range(0, 2);
-                rand = 1;
+
                 if (rand == 0)
                 {
                     StartCoroutine("Pattern2");
@@ -78,7 +78,7 @@ public class M_PistolLeg : MidBoss3
                 }
                 yield break;
             }
-            if(distance < 5f)
+            if (distance < 5f)
             {
                 audio.Stop();
                 StartCoroutine("Pattern3");

@@ -68,7 +68,7 @@ public class MidBoss1_Baby : MonoBehaviour
             Vector3 direction = (to - from).normalized;
             float angle = Vector3.Angle(direction, transform.forward);
 
-            if (distance <= 5f)
+            if (distance <= 3.5f)
             {
                 isRun = false;
                 navMeshAgent.speed = 0;
@@ -84,7 +84,7 @@ public class MidBoss1_Baby : MonoBehaviour
 
                 continue;
             }
-            else if(!isRun)
+            else if (!isRun)
             {
                 isRun = true;
                 navMeshAgent.speed = runSpeed;

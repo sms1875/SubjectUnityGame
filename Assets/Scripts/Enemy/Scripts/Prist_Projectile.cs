@@ -12,6 +12,7 @@ public class Prist_Projectile : MonoBehaviour
     private GameObject fireSound;
 
     private ParticleSystem ps;
+    private ParticleSystem.MinMaxCurve resetSize;
 
     private Transform target;
     private Animator animator;
@@ -21,7 +22,15 @@ public class Prist_Projectile : MonoBehaviour
     private void Awake()
     {
         ps = GetComponent<ParticleSystem>();
+        resetSize = ps.main.startSize;
     }
+
+    private void OnDisable()
+    {
+        var main = ps.main;
+        main.startSize = resetSize;
+    }
+
     public void SetUp(Transform target, Animator animator, MemoryPool memoryPool)
     {
         this.memoryPool = memoryPool;
@@ -55,8 +64,8 @@ public class Prist_Projectile : MonoBehaviour
             var main = ps.main;
             var size = main.startSize;
 
-            size.constantMin += 0.01f;
-            size.constantMax += 0.01f;
+            size.constantMin += 0.005f;
+            size.constantMax += 0.005f;
 
             main.startSize = size;
 

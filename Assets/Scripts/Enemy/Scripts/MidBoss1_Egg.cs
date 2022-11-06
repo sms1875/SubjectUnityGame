@@ -26,7 +26,7 @@ public class MidBoss1_Egg : MonoBehaviour
     {
         meshRenderers = GetComponentsInChildren<MeshRenderer>();
         materials = new Material[meshRenderers.Length];
-        for (int i = 0;i< meshRenderers.Length; i++)
+        for (int i = 0; i < meshRenderers.Length; i++)
         {
             materials[i] = meshRenderers[i].materials[0];
         }
@@ -41,25 +41,26 @@ public class MidBoss1_Egg : MonoBehaviour
             StartCoroutine("Up");
         }
     }
-    
+
 
     private IEnumerator Up()
     {
         audio.clip = readyClip;
+        audio.volume = 0.1f;
         audio.Play();
         float intensity = 0f;
         while (true)
         {
             intensity += 0.005f;
             if (intensity >= 2f)
-            { 
+            {
                 StartCoroutine("Down");
                 yield break;
             }
             else
             {
                 light.intensity = intensity;
-                for(int i = 0; i < materials.Length; i++)
+                for (int i = 0; i < materials.Length; i++)
                 {
                     materials[i].SetFloat("_Translucency", intensity);
                 }
@@ -95,6 +96,7 @@ public class MidBoss1_Egg : MonoBehaviour
     {
         audio.Stop();
         audio.clip = spawnClip;
+        audio.volume = 0.1f;
         float intensity = 0f;
         while (true)
         {

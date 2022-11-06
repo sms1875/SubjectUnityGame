@@ -10,6 +10,8 @@ public class DoorEvent : MonoBehaviour
     public Collider doorOpenTrigger;
     public Collider doorCloseTrigger;
 
+    public DigitalRuby.RainMaker.BaseRainScript rain;
+
     float angle = 90;
     bool isOpen;
 
@@ -79,6 +81,8 @@ public class DoorEvent : MonoBehaviour
                 audio.Play();
                 doorOpenTrigger.enabled = false;
                 doorCloseTrigger.enabled = true;
+
+                rain.RainIntensity = 0;
             }
         }
     }
