@@ -128,6 +128,8 @@ public class PlayerController : MonoBehaviour
     // 몬스터 공격 상호작용(?)
     private bool isStunned;  // 몬스터에게 공격 받으면 카메라 및 움직임 조작 불가
 
+    public bool IsStunned => isStunned;
+
     private float originWalkSpeed;
     private float originRunSpeed;
     private float originCrouchSpeed;
@@ -167,15 +169,28 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Stunned(float time)
     {
         isStunned = true;
+        isWalk = false;
+        isRun = false;
+        isCrouch = false;
+        isGround = false;
 
         yield return new WaitForSeconds(time);
 
         isStunned = false;
     }
 
-    public IEnumerator OnBounce(Vector3 direction)
+    public void OnBounce(Vector3 direction)
+    {
+        StartCoroutine("Bounce", direction);
+    }
+
+    private IEnumerator Bounce(Vector3 direction)
     {
         isStunned = true;
+        isWalk = false;
+        isRun = false;
+        isCrouch = false;
+        isGround = false;
 
         float currentTime = 0;
         while (true)
@@ -192,7 +207,12 @@ public class PlayerController : MonoBehaviour
         isStunned = false;
     }
 
-    public IEnumerator Shake(float time, float intensity, float speed)
+    public void OnShake(float time, float intensity, float speed)
+    {
+        StartCoroutine(Shake(time, intensity, speed));
+    }
+
+    private IEnumerator Shake(float time, float intensity, float speed)
     {
         Transform cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
         Vector3 originPosition = cam.localPosition;

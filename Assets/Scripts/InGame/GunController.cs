@@ -67,6 +67,10 @@ public class GunController : MonoBehaviour
 
     void Update()
     {
+        if (PlayerController.instance.IsStunned)
+        {
+            return;
+        }
         TryReload();
 
         if (!isChangeWeapon && !isFire)//무기교체
@@ -90,6 +94,10 @@ public class GunController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (PlayerController.instance.IsStunned)
+        {
+            return;
+        }
         if (isActivate)
         {
             

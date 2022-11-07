@@ -8,6 +8,10 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        if (PlayerController.instance.IsStunned)
+        {
+            return;
+        }
 
         mouseY += Input.GetAxis("Mouse Y") * DataManager.instance.mouseSensitivity * Time.deltaTime;
 

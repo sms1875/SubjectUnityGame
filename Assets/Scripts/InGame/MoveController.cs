@@ -44,6 +44,10 @@ public class MoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(PlayerController.instance.IsStunned)
+        {
+            return;
+        }
         Crouch();
         SetMovementSpeed();
         Move();

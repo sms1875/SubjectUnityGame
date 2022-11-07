@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SunBossEnterEvent : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class SunBossEnterEvent : MonoBehaviour
     {
         if (other.CompareTag("Player")&& !isEnter)
         {
-            other.GetComponent<PlayerController>().Shake(10, 2, 2);
+            other.GetComponent<PlayerController>().OnStun(10);
+            other.GetComponent<PlayerController>().OnShake(10, 2, 2);
             powder.SetActive(true);
             voice.SetActive(true);
             isEnter = true;
@@ -31,6 +33,6 @@ public class SunBossEnterEvent : MonoBehaviour
     private void BossScene()
     {
         PlayerData.instance.currentHp = PlayerController.instance.currentHp;
-        LoadingSceneManager.LoadScene("TempleBoss");
+        SceneManager.LoadScene("TempleBoss");     
     }
 }
