@@ -24,6 +24,9 @@ public class MapManager : MonoBehaviour
     public Camera mainCamera;
     Vector3 mousePos = Vector3.zero;
 
+    public int movecount = 0;
+    public int move = 0;
+
     private void Awake()
     {
         instance = this;
@@ -62,7 +65,7 @@ public class MapManager : MonoBehaviour
                     ViewWay(isKight);
                 }
 
-                else if (isPlayerReady == true)
+                else if (isPlayerReady == true && move < movecount)
                 {
                     string xy;
                     MapData.instance.TileDic.TryGetValue(raycastHit.transform.name, out xy);
@@ -72,6 +75,22 @@ public class MapManager : MonoBehaviour
                     int x = int.Parse(a[0].ToString());
                     int y = int.Parse(a[1].ToString());
                     PlayerMove(x, y);
+                    move++;
+
+                    Debug.Log("이동");
+                }
+
+                else if (isPlayerReady == true && move == movecount)
+                {
+                    string xy;
+                    MapData.instance.TileDic.TryGetValue(raycastHit.transform.name, out xy);
+
+                    string[] a = xy.Split(',');
+
+                    int x = int.Parse(a[0].ToString());
+                    int y = int.Parse(a[1].ToString());
+                    PlayerMove(x, y);
+                    move = 0;
                     isPlayerReady = false;
                     Debug.Log("이동 준비 해제");
                 }
@@ -82,6 +101,38 @@ public class MapManager : MonoBehaviour
         {
             Debug.Log("추진기 디버그 준비");
             ItemData.instance.Scout_Thruster = true;
+        }
+
+        if (Input.GetKeyDown("j"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
+        {
+            Debug.Log("제트팩 디버그");
+            ItemData.instance.Scout_Jetpack = true;
+        }
+
+        if (Input.GetKeyDown("h"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
+        {
+            Debug.Log("바리케이드 디버그");
+            ItemData.instance.Scout_Barricade = true;
+        }
+        if (Input.GetKeyDown("y"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
+        {
+            Debug.Log("드릴 디버그");
+            ItemData.instance.Scout_Drill = true;
+        }
+        if (Input.GetKeyDown("u"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
+        {
+            Debug.Log("점프패드 디버그");
+            ItemData.instance.Scout_Jumppad = true;
+        }
+        if (Input.GetKeyDown("i"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
+        {
+            Debug.Log("드론 디버그");
+            ItemData.instance.Scout_Drone = true;
+        }
+        if (Input.GetKeyDown("o"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
+        {
+            Debug.Log("레이더 디버그");
+            ItemData.instance.Scout_Raider = true;
         }
     }
     public void ViewWay(bool moveLikeKnight)
@@ -125,6 +176,10 @@ public class MapManager : MonoBehaviour
             {
                 tileCheck(x, y);
             }
+            else if (ItemData.instance.Jump == true)
+            {
+                tileCheck(x, y);
+            }
             else
             {
                 Debug.Log("해당 칸은 이동 범위가 아니므로 이동할 수 없습니다.");
@@ -164,6 +219,11 @@ public class MapManager : MonoBehaviour
         playerNowPoint_Y = y;
         MapData.instance._tile[playerNowPoint_X, playerNowPoint_Y] = TileType.Player;
 
+
+        if (ItemData.instance.Jump == true)
+        {
+            yield return new WaitForSeconds(3.5f);
+        }
         yield return new WaitForSeconds(2.3f);
 
 
@@ -171,6 +231,7 @@ public class MapManager : MonoBehaviour
         MainMapCharacter.instance.checkPlayerWalk();
 
         //플레이어 이동에 걸리는 시간
+        
         yield return new WaitForSeconds(1f);
         if(isEvent) EventSceneLoad();
         //--몬스터 이동 함수--
@@ -184,6 +245,7 @@ public class MapManager : MonoBehaviour
         isMove = false;
 
     }
+
     public void EventSceneLoad()
     {
         if (MapData.instance.EventSceneList != null)
