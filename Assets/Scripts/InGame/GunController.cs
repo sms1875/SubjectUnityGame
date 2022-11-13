@@ -59,9 +59,122 @@ public class GunController : MonoBehaviour
     }
     void checkItem()
     {
-        if (ItemData.instance.Buff_IncreaseDamage)
+        if (ItemData.instance.damage == true)
         {
-            ItemData.instance.IncreaseDamage();
+            if (currentGun.name == "SG2")
+            {
+                currentGun.damage += 1.5f;
+            }
+            else if (currentGun.name == "SG1")
+            {
+                currentGun.damage += 3.5f;
+            }
+            else if (currentGun.name == "AR2" || currentGun.name == "SMG1")
+            {
+                currentGun.damage += 5f;
+            }
+            else if (currentGun.name == "AR1")
+            {
+                currentGun.damage += 7.5f;
+            }
+            else if (currentGun.name == "HG2")
+            {
+                currentGun.damage += 9f;
+            }
+            else if (currentGun.name == "HG1" || currentGun.name == "LMG")
+            {
+                currentGun.damage += 10f;
+            }
+            else if (currentGun.name == "DMR2")
+            {
+                currentGun.damage += 12f;
+            }
+            else if (currentGun.name == "DMR1")
+            {
+                currentGun.damage += 15f;
+            }
+            else
+            {
+                currentGun.damage += 40f;
+            }
+        }
+        if (ItemData.instance.ammo == true)
+        {
+            if (currentGun.name == "SG1")
+            {
+                currentGun.carryBulletCount += 4;
+            }
+            else if (currentGun.name == "SR1")
+            {
+                currentGun.carryBulletCount += 5;
+            }
+            else if (currentGun.name == "SG2")
+            {
+                currentGun.carryBulletCount += 6;
+            }
+            else if (currentGun.name == "DMR1")
+            {
+                currentGun.carryBulletCount += 15;
+            }
+            else if (currentGun.name == "DMR2")
+            {
+                currentGun.carryBulletCount += 20;
+            }
+            else if (currentGun.name == "HG1")
+            {
+                currentGun.carryBulletCount += 30;
+            }
+            else if (currentGun.name == "HG2")
+            {
+                currentGun.carryBulletCount += 34;
+            }
+            else if (currentGun.name == "AR1")
+            {
+                currentGun.carryBulletCount += 40;
+            }
+            else if (currentGun.name == "AR2")
+            {
+                currentGun.carryBulletCount += 60;
+            }
+            else if (currentGun.name == "SMG1")
+            {
+                currentGun.carryBulletCount += 75;
+            }
+            else
+            {
+                currentGun.carryBulletCount += 100;
+            }
+        }
+        if (ItemData.instance.magazine == true)
+        {
+            if (currentGun.name == "SR1")
+            {
+                currentGun.reloadBulletCount += 1;
+            }
+            else if (currentGun.name == "HG1" || currentGun.name == "DMR1" || currentGun.name == "SG1")
+            {
+                currentGun.reloadBulletCount += 2;
+            }
+            else if (currentGun.name == "HG2" || currentGun.name == "DMR2" || currentGun.name == "SG2")
+            {
+                currentGun.reloadBulletCount += 3;
+            }
+            else if (currentGun.name == "AR1")
+            {
+                currentGun.reloadBulletCount += 4;
+            }
+            else if (currentGun.name == "AR2")
+            {
+                currentGun.reloadBulletCount += 6;
+            }
+            else if (currentGun.name == "SMG1")
+            {
+                currentGun.reloadBulletCount += 10;
+            }
+            else
+            {
+                currentGun.reloadBulletCount += 20;
+            }
         }
     }
 

@@ -15,6 +15,8 @@ public class MoveController : MonoBehaviour
     [SerializeField] private float dashTime=0.15f;
     [SerializeField] private float dashDelay = 1f;
 
+    [SerializeField] public float buff_speed = 1f;
+
     //플레이어 속도 감속 후 리셋을 위한 오리지널 스피드
     private float originWalkSpeed;
     private float originRunSpeed;
@@ -69,6 +71,11 @@ public class MoveController : MonoBehaviour
         CameraRotation();
     }
 
+    private void Speed()
+    {
+        buff_speed = ItemData.instance.upSP;
+    }
+
     private void Crouch()//앉기 설정
     {
         if (Input.GetKey(crouchKey) && charController.isGrounded && !PlayerController.instance.isRun) 
@@ -88,12 +95,12 @@ public class MoveController : MonoBehaviour
     {
         if (Input.GetKey(runKey) && !PlayerController.instance.isCrouch && PlayerController.instance.isWalk) //달리는속도
         {
-            movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
+            movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed) * buff_speed;
             PlayerController.instance.isRun = true;
         }
         else if (!PlayerController.instance.isCrouch)//걷는속도
         {
-            movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
+            movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed) * buff_speed;
             PlayerController.instance.isRun = false;
         }
     }

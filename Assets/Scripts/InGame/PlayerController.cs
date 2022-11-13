@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
+    public float damagedown = 1;
+
     // [SerializeField] private Inventory inventory;
 
     private void Awake()
@@ -116,7 +118,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)//데미지 처리
     {
-        currentHp -= damage - currentDp;
+        currentHp -= (damage - currentDp) * damage;
         Debug.Log("현재 플레이어 체력:"+currentHp);
         if (currentHp <= 0)
         {
