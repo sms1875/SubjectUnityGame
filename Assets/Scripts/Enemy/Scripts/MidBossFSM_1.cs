@@ -577,7 +577,7 @@ public class MidBossFSM_1 : MonoBehaviour
             cloneDmgText.GetComponent<DamageText>().SetUp(damage);
         }
 
-        currentHealth -= damage;
+        currentHealth -= damage * 0.5f;
 
         if (currentHealth <= 0)
         {

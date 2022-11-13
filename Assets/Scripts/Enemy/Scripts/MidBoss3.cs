@@ -24,7 +24,7 @@ public class MidBoss3 : MonoBehaviour
             return;
         }
 
-        health -= damage;
+        health -= damage * 0.5f;
 
         if (health <= 0)
         {

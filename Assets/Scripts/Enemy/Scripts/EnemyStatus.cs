@@ -32,6 +32,8 @@ public class EnemyStatus : MonoBehaviour
     private float spinSpeed = 4f;
     [SerializeField]
     private float viewAngle = 120f;
+    [SerializeField]
+    private float defence = 0;
 
     public float MaxHealthPoint
     {
@@ -102,6 +104,12 @@ public class EnemyStatus : MonoBehaviour
     {
         set => viewAngle = value;
         get => viewAngle;
+    }
+
+    public float Defence
+    {
+        set => defence = value;
+        get => defence;
     }
 }
 

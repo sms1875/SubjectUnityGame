@@ -87,6 +87,7 @@ public class EnemyFSM : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         anim = GetComponentInChildren<Animator>();
         wanderCenter = transform.position;
+        enemyStatus.Defence += 1;
         if (ai_Type == AI_Type.Obstacle)
         {
             materials = GetComponent<MeshRenderer>().materials;
@@ -716,7 +717,7 @@ public class EnemyFSM : MonoBehaviour
 
         if (ai_Type == AI_Type.Obstacle)
         {
-            enemyStatus.HealthPoint -= damage;
+            enemyStatus.HealthPoint -= damage * (100 - enemyStatus.Defence) / 100;
 
             if (enemyStatus.HealthPoint <= 0)
             {

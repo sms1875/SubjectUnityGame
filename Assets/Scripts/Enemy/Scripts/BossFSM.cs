@@ -621,7 +621,7 @@ public class BossFSM : CombatEvent
             cloneDmgText.GetComponent<DamageText>().SetUp(damage);
         }
 
-        currentHealth -= damage;
+        currentHealth -= damage * 0.5f;
 
         if (currentHealth <= 0 && !isPhase2)
         {
