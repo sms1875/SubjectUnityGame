@@ -129,38 +129,6 @@ public class PlayerController : MonoBehaviour
     private bool isStunned;  // 몬스터에게 공격 받으면 카메라 및 움직임 조작 불가
 
     public bool IsStunned => isStunned;
-
-    private float originWalkSpeed;
-    private float originRunSpeed;
-    private float originCrouchSpeed;
-    private float originRunBuildUpSpeed;
-    private float originJumpSpeed;
-
-    // Awake에서 원래속도 받아오기
-    //    originWalkSpeed = walkSpeed;
-    //    originRunSpeed = runSpeed;
-    //    originCrouchSpeed = crouchSpeed;
-    //    originRunBuildUpSpeed = runBuildUpSpeed;
-    //    originJumpSpeed = jumpSpeed;
-    public void SpeedDown()
-    {
-        //movementSpeed /= 2;
-        //walkSpeed = originWalkSpeed / 2;
-        //runSpeed = originRunSpeed / 2;
-        //crouchSpeed = originCrouchSpeed / 2;
-        //runBuildUpSpeed = originRunBuildUpSpeed / 2;
-        //jumpSpeed = originJumpSpeed / 2;
-    }
-
-    public void SpeedReset()
-    {
-        //walkSpeed = originWalkSpeed;
-        //runSpeed = originRunSpeed;
-        //crouchSpeed = originCrouchSpeed;
-        //runBuildUpSpeed = originRunBuildUpSpeed;
-        //jumpSpeed = originJumpSpeed;
-    }
-
     public void OnStun(float time)
     {
         StartCoroutine("Stunned", time);

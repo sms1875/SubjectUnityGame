@@ -13,19 +13,19 @@ public class Veneer : MonoBehaviour
 
     private MemoryPool memoryPool;
     private ParticleSystem ps;
-    private PlayerController playerController;
+    private MoveController moveController;
 
     private void Awake()
     {
         ps = GetComponentInChildren<ParticleSystem>();
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        moveController = GameObject.FindGameObjectWithTag("Player").GetComponent<MoveController>();
     }
 
     private void OnDisable()
     {
         if (isSlow)
         {
-            playerController.SpeedReset();
+            moveController.SpeedReset();
             isSlow = false;
         }
         damageTime = 0;
@@ -90,12 +90,12 @@ public class Veneer : MonoBehaviour
         {
             if (isIce && !isSlow)
             {
-                playerController.SpeedDown();
+                moveController.SpeedDown();
                 isSlow = true;
             }
             if(damageTime >= damageRate)
             {
-                playerController.TakeDamage((int)damage);
+                other.GetComponent<PlayerController>().TakeDamage((int)damage);
                 damageTime = 0;
             }
         }
@@ -107,7 +107,7 @@ public class Veneer : MonoBehaviour
         {
             if (isSlow)
             {
-                playerController.SpeedReset();
+                moveController.SpeedReset();
                 isSlow = false;
             }
         }

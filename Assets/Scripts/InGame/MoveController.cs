@@ -15,6 +15,14 @@ public class MoveController : MonoBehaviour
     [SerializeField] private float dashTime=0.15f;
     [SerializeField] private float dashDelay = 1f;
 
+    //플레이어 속도 감속 후 리셋을 위한 오리지널 스피드
+    private float originWalkSpeed;
+    private float originRunSpeed;
+    private float originCrouchSpeed;
+    private float originRunBuildUpSpeed;
+    private float originJumpSpeed;
+    private float originDashSpeed;
+
     public bool isDash = true;
 
     //키설정
@@ -40,6 +48,13 @@ public class MoveController : MonoBehaviour
         cam = FindObjectOfType<Camera>();
         originalHight = charController.height; //CharacterController 높이 저장
         crouchHight = originalHight * 3 / 5; //앉은키 설정
+
+        originWalkSpeed = walkSpeed;
+        originRunSpeed = runSpeed;
+        originCrouchSpeed = crouchSpeed;
+        originRunBuildUpSpeed = runBuildUpSpeed;
+        originJumpSpeed = jumpSpeed;
+        originDashSpeed = dashSpeed;
     }
 
     private void FixedUpdate()
@@ -143,4 +158,26 @@ public class MoveController : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX);
     }
 
+    // 플레이어 속도 감소 및 리셋
+    public void SpeedDown()
+    {
+        movementSpeed /= 2;
+        walkSpeed = originWalkSpeed / 2;
+        runSpeed = originRunSpeed / 2;
+        crouchSpeed = originCrouchSpeed / 2;
+        runBuildUpSpeed = originRunBuildUpSpeed / 2;
+        jumpSpeed = originJumpSpeed / 2;
+        dashSpeed = originDashSpeed / 2;
+    }
+
+    public void SpeedReset()
+    {
+        walkSpeed = originWalkSpeed;
+        runSpeed = originRunSpeed;
+        crouchSpeed = originCrouchSpeed;
+        runBuildUpSpeed = originRunBuildUpSpeed;
+        jumpSpeed = originJumpSpeed;
+        dashSpeed = originDashSpeed;
+    }
+    //
 }
