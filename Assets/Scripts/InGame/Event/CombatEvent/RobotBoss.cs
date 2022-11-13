@@ -19,7 +19,7 @@ public class RobotBoss : CombatEvent
 
     private void Update()
     {
-        if(cnt <= 0)
+        if (cnt <= 0)
         {
             Clear();
         }

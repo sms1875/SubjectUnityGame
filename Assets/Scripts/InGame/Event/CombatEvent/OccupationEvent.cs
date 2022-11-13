@@ -17,6 +17,7 @@ public class OccupationEvent : CombatEvent
             spawners[i] = transform.GetChild(i).gameObject;
         }            
     }
+
     private IEnumerator Stay()
     {
         float curretTime = 0;

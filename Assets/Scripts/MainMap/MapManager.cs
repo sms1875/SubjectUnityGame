@@ -96,44 +96,6 @@ public class MapManager : MonoBehaviour
                 }
             }
         }
-
-        if(Input.GetKeyDown("k"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
-        {
-            Debug.Log("추진기 디버그 준비");
-            ItemData.instance.Scout_Thruster = true;
-        }
-
-        if (Input.GetKeyDown("j"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
-        {
-            Debug.Log("제트팩 디버그");
-            ItemData.instance.Scout_Jetpack = true;
-        }
-
-        if (Input.GetKeyDown("h"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
-        {
-            Debug.Log("바리케이드 디버그");
-            ItemData.instance.Scout_Barricade = true;
-        }
-        if (Input.GetKeyDown("y"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
-        {
-            Debug.Log("드릴 디버그");
-            ItemData.instance.Scout_Drill = true;
-        }
-        if (Input.GetKeyDown("u"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
-        {
-            Debug.Log("점프패드 디버그");
-            ItemData.instance.Scout_Jumppad = true;
-        }
-        if (Input.GetKeyDown("i"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
-        {
-            Debug.Log("드론 디버그");
-            ItemData.instance.Scout_Drone = true;
-        }
-        if (Input.GetKeyDown("o"))//디버그용 실제는 여기에 아이템 사용으로 인한 트리거가 올것
-        {
-            Debug.Log("레이더 디버그");
-            ItemData.instance.Scout_Raider = true;
-        }
     }
     public void ViewWay(bool moveLikeKnight)
     {
@@ -259,13 +221,13 @@ public class MapManager : MonoBehaviour
             switch (lastSceneNum)
             {
                 case 3:
-                    LoadingSceneManager.LoadScene("Test");
+                    LoadingSceneManager.LoadScene("Forest");
                     break;
                 case 4:
-                    LoadingSceneManager.LoadScene("Test");
+                    LoadingSceneManager.LoadScene("Forest");
                     break;
                 case 5:
-                    LoadingSceneManager.LoadScene("Test");
+                    LoadingSceneManager.LoadScene("Forest");
                     break;
             }
 

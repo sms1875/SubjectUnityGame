@@ -29,6 +29,8 @@ TagManager:
   - SpaceShip
   - Spawner
   - EnemyProjectile
+  - Slice
+  - Event
   layers:
   - Default
   - TransparentFX

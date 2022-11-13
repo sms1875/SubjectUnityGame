@@ -2417,7 +2417,7 @@ GameObject:
   - component: {fileID: 506473775}
   m_Layer: 0
   m_Name: EventTrigger
-  m_TagString: Untagged
+  m_TagString: Event
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10142,6 +10142,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1060258286418232352, guid: 417f7b492e9b384458153d4d0ac63c6b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060258286418232352, guid: 417f7b492e9b384458153d4d0ac63c6b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943126906448202373, guid: 417f7b492e9b384458153d4d0ac63c6b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943126906448202373, guid: 417f7b492e9b384458153d4d0ac63c6b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5391440702931546248, guid: 417f7b492e9b384458153d4d0ac63c6b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -10233,6 +10249,14 @@ PrefabInstance:
     - target: {fileID: 5391440703628567442, guid: 417f7b492e9b384458153d4d0ac63c6b, type: 3}
       propertyPath: theGunController
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630411821462082629, guid: 417f7b492e9b384458153d4d0ac63c6b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630411821462082629, guid: 417f7b492e9b384458153d4d0ac63c6b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 417f7b492e9b384458153d4d0ac63c6b, type: 3}

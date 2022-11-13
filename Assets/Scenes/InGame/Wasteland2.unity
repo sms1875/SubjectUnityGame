@@ -2202,7 +2202,7 @@ GameObject:
   - component: {fileID: 306639246}
   m_Layer: 0
   m_Name: MeleeEvent
-  m_TagString: Untagged
+  m_TagString: Event
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
