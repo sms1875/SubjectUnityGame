@@ -10980,6 +10980,10 @@ PrefabInstance:
       propertyPath: targetRecognitionRange
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5192562734436626944, guid: 41882d59bfc601148b42c34c4633dcc6, type: 3}
+      propertyPath: shoutVolume
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41882d59bfc601148b42c34c4633dcc6, type: 3}
 --- !u!4 &1549164476 stripped

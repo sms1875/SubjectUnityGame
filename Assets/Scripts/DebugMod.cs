@@ -29,6 +29,7 @@ public class DebugMod : MonoBehaviour
         {
             Item();
             Event();
+            Recovery();
         }
     }
 
@@ -129,6 +130,16 @@ public class DebugMod : MonoBehaviour
             {
                 Debug.Log("이벤트가 아님");
             }
+        }
+    }
+
+    private void Recovery()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PlayerData.instance.currentHp = PlayerData.instance.MaxHp;
+            PlayerController.instance.currentHp = PlayerData.instance.MaxHp;
+            PlayerController.instance.currentDp = PlayerData.instance.MaxDp;
         }
     }
 }

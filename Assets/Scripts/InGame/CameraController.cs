@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (PlayerController.instance.IsStunned)
+        if (PlayerController.instance.IsStunned || DebugMod.isDebug)
         {
             return;
         }

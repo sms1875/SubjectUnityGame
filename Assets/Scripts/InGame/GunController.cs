@@ -180,7 +180,7 @@ public class GunController : MonoBehaviour
 
     void Update()
     {
-        if (PlayerController.instance.IsStunned)
+        if (PlayerController.instance.IsStunned || DebugMod.isDebug)
         {
             return;
         }
@@ -207,7 +207,7 @@ public class GunController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (PlayerController.instance.IsStunned)
+        if (PlayerController.instance.IsStunned || DebugMod.isDebug)
         {
             return;
         }
