@@ -171,8 +171,8 @@ public class ItemData : MonoBehaviour
     public void Heal_1()
     {
         Debug.Log("체력 즉시 회복");
-        PlayerData.instance.currentHp += PlayerData.instance.MaxHp*0.3f;
-        if(PlayerData.instance.currentHp > PlayerData.instance.MaxHp)
+        PlayerData.instance.currentHp += PlayerData.instance.MaxHp * 0.3f;
+        if (PlayerData.instance.currentHp > PlayerData.instance.MaxHp)
         {
             PlayerData.instance.currentHp = PlayerData.instance.MaxHp;
         }
@@ -188,7 +188,7 @@ public class ItemData : MonoBehaviour
             {
                 PlayerData.instance.currentHp = PlayerData.instance.MaxHp;
             }
-            if(heal2count > 10)
+            if (heal2count > 10)
             {
                 heal2count = 0;
                 break;
@@ -299,9 +299,9 @@ public class ItemData : MonoBehaviour
     {
         int px = MapManager.instance.playerNowPoint_X;
         int py = MapManager.instance.playerNowPoint_Y;
-        for (int x = px-1; x <= px + 1; x++)
+        for (int x = px - 1; x <= px + 1; x++)
         {
-            if (x < 0 || x > MapManager.instance.size)
+            if (x < 0 || x > MapManager.instance._size)
             {
                 Debug.Log("xover");
             }
@@ -309,15 +309,19 @@ public class ItemData : MonoBehaviour
             {
                 for (int y = py - 1; y <= py + 1; y++)
                 {
-                    if (y < 0 || y > MapManager.instance.size)
+                    if (y < 0 || y > MapManager.instance._size)
                     {
                         Debug.Log("yover");
                     }
                     else
                     {
-                        if (MapData.instance._tile[x, y] == TileType.Enemy_Elite)
+                        if (MapData.instance._tile[x, y] == TileType.Enemy_Elite_Knight || MapData.instance._tile[x, y] == TileType.Enemy_Elite_Rook || MapData.instance._tile[x, y] == TileType.Enemy_Elite_Bishop || MapData.instance._tile[x, y] == TileType.Enemy_Elite_Queen)
                         {
                             Debug.Log("엘리트 몬스터 " + x + ", " + y);
+                        }
+                        else if (MapData.instance._tile[x, y] == TileType.Enemy_Boss)
+                        {
+                            Debug.Log("보스 몬스터 " + x + ", " + y);
                         }
                         else if (MapData.instance._tile[x, y] == TileType.Enemy_Normal || MapData.instance._tile[x, y] == TileType.Event)//임시로 이벤트도 포함
                         {
@@ -358,7 +362,7 @@ public class ItemData : MonoBehaviour
 
                     for (int rx = x - 1; rx <= x + 1; rx++)
                     {
-                        if (rx < 0 || rx > MapManager.instance.size)
+                        if (rx < 0 || rx > MapManager.instance._size)
                         {
                             Debug.Log("xover");
                         }
@@ -366,15 +370,19 @@ public class ItemData : MonoBehaviour
                         {
                             for (int ry = y - 1; ry <= y + 1; ry++)
                             {
-                                if (ry < 0 || ry > MapManager.instance.size)
+                                if (ry < 0 || ry > MapManager.instance._size)
                                 {
                                     Debug.Log("yover");
                                 }
                                 else
                                 {
-                                    if (MapData.instance._tile[rx, ry] == TileType.Enemy_Elite)
+                                    if (MapData.instance._tile[rx, ry] == TileType.Enemy_Elite_Knight || MapData.instance._tile[rx, ry] == TileType.Enemy_Elite_Rook || MapData.instance._tile[rx, ry] == TileType.Enemy_Elite_Bishop || MapData.instance._tile[rx, ry] == TileType.Enemy_Elite_Queen)
                                     {
                                         Debug.Log("엘리트 몬스터 " + rx + ", " + ry);
+                                    }
+                                    else if (MapData.instance._tile[rx, ry] == TileType.Enemy_Boss)
+                                    {
+                                        Debug.Log("보스 몬스터 " + rx + ", " + ry);
                                     }
                                     else if (MapData.instance._tile[rx, ry] == TileType.Enemy_Normal || MapData.instance._tile[rx, ry] == TileType.Event)//임시로 이벤트도 포함
                                     {

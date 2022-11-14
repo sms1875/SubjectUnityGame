@@ -23874,7 +23874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1851821627}
-  - component: {fileID: 1851821626}
+  - component: {fileID: 1851821628}
   m_Layer: 0
   m_Name: MapManager
   m_TagString: Untagged
@@ -23882,7 +23882,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1851821626
+--- !u!4 &1851821627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851821625}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.661346, y: 2.6617699, z: 32.516403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1851821628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23891,7 +23906,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1851821625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3571235b6791f904aa089d047d9efbde, type: 3}
+  m_Script: {fileID: 11500000, guid: 522e7014e717e274ca1780cc571a9659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerNowPoint_X: 0
@@ -23901,7 +23916,7 @@ MonoBehaviour:
   isKight: 0
   isPlayerWalk: 0
   isEvent: 0
-  size: 8
+  _size: 8
   Tile:
   - {fileID: 226715359}
   - {fileID: 500410571}
@@ -23970,21 +23985,8 @@ MonoBehaviour:
   mainCamera: {fileID: 1795304656}
   movecount: 0
   move: 0
---- !u!4 &1851821627
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851821625}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.661346, y: 2.6617699, z: 32.516403}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  enemy_Elite: []
+  isEliteLose: 1
 --- !u!1 &1859050760
 GameObject:
   m_ObjectHideFlags: 0
