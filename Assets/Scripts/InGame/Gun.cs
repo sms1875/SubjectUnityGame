@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour {
 
-    public Gun gun;
+    //public Gun gun;
 
     [Header("Fire Effects")]
     [SerializeField]
@@ -34,12 +34,12 @@ public class Gun : MonoBehaviour {
     public float retroActionForce; // 반동 세기
     public float retroActionFineSightForce; // 정조준시의 반동 세기.
 
-    //private ImpactMemoryPool impactMemoryPool;
+    private ImpactMemoryPool impactMemoryPool;
 
     private void Awake()
     {
-        //impactMemoryPool = GetComponent<ImpactMemoryPool>();
-        //muzzleFlashEffect.SetActive(false);
+        impactMemoryPool = GetComponent<ImpactMemoryPool>();
+        muzzleFlashEffect.SetActive(false);
     }
 
     public void init(Gun origin)
@@ -52,7 +52,7 @@ public class Gun : MonoBehaviour {
 
     public void MuzzleFlash() // 총구화염 출력
     {
-      //  StartCoroutine("OnMuzzleFlashEffect");
+        StartCoroutine("OnMuzzleFlashEffect");
     }
 
     private IEnumerator OnMuzzleFlashEffect() // 총구화염 출력용 Coroutine

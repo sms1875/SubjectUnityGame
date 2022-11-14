@@ -19,16 +19,18 @@ public class ImpactMemoryPool : MonoBehaviour
 
     public void SpawnImpact(RaycastHit hit)
     {
-        if (hit.transform.CompareTag("Enemy"))
+        //if (hit.transform.CompareTag("Enemy"))
         {
             OnSpawnImpact(ImpactType.Enemy, hit.point, Quaternion.LookRotation(hit.normal));
-            Debug.Log("적 명중 이펙트");
         } 
+
+        /*
         else if (hit.transform.CompareTag("Enemy_Head"))
         {
             OnSpawnImpact(ImpactType.Enemy_Head, hit.point, Quaternion.LookRotation(hit.normal));
             Debug.Log("적 머리 명중 이펙트");
-        }
+        }*/
+
         /*
         else if (hit.transform.CompareTag("ImpactDrone"))
         {

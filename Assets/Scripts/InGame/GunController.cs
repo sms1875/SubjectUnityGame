@@ -11,7 +11,7 @@ public class GunController : MonoBehaviour
 
     private Vector3 cameraCenter;
 
-    //private ImpactMemoryPool impactMemoryPool; // 이펙트 출력용 메모리 컴포넌트
+    public ImpactMemoryPool impactMemoryPool; // 이펙트 출력용 메모리 컴포넌트
 
     // 상태 변수
     public static bool isActivate = true; //무기 활성화 여부.
@@ -44,7 +44,7 @@ public class GunController : MonoBehaviour
         }
         init();
 
-        //impactMemoryPool = GetComponent<ImpactMemoryPool>(); // 이펙트 출력
+        impactMemoryPool = GetComponent<ImpactMemoryPool>(); // 이펙트 출력
     }
     void init()
     {
@@ -193,16 +193,6 @@ public class GunController : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Alpha2) && currentGun.name != PlayerController.instance.currentGunList[1].name)
                 StartCoroutine(ChangeWeaponCoroutine("GUN", PlayerController.instance.currentGunList[1].name));
         }
-        /*
-        if (isActivate)
-        {
-            if (!Inventory.inventoryActivated)
-            {
-                Fire();
-                ReloadCoroutine();
-            }
-        }
-        */
     }
 
     private void FixedUpdate()
@@ -213,7 +203,6 @@ public class GunController : MonoBehaviour
         }
         if (isActivate)
         {
-            
             Fire(); 
             Aim();
         }
@@ -233,7 +222,6 @@ public class GunController : MonoBehaviour
             {
                 if (currentGun.currentBulletCount > 0)
                 {
-                    Debug.Log("1");
                     StartCoroutine(Shoot());
                 }
                 else
@@ -253,8 +241,6 @@ public class GunController : MonoBehaviour
             Hit(); // RayCast 사격
             currentGun.MuzzleFlash(); // 이펙트
             currentGun.currentBulletCount--;//총알감소
-                                            //currentGun.anim.SetBool("Run", false);
-                                            //playerController.makeRunFalse();//걷기상태로 변하게 변경
 
             //PlaySE(currentGun.fire_Sound); // 사운드
             //StartCoroutine(RetroActionCoroutine()); // 반동
@@ -272,8 +258,7 @@ public class GunController : MonoBehaviour
     {
        
         if (Input.GetKeyDown(KeyCode.R) && !isReload && currentGun.currentBulletCount < currentGun.reloadBulletCount)
-        { Debug.Log("2");
-
+        { 
             StartCoroutine(ReloadCoroutine());
         }
     }
@@ -286,22 +271,12 @@ public class GunController : MonoBehaviour
         {
             while (currentGun.currentBulletCount < currentGun.reloadBulletCount && isReload)
             {
-                /*
-                while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Reload_Ammo")|| 
-                    !weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Reload_Enry"))
-                {
-                    yield return null;
-                }*/
                 yield return new WaitForSeconds(currentGun.reloadTime);//재장전 시간
                 currentGun.currentBulletCount += 1;
             }
         }
         else
-        {/*
-            while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Reload"))
-            {
-                yield return null;
-            }*/
+        {
             yield return new WaitForSeconds(currentGun.reloadTime);//재장전 시간
             currentGun.currentBulletCount = currentGun.reloadBulletCount;
         }
@@ -348,61 +323,51 @@ public class GunController : MonoBehaviour
         {
             targetPoint = ray.origin + ray.direction * currentGun.range;
         }
-        //Debug.DrawRay(ray.origin, ray.direction * currentGun.range, Color.red);
+        Debug.DrawRay(ray.origin, ray.direction * currentGun.range, Color.red);
 
-        //Vector3 attackDirection = (targetPoint - currentGun.bulletSpawnPoint.position).normalized;
-        //if (Physics.Raycast(currentGun.bulletSpawnPoint.position, attackDirection, out hit, currentGun.range))
+        Vector3 attackDirection = (targetPoint - currentGun.bulletSpawnPoint.position).normalized;
+        if (Physics.Raycast(currentGun.bulletSpawnPoint.position, attackDirection, out hit, currentGun.range))
         {
-            //   impactMemoryPool.SpawnImpact(hit); // 명중
-            // Debug.Log("Ray 명중 및 효과 출력");
+            impactMemoryPool.SpawnImpact(hit); // 명중
+
             /*
             if (hit.transform.CompareTag("ImpactEnemy")) // 적 몸통
             {
                 hit.transform.GetComponent<EnemyFSM>().TakeDamage(currentGun.damage);
-            } Debug.Log("적 몸통")
+            } 
             if (hit.transform.CompareTag("ImpactEnemy_Head")) // 적 머리
             {
-                hit.transform.GetComponent<EnemyFSM>().TakeDamage(currentGun.damage * 1.5);
-            } Debug.Log("적 머리")
+                hit.transform.GetComponent<EnemyFSM>().TakeDamage(currentGun.damage * 1.5f);
+            } 
             if (hit.transform.CompareTag("ImpactMidBoss1")) // 중간보스1 몸통
             {
-                hit.transform.GetComponent<MidBoss1_FSM>().TakeDamage(currentGun.damage);
-            } Debug.Log("중보1 몸통")
+              //  hit.transform.GetComponent<MidBoss1_FSM>().TakeDamage(currentGun.damage);
+            }
             if (hit.transform.CompareTag("ImpactMidBoss1_Head")) // 중간보스1 머리
             {
-                hit.transform.GetComponent<MidBoss1_FSM>().TakeDamage(currentGun.damage * 1.5);
-            } Debug.Log("중보1 머리")
+              //  hit.transform.GetComponent<MidBoss1_FSM>().TakeDamage(currentGun.damage * 1.5);
+            } 
             if (hit.transform.CompareTag("ImpactMidBoss2")) // 중간보스2 몸통
             {
-                hit.transform.GetComponent<MidBoss2_FSM>().TakeDamage(currentGun.damage);
-            } Debug.Log("중보2 몸통")
+              //  hit.transform.GetComponent<MidBoss2_FSM>().TakeDamage(currentGun.damage);
+            }
             if (hit.transform.CompareTag("ImpactMidBoss2_Head")) // 중간보스2 머리
             {
-                hit.transform.GetComponent<MidBoss_2FSM>().TakeDamage(currentGun.damage * 1.5);
-            } Debug.Log("중보2 머리")
+               // hit.transform.GetComponent<MidBoss_2FSM>().TakeDamage(currentGun.damage * 1.5);
+            } 
             if (hit.transform.CompareTag("ImpactDrone")) // 드론
             {
                 hit.transform.GetComponent<DroneController>().TakeDamage(currentGun.damage);
-            } Debug.Log("드론")
+            } 
             if (hit.transform.CompareTag("ImpactStage1_Boss")) // 1스테 보스
             {
-                hit.transform.GetComponent<BossFSM>().TakeDamage(currentGun.damage * 1.5);
-            } Debug.Log("1스테 보스")
-            */ // 데미지 계산 관련
+                hit.transform.GetComponent<BossFSM>().TakeDamage(currentGun.damage * 1.5f);
+            }*/
+
         }
-        //Debug.DrawRay(currentGun.bulletSpawnPoint.position, attackDirection * currentGun.range, Color.blue);
-
-        // Debug.DrayRay는 체크용이라 지워도 무방
+        Debug.DrawRay(currentGun.bulletSpawnPoint.position, attackDirection * currentGun.range, Color.blue);
 
     }
-
-    /*
-    private void PlaySE(AudioClip _clip)
-    {
-        audioSource.clip = _clip;
-        audioSource.Play();
-    }
-    */
 
     public IEnumerator ChangeWeaponCoroutine(string _type, string _name)
     {
@@ -412,11 +377,7 @@ public class GunController : MonoBehaviour
 
         CancelPreWeaponAction();
         yield return new WaitForSeconds(currentGun.outWeaponTime);
-        /*
-        while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Out"))
-        {
-            yield return null;
-        }*/
+
         if (gunObj != null)//현재 무기 비활성화
             gunObj.gameObject.SetActive(false);
 

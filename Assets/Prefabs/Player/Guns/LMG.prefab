@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 0}
-  muzzleFlashEffect: {fileID: 0}
+  muzzleFlashEffect: {fileID: 7300084442353096552, guid: a763fde630ac7344282bdb5e48247ec9, type: 3}
   bulletSpawnPoint: {fileID: 0}
   gunName: LMG
   range: 300
