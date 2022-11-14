@@ -14,7 +14,7 @@ public class DestroyEvent : CombatEvent
         targets = new GameObject[transform.GetChild(length - 1).childCount];
         for(int i = 0; i < targets.Length; i++)
         {
-            targets[i] = transform.GetChild(length - 1).GetChild(i).gameObject;
+            targets[i] = transform.GetChild(length - 1).GetChild(i).GetChild(0).gameObject;
         }
     }
 

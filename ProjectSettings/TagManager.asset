@@ -31,6 +31,8 @@ TagManager:
   - EnemyProjectile
   - Slice
   - Event
+  - Main
+  - SnowMan
   layers:
   - Default
   - TransparentFX

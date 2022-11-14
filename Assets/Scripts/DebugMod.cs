@@ -29,7 +29,7 @@ public class DebugMod : MonoBehaviour
         {
             Item();
             Event();
-            Recovery();
+            Ability();
         }
     }
 
@@ -39,15 +39,11 @@ public class DebugMod : MonoBehaviour
         {
             if (isDebug)
             {
-                isDebug = false;
-                Time.timeScale = 1;
-                transform.GetChild(0).gameObject.SetActive(false);
+                ClosePannel();
             }
             else
             {
-                isDebug = true;
-                Time.timeScale = 0;
-                transform.GetChild(0).gameObject.SetActive(true);
+                OpenPannel();
             }
         }
     }
@@ -100,9 +96,7 @@ public class DebugMod : MonoBehaviour
             if (GameObject.FindGameObjectWithTag("Event") || GameObject.FindGameObjectWithTag("Stage1_Boss")) // 이벤트 내부인지 확인
             {
                 Debug.Log("이벤트 클리어");
-                isDebug = false;
-                Time.timeScale = 1;
-                transform.GetChild(0).gameObject.SetActive(false);
+                ClosePannel();
                 GameObject.FindGameObjectWithTag("Event").GetComponent<CombatEvent>().Clear();
             }
             else
@@ -115,9 +109,7 @@ public class DebugMod : MonoBehaviour
             if (GameObject.FindGameObjectWithTag("Event") || GameObject.FindGameObjectWithTag("Stage1_Boss")) // 이벤트 내부인지 확인
             {
                 Debug.Log("이벤트 실패");
-                isDebug = false;
-                Time.timeScale = 1;
-                transform.GetChild(0).gameObject.SetActive(false);
+                ClosePannel();
 
                 PlayerData.instance.currentHp = PlayerController.instance.currentHp;
 
@@ -131,15 +123,192 @@ public class DebugMod : MonoBehaviour
                 Debug.Log("이벤트가 아님");
             }
         }
+
+        // 맵이동
+        // 2*2 전투 이벤트
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Forest");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Wasteland");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Temple1");
+        }
+
+        // 3*3 전투 이벤트
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Forest2");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Wasteland2");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Temple2");
+        }
+
+        // 엘리트 몬스터 이벤트
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("ForestBoss");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("SnowBoss");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("RobotBoss");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("MutantBoss");
+        }
+
+        // 보스 이벤트
+        if (Input.GetKeyDown(KeyCode.Minus))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Temple3");
+        }
+
+        // 비전투 이벤트  LoadingSceneManager.LoadScene("Temple3"); << 매치되는 씬으로 수정 필요
+        if (Input.GetKeyDown(KeyCode.F1)) 
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Temple3");
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Temple3");
+        }
+
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Temple3");
+        }
+
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Temple3");
+        }
+
+        // 메인 맵
+        if (Input.GetKeyDown(KeyCode.Equals) && !GameObject.FindGameObjectWithTag("Main"))
+        {
+            ClosePannel();
+            PlayerData.instance.currentHp = PlayerController.instance.currentHp;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            LoadingSceneManager.LoadScene("MainMap_Chess");
+        }
+
     }
 
-    private void Recovery()
+    private void Ability()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R)) // 회복
         {
             PlayerData.instance.currentHp = PlayerData.instance.MaxHp;
             PlayerController.instance.currentHp = PlayerData.instance.MaxHp;
             PlayerController.instance.currentDp = PlayerData.instance.MaxDp;
         }
+
+        if (Input.GetKeyDown(KeyCode.A)) // 일반 몬스터 모두 죽이기
+        {
+            GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject gameObject in enemys)
+            {
+                gameObject.GetComponent<EnemyFSM>().TakeDamage(10000);
+            }
+        }
+    }
+
+    private void ClosePannel()
+    {
+        isDebug = false;
+        Time.timeScale = 1;
+        transform.GetChild(0).gameObject.SetActive(false);
+    }
+
+    private void OpenPannel()
+    {
+        isDebug = true;
+        Time.timeScale = 0;
+        transform.GetChild(0).gameObject.SetActive(true);
     }
 }

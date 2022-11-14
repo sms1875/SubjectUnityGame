@@ -7,7 +7,7 @@ public class SnowMan : CombatEvent
     public AudioClip jumpClip;
     public AudioClip landClip;
 
-    private float health = 1000f;
+    public float health = 1000f;
     private float maxHealth = 1000f;
 
     private bool isDie;
