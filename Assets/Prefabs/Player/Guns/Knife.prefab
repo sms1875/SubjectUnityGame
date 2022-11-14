@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506819174722663210}
-  m_Mesh: {fileID: 4898376589914736847, guid: 680dee61e71be9a4dbc9e3905989234f, type: 3}
+  m_Mesh: {fileID: 4898376589914736847, guid: 0febe361a423bc34d912e4523b2507e4, type: 3}
 --- !u!23 &571337267144628271
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -212,9 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190b7c640f3e9274c9170d1c490d1d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gun: {fileID: 0}
   muzzleFlashEffect: {fileID: 7300084442353096552, guid: a763fde630ac7344282bdb5e48247ec9, type: 3}
-  bulletSpawnPoint: {fileID: 0}
+  bulletSpawnPoint: {fileID: 6054360893277396298}
   gunName: Knife
   range: 0.1
   accuracy: 0.1

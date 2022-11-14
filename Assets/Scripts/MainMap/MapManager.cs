@@ -234,13 +234,13 @@ public class MapManager : MonoBehaviour
             switch (lastSceneNum)
             {
                 case 3:
-                    LoadingSceneManager.LoadScene("Test");
+                    LoadingSceneManager.LoadScene("Forest");
                     break;
                 case 4:
-                    LoadingSceneManager.LoadScene("Test");
+                    LoadingSceneManager.LoadScene("Forest");
                     break;
                 case 5:
-                    LoadingSceneManager.LoadScene("Test");
+                    LoadingSceneManager.LoadScene("Forest");
                     break;
             }
 

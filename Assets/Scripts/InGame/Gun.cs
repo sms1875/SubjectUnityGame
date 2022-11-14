@@ -52,7 +52,7 @@ public class Gun : MonoBehaviour {
 
     public void MuzzleFlash() // ÃÑ±¸È­¿° Ãâ·Â
     {
-        StartCoroutine("OnMuzzleFlashEffect");
+        StartCoroutine(OnMuzzleFlashEffect());
     }
 
     private IEnumerator OnMuzzleFlashEffect() // ÃÑ±¸È­¿° Ãâ·Â¿ë Coroutine

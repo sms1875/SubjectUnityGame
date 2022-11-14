@@ -238,8 +238,8 @@ public class GunController : MonoBehaviour
         {
             isFire = true;
             weaponAnim.SetTrigger("Fire");//애니메이션 설정
-            Hit(); // RayCast 사격
             currentGun.MuzzleFlash(); // 이펙트
+            Hit(); // RayCast 사격
             currentGun.currentBulletCount--;//총알감소
 
             //PlaySE(currentGun.fire_Sound); // 사운드
@@ -323,49 +323,83 @@ public class GunController : MonoBehaviour
         {
             targetPoint = ray.origin + ray.direction * currentGun.range;
         }
-        Debug.DrawRay(ray.origin, ray.direction * currentGun.range, Color.red);
 
         Vector3 attackDirection = (targetPoint - currentGun.bulletSpawnPoint.position).normalized;
         if (Physics.Raycast(currentGun.bulletSpawnPoint.position, attackDirection, out hit, currentGun.range))
         {
             impactMemoryPool.SpawnImpact(hit); // 명중
 
-            /*
-            if (hit.transform.CompareTag("ImpactEnemy")) // 적 몸통
+            if (hit.transform.CompareTag("Enemy")) // 적 몸통
             {
                 hit.transform.GetComponent<EnemyFSM>().TakeDamage(currentGun.damage);
-            } 
-            if (hit.transform.CompareTag("ImpactEnemy_Head")) // 적 머리
+            }
+            if (hit.transform.CompareTag("EnemyHead")) // 적 머리
             {
                 hit.transform.GetComponent<EnemyFSM>().TakeDamage(currentGun.damage * 1.5f);
-            } 
-            if (hit.transform.CompareTag("ImpactMidBoss1")) // 중간보스1 몸통
-            {
-              //  hit.transform.GetComponent<MidBoss1_FSM>().TakeDamage(currentGun.damage);
             }
-            if (hit.transform.CompareTag("ImpactMidBoss1_Head")) // 중간보스1 머리
+            if (hit.transform.CompareTag("Turret")) // 터렛
             {
-              //  hit.transform.GetComponent<MidBoss1_FSM>().TakeDamage(currentGun.damage * 1.5);
-            } 
-            if (hit.transform.CompareTag("ImpactMidBoss2")) // 중간보스2 몸통
-            {
-              //  hit.transform.GetComponent<MidBoss2_FSM>().TakeDamage(currentGun.damage);
+                hit.transform.GetComponent<Turret>().TakeDamage(currentGun.damage);
             }
-            if (hit.transform.CompareTag("ImpactMidBoss2_Head")) // 중간보스2 머리
+
+            if (hit.transform.CompareTag("MidBoss1")) // 중간보스1 몸통
             {
-               // hit.transform.GetComponent<MidBoss_2FSM>().TakeDamage(currentGun.damage * 1.5);
-            } 
-            if (hit.transform.CompareTag("ImpactDrone")) // 드론
+                hit.transform.GetComponent<MidBossFSM_1>().TakeDamage(currentGun.damage);
+            }
+            if (hit.transform.CompareTag("MidBoss1_Head")) // 중간보스1 머리
             {
-                hit.transform.GetComponent<DroneController>().TakeDamage(currentGun.damage);
-            } 
-            if (hit.transform.CompareTag("ImpactStage1_Boss")) // 1스테 보스
+                hit.transform.GetComponent<MidBossFSM_1>().TakeDamage(currentGun.damage * 1.5f);
+            }
+            if (hit.transform.CompareTag("Baby")) // 중간보스1 새끼
+            {
+                hit.transform.GetComponent<MidBoss1_Baby>().TakeDamage(currentGun.damage);
+            }
+            if (hit.transform.CompareTag("Egg")) // 중간보스1 알
+            {
+                hit.transform.GetComponent<MidBoss1_Egg>().TakeDamage(currentGun.damage);
+            }
+
+            if (hit.transform.CompareTag("SnowMan")) // 찐 중간보스2 스노우맨
+            {
+                hit.transform.GetComponent<SnowMan>().TakeDamage(currentGun.damage);
+            }
+            if (hit.transform.CompareTag("MidBoss2")) // 중간보스2 몸통
+            {
+                hit.transform.GetComponent<MidBossFSM_2>().TakeDamage(currentGun.damage);
+            }
+            if (hit.transform.CompareTag("MidBoss2_Head")) // 중간보스2 머리
+            {
+                hit.transform.GetComponent<MidBossFSM_2>().TakeDamage(currentGun.damage * 1.5f);
+            }
+
+            if (hit.transform.CompareTag("MidBoss3")) // 중간보스3 (기계라 머리구분 없음)
+            {
+                hit.transform.GetComponent<MidBoss3>().TakeDamage(currentGun.damage);
+            }
+            if (hit.transform.CompareTag("Missile"))
+            {
+                hit.transform.GetComponent<Missile>().TakeDamage(currentGun.damage);
+            }
+
+            if (hit.transform.CompareTag("Stage1_Boss")) // 중간보스4 몸통
+            {
+                hit.transform.GetComponent<BossFSM>().TakeDamage(currentGun.damage);
+            }
+            if (hit.transform.CompareTag("Stage1_Boss_Head")) // 중간보스4 머리
             {
                 hit.transform.GetComponent<BossFSM>().TakeDamage(currentGun.damage * 1.5f);
-            }*/
+            }
+
+            if (hit.transform.CompareTag("SunBoss"))
+            {
+                hit.transform.GetComponent<SunBoss>().TakeDamage((int)currentGun.damage);
+            }
+            if (hit.transform.CompareTag("Ball")) // 선 보스 에너지 구체
+            {
+                hit.transform.GetComponent<Ball>().TakeDamage((int)currentGun.damage);
+            }
 
         }
-        Debug.DrawRay(currentGun.bulletSpawnPoint.position, attackDirection * currentGun.range, Color.blue);
 
     }
 
