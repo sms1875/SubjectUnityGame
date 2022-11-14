@@ -5,29 +5,28 @@ using UnityEngine;
 public class ItemData : MonoBehaviour
 {
     public static ItemData instance;
-    public bool Consum_Heal = false;
-    public bool Bool_HealLobby = false;
-    public bool Bool_HealInGame = false;
-
-    public bool Consum_Grenade = false;
+    public bool Consum_Heal_1 = false;                  //즉시 회복 아이템 사용
+    public bool Consum_Heal_2 = false;                  //지속 회복 아이템 사용
+    //public bool Consum_Grenade = false;
     //public bool Consum_Mine = false; 이펙트 없음
     //public bool Consum_PoisonMIne = false; 이펙트 없음
-    public bool Consum_FlashGrenade = false;
-    public bool Consum_FrozenGrenade = false;
-    public bool Consum_ParalysGrenade = false;
+    //public bool Consum_FlashGrenade = false;
+    //public bool Consum_FrozenGrenade = false;
+    //public bool Consum_ParalysGrenade = false;
     //public bool Consum_Indicator = false; 애니메이션 없음
 
-    public bool Buff_IncreaseHp = false;
-    public bool Buff_IncreaseDeffense = false;
-    public bool Buff_IncreaseMagazine = false;
-    public bool Buff_IncreaseAmmo = false;
+    public bool Buff_IncreaseHp = false;                //최대 체력 증가
+    public bool Buff_IncreaseDeffense = false;          //방어력 증가
+    public bool Buff_IncreaseSpeed = false;             //이동속도 증가
+    public bool Buff_DecreaseReceivedDamage = false;    //받는데미지 감소
+    public bool Buff_IncreaseMagazine = false;          //탄창 용량 증가
+    public bool Buff_IncreaseAmmo = false;              //탄약 증가
+    public bool Buff_IncreaseDamage = false;            //데미지 증가
     //public bool Buff_IncreaseHealEffect = false; 구현 가능?
-    public bool Buff_IncreaseSpeed = false;
-    public bool Buff_IncreaseDamage = false;
-    public bool Buff_DecreaseReceivedDamage = false;
+
 
     public bool Scout_Drone = false;                    //시야내 적 확인
-    public bool Scout_Raider = false;
+    public bool Scout_Raider = false;                   //일정 범위 내 적 확인
     //public bool Scout_Flare = false; 레이더와 겹침
     //public bool Scout_Telescope = false; 빌드 후 안개가 없어진 관계로 제외
     //public bool Scout_Tower = false; 정찰드론과 겹침
@@ -44,6 +43,15 @@ public class ItemData : MonoBehaviour
 
     public int ThrusterTime = 3;
     public bool Jump = false;
+    public float upHP = 0f;
+    public float upDP = 0f;
+    public float upSP = 1.0f;
+    public int heal2count = 0;
+
+    public bool ammo = false;
+    public bool magazine = false;
+    public bool damage = false;
+
 
 
 
@@ -55,43 +63,65 @@ public class ItemData : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Consum_Heal)
+        if (Consum_Heal_1)
         {
-            Heal();
+            Debug.Log("체력 즉시 회복");
+            Heal_1();
+            Consum_Heal_1 = false;
         }
-        if (Consum_Grenade)
+        if (Consum_Heal_2)
         {
-            Grenade();
+            Debug.Log("체력 지속 회복");
+            StartCoroutine("Heal_2");
+            Consum_Heal_2 = false;
         }
+
+
 
         if (Buff_IncreaseHp)
         {
+            Debug.Log("버프 체력 증가 작동");
             IncreaseHp();
+            Buff_IncreaseHp = false;
         }
         if (Buff_IncreaseDeffense)
         {
+            Debug.Log("버프 방어력 증가 작동");
             IncreaseDeffense();
-        }
-        if (Buff_IncreaseMagazine)
-        {
-            IncreaseMagazine();
-        }
-        if (Buff_IncreaseAmmo)
-        {
-            IncreaseAmmo();
+            Buff_IncreaseDeffense = false;
         }
         if (Buff_IncreaseSpeed)
         {
+            Debug.Log("이동속도 증가 작동");
             IncreaseSpeed();
-        }
-        if (Buff_IncreaseDamage)
-        {
-            IncreaseDamage();
+            Buff_IncreaseSpeed = false;
         }
         if (Buff_DecreaseReceivedDamage)
         {
+            Debug.Log("받는데미지 감소 작동");
             DecreaseReceivedDamage();
+            Buff_DecreaseReceivedDamage = false;
         }
+        if (Buff_IncreaseMagazine)
+        {
+            Debug.Log("탄창 용량 증가");
+            IncreaseMagazine();
+            Buff_IncreaseMagazine = false;
+        }
+        if (Buff_IncreaseAmmo)
+        {
+            Debug.Log("탄약 증가");
+            IncreaseAmmo();
+            Buff_IncreaseAmmo = false;
+        }
+        if (Buff_IncreaseDamage)
+        {
+            Debug.Log("데미지 증가");
+            IncreaseDamage();
+            Buff_IncreaseDamage = false;
+        }
+
+
 
         if (Scout_Drone)
         {
@@ -138,67 +168,132 @@ public class ItemData : MonoBehaviour
         }
     }
 
-    public void Heal()
+    public void Heal_1()
     {
-        if (Bool_HealLobby)
+        Debug.Log("체력 즉시 회복");
+        PlayerData.instance.currentHp += PlayerData.instance.MaxHp*0.3f;
+        if(PlayerData.instance.currentHp > PlayerData.instance.MaxHp)
         {
-            Debug.Log("체력 회복 - 로비");
             PlayerData.instance.currentHp = PlayerData.instance.MaxHp;
-            Bool_HealLobby = false;
-            Consum_Heal = false;
-        }
-
-        if (Bool_HealInGame)
-        {
-            Debug.Log("체력 회복 - 게임");
-            PlayerController.instance.currentHp = PlayerData.instance.MaxHp;
-            Bool_HealInGame = false;
-            Consum_Heal = false;
         }
     }
-    public void Grenade()
+    IEnumerator Heal_2()
     {
-        //애니메이션 grenade 실행
-        //수류탄 오브젝트 플레이어 머리 우측 뒤에서 생성 + 수류탄은 중력 적용
-        //수류탄 정면 상향 방향으로 이동
-        //수류탄 폭발 판정 및 데미지 등은 수류탄.cs만들어서 따로 작업
+        while (true)
+        {
+            Debug.Log("체력 지속 회복");
+            PlayerData.instance.currentHp += PlayerData.instance.MaxHp * 0.05f;
+            heal2count += 1;
+            if (PlayerData.instance.currentHp > PlayerData.instance.MaxHp)
+            {
+                PlayerData.instance.currentHp = PlayerData.instance.MaxHp;
+            }
+            if(heal2count > 10)
+            {
+                heal2count = 0;
+                break;
+            }
+            yield return new WaitForSeconds(2f);
+        }
     }
+
+
 
     public void IncreaseHp()
     {
         Debug.Log("체력 최대치 증가");
-        PlayerData.instance.MaxHp += 10;
-        PlayerData.instance.currentHp += 10;
-        Buff_IncreaseHp = false;
+        float beforeHP = PlayerData.instance.MaxHp;
+        PlayerData.instance.MaxHp = beforeHP * 1.2f;
+        PlayerData.instance.currentHp += beforeHP * 0.2f;
+        upHP = beforeHP * 0.2f;
     }
+    public void AfterHP()
+    {
+        Debug.Log("체력 최대치 버프 종료");
+        PlayerData.instance.MaxHp -= upHP;
+        if (PlayerData.instance.MaxHp < PlayerData.instance.currentHp)
+        {
+            PlayerData.instance.currentHp = PlayerData.instance.MaxHp;
+        }
+        upHP = 0;
+    }
+
     public void IncreaseDeffense()
     {
-
+        Debug.Log("방어력 최대치 증가");
+        float beforeDP = PlayerData.instance.MaxDp;
+        PlayerData.instance.MaxDp = beforeDP * 1.1f;
+        PlayerData.instance.currentDp += beforeDP * 0.1f;
+        upDP = beforeDP * 0.2f;
     }
-    public void IncreaseMagazine()
+    public void AfterDeffense()
     {
-
+        Debug.Log("방어력 최대치 버프 종료");
+        PlayerData.instance.MaxDp -= upDP;
+        if (PlayerData.instance.MaxDp < PlayerData.instance.currentDp)
+        {
+            PlayerData.instance.currentDp = PlayerData.instance.MaxDp;
+        }
+        upDP = 0;
     }
-    public void IncreaseAmmo()
-    {
 
-    }
+
     public void IncreaseSpeed()
     {
-
+        Debug.Log("이동속도 증가");
+        upSP = 1.2f;
     }
+    public void AfterSpeed()
+    {
+        Debug.Log("이동속도 버프 종료");
+        upSP = 1.0f;
+    }
+
+    public void DecreaseReceivedDamage()
+    {
+        Debug.Log("데미지감소");
+        PlayerController.instance.damagedown = 0.9f;
+    }
+    public void AfterDRD()
+    {
+        Debug.Log("데미지감소");
+        PlayerController.instance.damagedown = 1.0f;
+    }
+
     public void IncreaseDamage()
     {
         Debug.Log("데미지 증가");
-        Debug.Log("데미지 : " + GunController.instance.currentGun.damage);
-        GunController.instance.currentGun.damage += 10;
-        Debug.Log("증가된 데미지 : " + GunController.instance.currentGun.damage);
-        ItemData.instance.Buff_IncreaseDamage = false;
+        damage = true;
     }
-    public void DecreaseReceivedDamage()
+    public void AfterDamage()
     {
-
+        Debug.Log("데미지 버프 증가");
+        damage = false;
     }
+
+    public void IncreaseMagazine()
+    {
+        Debug.Log("탄창 증가");
+        magazine = true;
+    }
+    public void AfterMagazine()
+    {
+        Debug.Log("탄창 증가 종료");
+        magazine = false;
+    }
+
+    public void IncreaseAmmo()
+    {
+        Debug.Log("탄약 증가");
+        ammo = true;
+    }
+    public void AfterAmmo()
+    {
+        Debug.Log("탄약 증가 종료");
+        ammo = false;
+    }
+
+
 
     public void Drone()
     {
@@ -239,9 +334,9 @@ public class ItemData : MonoBehaviour
     }
     IEnumerator Raider()
     {
+        Debug.Log("레이더");
         while (true)
         {
-            Debug.Log("레이더");
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("레이더 클릭");

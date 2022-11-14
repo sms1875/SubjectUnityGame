@@ -24,7 +24,7 @@ public class Gun : MonoBehaviour {
 
     // public bool isAutomaic; // 연사총인가
 
-    public int damage; // 총의 데미지.
+    public float damage; // 총의 데미지.
 
     public int reloadBulletCount; // 총알 재정전 개수.
     public int currentBulletCount; // 현재 탄알집에 남아있는 총알의 개수.
