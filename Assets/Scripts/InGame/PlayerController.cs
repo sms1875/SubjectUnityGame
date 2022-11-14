@@ -38,11 +38,6 @@ public class PlayerController : MonoBehaviour
         PlayerController.instance = this;
         init();
     }
-    
-    private void Start()
-    {
-        GameController.instance.Result();
-    }
 
     //√ ±‚»≠
     private void init()

@@ -40,6 +40,8 @@ public class MidBossFSM_2 : MonoBehaviour
     private bool isRun;
     private bool isLock;
 
+    private Color originColor;
+
     private Transform viewTf;
 
     private GameObject targetObj;
@@ -64,6 +66,8 @@ public class MidBossFSM_2 : MonoBehaviour
         {
             meleeTotalWeight += midBossMeleePatterns[i].weight;
         }
+
+        originColor = skin.materials[0].color;
     }
 
     private void OnEnable()
@@ -465,7 +469,7 @@ public class MidBossFSM_2 : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        skin.materials[0].color = Color.white;
+        skin.materials[0].color = originColor;
 
         ShoutObj.SetActive(true);
 

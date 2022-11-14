@@ -383,7 +383,7 @@ public class GunController : MonoBehaviour
 
             if (hit.transform.CompareTag("Stage1_Boss")) // 중간보스4 몸통
             {
-                hit.transform.GetComponent<BossFSM>().TakeDamage(currentGun.damage);
+                hit.transform.GetComponentInParent<BossFSM>().TakeDamage(currentGun.damage);
             }
             if (hit.transform.CompareTag("Stage1_Boss_Head")) // 중간보스4 머리
             {

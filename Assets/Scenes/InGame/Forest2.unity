@@ -809,6 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   limitTime: 180
+  smallShip: {fileID: 425572541}
 --- !u!4 &275095395
 Transform:
   m_ObjectHideFlags: 0

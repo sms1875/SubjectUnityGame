@@ -126,6 +126,8 @@ public class EnemyFSM : MonoBehaviour
         {
             ChangeState(EnemyState.Idle);
         }
+
+        Invoke("OffInvincibility", 1f);
     }
 
     private void OnDisable()
@@ -134,6 +136,8 @@ public class EnemyFSM : MonoBehaviour
         StopCoroutine(enemyState.ToString());
 
         enemyState = EnemyState.None;
+
+        enemyStatus.HealthPoint = enemyStatus.MaxHealthPoint;
     }
 
     private void LateUpdate()

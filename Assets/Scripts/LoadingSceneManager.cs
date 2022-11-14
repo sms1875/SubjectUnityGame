@@ -23,6 +23,7 @@ public class LoadingSceneManager : MonoBehaviour
     IEnumerator LoadScene()
     {
         yield return null;
+        MeleeEvent.cnt = 0;
         AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
         op.allowSceneActivation = false;
         float timer = 0.0f;
