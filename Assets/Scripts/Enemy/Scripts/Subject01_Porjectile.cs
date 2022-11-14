@@ -45,7 +45,7 @@ public class Subject01_Porjectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("플레이어에게" + projectileDamage + "의 데미지를 입혔다.");
+            other.GetComponent<PlayerController>().TakeDamage((int)projectileDamage);
 
             memoryPool.DeactivatePoolItem(gameObject);
         }

@@ -10,7 +10,7 @@ public class ShockWaveTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("플레이어가 충격에 의해 " + damage + "의 피해를 입음");
+            other.GetComponent<PlayerController>().TakeDamage((int)damage);
         }
     }
 }

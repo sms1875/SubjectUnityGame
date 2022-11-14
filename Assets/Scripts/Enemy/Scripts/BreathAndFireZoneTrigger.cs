@@ -18,7 +18,7 @@ public class BreathAndFireZoneTrigger : MonoBehaviour
     {
         if (other.transform.CompareTag("Player") && !isOnDamage)
         {
-            StartCoroutine("OnDamage");
+            StartCoroutine("OnDamage", other.transform);
         }
     }
 
@@ -31,12 +31,12 @@ public class BreathAndFireZoneTrigger : MonoBehaviour
         }
     }
 
-    private IEnumerator OnDamage()
+    private IEnumerator OnDamage(Transform tf)
     {
         isOnDamage = true;
         while (true)
         {
-            Debug.Log("플레이어가" + damage + "의 피해를 입음");
+            tf.GetComponent<PlayerController>().TakeDamage((int)damage);
 
             yield return new WaitForSeconds(damageRate);
         }

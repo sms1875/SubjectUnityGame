@@ -144,12 +144,7 @@ public class PlayerController : MonoBehaviour
         isStunned = false;
     }
 
-    public void OnBounce(Vector3 direction)
-    {
-        StartCoroutine("Bounce", direction);
-    }
-
-    private IEnumerator Bounce(Vector3 direction)
+    private IEnumerator OnBounce(Vector3 direction)
     {
         isStunned = true;
         isWalk = false;
@@ -164,7 +159,7 @@ public class PlayerController : MonoBehaviour
             {
                 break;
             }
-            charController.Move(direction * -15f * Time.deltaTime);
+            charController.Move(direction * -10f * Time.deltaTime);
             currentTime += Time.deltaTime;
             yield return null;
         }
