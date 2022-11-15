@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+
     #region 상태변수
     public bool isWalk = false;
     public bool isRun = false;
@@ -31,6 +33,12 @@ public class PlayerController : MonoBehaviour
 
     public float damagedown = 1;
 
+    public Slider hpSlider;
+    public Slider staSlider;
+
+    [SerializeField] private Image bsImage;
+ 
+
     // [SerializeField] private Inventory inventory;
 
     private void Awake()
@@ -54,24 +62,28 @@ public class PlayerController : MonoBehaviour
             currentDashGauge = PlayerData.instance.DashGauge;
         }
         StartCoroutine(setSound());
-        TakeDamage(20);
 
     }
 
     private void Update()
     {
+        hpSlider.maxValue = PlayerData.instance.MaxHp;
+        staSlider.maxValue = PlayerData.instance.DashGauge;
+
+        hpSlider.value = currentHp;
+        staSlider.value = currentDashGauge;
         //초당 6씩 게이지 증가
         if (currentDashGauge < PlayerData.instance.DashGauge)
         {
             currentDashGauge += 0.1f;
         }
-    /*
-        if (!Inventory.inventoryActivated)
-        {
-            CameraRotation();
-            CharacterRotation();
-        }
-    */
+        /*
+            if (!Inventory.inventoryActivated)
+            {
+                CameraRotation();
+                CharacterRotation();
+            }
+        */
     }
 
     private void FixedUpdate()
@@ -91,13 +103,13 @@ public class PlayerController : MonoBehaviour
         //theCrosshair.JumpingAnimation(!GetIsGround());//크로스헤어 점프
     }
 
-  IEnumerator setSound()
+    IEnumerator setSound()
     {
         if (isRun)
         {
             PlayerSoundSource.clip = PlayerSoundClip[1];
-            if(!PlayerSoundSource.isPlaying)
-            PlayerSoundSource.Play();
+            if (!PlayerSoundSource.isPlaying)
+                PlayerSoundSource.Play();
         }
         else if (isWalk)
         {
@@ -113,14 +125,27 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)//데미지 처리
     {
-        currentHp -= (damage - currentDp) * damage;
-        Debug.Log("현재 플레이어 체력:"+currentHp);
+
+        currentHp -= (damage - currentDp) * damagedown;
+        Debug.Log("현재 플레이어 체력:" + currentHp);
+        if (currentHp > 0)
+        {
+            StartCoroutine(ShowBloodScreen());
+        }
         if (currentHp <= 0)
         {
             Debug.Log("사망했습니다");
         }
     }
 
+    private IEnumerator ShowBloodScreen()
+    {
+        bsImage.color = new Color(1, 0, 0, UnityEngine.Random.Range(0.2f, 0.3f));
+        Debug.Log("BS On");
+        yield return new WaitForSeconds(0.1f);
+        bsImage.color = Color.clear;
+        Debug.Log("BS Off");
+    }
 
     // 몬스터 공격 상호작용(?)
     private bool isStunned;  // 몬스터에게 공격 받으면 카메라 및 움직임 조작 불가

@@ -55,6 +55,13 @@ public class MidBossFSM_1 : MonoBehaviour
     private Rigidbody rigid;
     private Collider coll;
 
+    [Header("HPbarUI")]
+    public GameObject healthBarBackground;
+    public Slider healthBarSliderFill;
+
+    private bool isHealthUIActive;
+    private float hpBarTime = 0;
+
     private void Awake()
     {
         GameManager.isBoss = true;
@@ -109,7 +116,7 @@ public class MidBossFSM_1 : MonoBehaviour
         }
         else
         {
-            if(isThink && !isRun)
+            if (isThink && !isRun)
             {
                 isRun = true;
                 animator.SetTrigger("onRun");
@@ -148,7 +155,7 @@ public class MidBossFSM_1 : MonoBehaviour
                 StartCoroutine("Think");
                 yield break;
             }
-        
+
             yield return null;
         }
     }
@@ -200,7 +207,7 @@ public class MidBossFSM_1 : MonoBehaviour
                 StartCoroutine("Acid");
                 yield break;
             }
-            else if(eggRate <= eggCharge)
+            else if (eggRate <= eggCharge)
             {
                 isThink = false;
                 StartCoroutine("Egg");
@@ -579,6 +586,16 @@ public class MidBossFSM_1 : MonoBehaviour
 
         currentHealth -= damage * 0.5f;
 
+        healthBarSliderFill.maxValue = maxHealth;
+        healthBarSliderFill.value = currentHealth;
+        
+        hpBarTime = 0;
+        if (!isHealthUIActive)
+        {
+            isHealthUIActive = true;
+            StartCoroutine(WaitCoroutine());
+        }
+
         if (currentHealth <= 0)
         {
             currentHealth = 0;
@@ -589,6 +606,23 @@ public class MidBossFSM_1 : MonoBehaviour
 
             StartCoroutine("OnDie");
         }
+    }
+
+    IEnumerator WaitCoroutine()
+    {
+        healthBarBackground.SetActive(true);
+        while (true)
+        {
+            if (hpBarTime >= 3f)
+            {
+                break;
+            }
+            hpBarTime += Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log("false");
+        healthBarBackground.SetActive(false);
+        isHealthUIActive = false;
     }
 
     private IEnumerator OnDie()

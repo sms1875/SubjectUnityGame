@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SnowMan : CombatEvent
 {
@@ -18,6 +19,13 @@ public class SnowMan : CombatEvent
 
     private Rigidbody rigid;
     private AudioSource audioSource;
+
+    [Header("HPbarUI")]
+    public GameObject healthBarBackground;
+    public Slider healthBarSliderFill;
+
+    private bool isHealthUIActive;
+    private float hpBarTime = 0;
 
     private void Awake()
     {
@@ -95,6 +103,15 @@ public class SnowMan : CombatEvent
         }
         health -= damage;
 
+        healthBarSliderFill.maxValue = maxHealth;
+        healthBarSliderFill.value = health;
+        hpBarTime = 0;
+        if (!isHealthUIActive)
+        {
+            isHealthUIActive = true;
+            StartCoroutine(WaitCoroutine());
+        }
+
         if (health <= 0)
         {
             health = 0;
@@ -102,5 +119,22 @@ public class SnowMan : CombatEvent
 
             Clear();
         }
+    }
+
+    IEnumerator WaitCoroutine()
+    {
+        healthBarBackground.SetActive(true);
+        while (true)
+        {
+            if (hpBarTime >= 3f)
+            {
+                break;
+            }
+            hpBarTime += Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log("false");
+        healthBarBackground.SetActive(false);
+        isHealthUIActive = false;
     }
 }

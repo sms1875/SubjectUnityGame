@@ -67,6 +67,13 @@ public class BossFSM : CombatEvent
     private Transform child0;
     private Rigidbody childRigidbody;
 
+    [Header("HPbarUI")]
+    public GameObject healthBarBackground;
+    public Slider healthBarSliderFill;
+
+    private bool isHealthUIActive;
+    private float hpBarTime = 0;
+
     private void Awake()
     {
         targetObj = GameObject.FindGameObjectWithTag("Player");
@@ -76,7 +83,7 @@ public class BossFSM : CombatEvent
         animator = GetComponentInChildren<Animator>();
         child0 = transform.GetChild(0);
         childRigidbody = child0.GetComponent<Rigidbody>();
-
+        isPhase2 = false;
 
         for (int i = 0; i < bossMeleePatterns.Count; i++)
         {
@@ -623,6 +630,29 @@ public class BossFSM : CombatEvent
 
         currentHealth -= damage * 0.5f;
 
+        if (!isPhase2)
+        {
+            healthBarSliderFill.maxValue = maxHealth_Phase1;
+            healthBarSliderFill.value = currentHealth;
+            hpBarTime = 0;
+            if (!isHealthUIActive)
+            {
+                isHealthUIActive = true;
+                StartCoroutine(WaitCoroutine());
+            }
+        }
+        else
+        {
+            healthBarSliderFill.maxValue = maxHealth_Phase2;
+            healthBarSliderFill.value = currentHealth;
+            hpBarTime = 0;
+            if (!isHealthUIActive)
+            {
+                isHealthUIActive = true;
+                StartCoroutine(WaitCoroutine());
+            }
+        }
+
         if (currentHealth <= 0 && !isPhase2)
         {
             if (navMeshAgent.enabled == true) navMeshAgent.ResetPath();
@@ -635,7 +665,6 @@ public class BossFSM : CombatEvent
             veneerPattern.SetActive(false);
             animator.SetTrigger("onPhase2");
             StopAllCoroutines();
-
             StartCoroutine("OnPhase2");
         }
         else if (currentHealth <= 0 && isPhase2)
@@ -651,6 +680,22 @@ public class BossFSM : CombatEvent
             Clear();
             Invoke("OnDie", 10f);
         }
+    }
+    IEnumerator WaitCoroutine()
+    {
+        healthBarBackground.SetActive(true);
+        while (true)
+        {
+            if (hpBarTime >= 3f)
+            {
+                break;
+            }
+            hpBarTime += Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log("false");
+        healthBarBackground.SetActive(false);
+        isHealthUIActive = false;
     }
 
     private IEnumerator OnPhase2()

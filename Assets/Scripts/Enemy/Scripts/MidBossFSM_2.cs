@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class MidBossFSM_2 : MonoBehaviour
 {
@@ -50,6 +51,13 @@ public class MidBossFSM_2 : MonoBehaviour
     private Animator animator;
     private NavMeshAgent navMeshAgent;
     private SkinnedMeshRenderer skin;
+
+    [Header("HPbarUI")]
+    public GameObject healthBarBackground;
+    public Slider healthBarSliderFill;
+
+    private bool isHealthUIActive;
+    private float hpBarTime = 0;
 
     private void Awake()
     {
@@ -492,6 +500,15 @@ public class MidBossFSM_2 : MonoBehaviour
 
         currentHealth -= damage * 0.5f;
 
+        healthBarSliderFill.maxValue = maxHealth;
+        healthBarSliderFill.value = currentHealth;
+        hpBarTime = 0;
+        if (!isHealthUIActive)
+        {
+            isHealthUIActive = true;
+            StartCoroutine(WaitCoroutine());
+        }
+
         if (currentHealth <= 0)
         {
             currentHealth = 0;
@@ -504,6 +521,23 @@ public class MidBossFSM_2 : MonoBehaviour
 
             StartCoroutine("OnDie");
         }
+    }
+
+    IEnumerator WaitCoroutine()
+    {
+        healthBarBackground.SetActive(true);
+        while (true)
+        {
+            if (hpBarTime >= 3f)
+            {
+                break;
+            }
+            hpBarTime += Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log("false");
+        healthBarBackground.SetActive(false);
+        isHealthUIActive = false;
     }
 
     private IEnumerator OnDie()
