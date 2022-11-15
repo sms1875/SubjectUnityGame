@@ -277,6 +277,16 @@ public class DebugMod : MonoBehaviour
             LoadingSceneManager.LoadScene("MainMap_Chess");
         }
 
+        // Å×½ºÆ® ¸Ê
+        if (Input.GetKeyDown(KeyCode.F12))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("EnemyTest");
+        }
+
     }
 
     private void Ability()

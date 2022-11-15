@@ -126,8 +126,6 @@ public class EnemyFSM : MonoBehaviour
         {
             ChangeState(EnemyState.Idle);
         }
-
-        Invoke("OffInvincibility", 1f);
     }
 
     private void OnDisable()
@@ -875,20 +873,20 @@ public class EnemyFSM : MonoBehaviour
         StartCoroutine("Hit");
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    if (navMeshAgent == null) return;
+    private void OnDrawGizmos()
+    {
+        if (navMeshAgent == null) return;
 
-    //    Gizmos.color = Color.black;
-    //    Gizmos.DrawRay(transform.position, navMeshAgent.destination - transform.position);
+        Gizmos.color = Color.black;
+        Gizmos.DrawRay(transform.position, navMeshAgent.destination - transform.position);
 
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(transform.position, enemyStatus.TargetRecognitionRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, enemyStatus.TargetRecognitionRange);
 
-    //    Gizmos.color = Color.green;
-    //    Gizmos.DrawWireSphere(transform.position, enemyStatus.PursuitLimitRange);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, enemyStatus.PursuitLimitRange);
 
-    //    Gizmos.color = Color.blue;
-    //    Gizmos.DrawWireSphere(transform.position, enemyStatus.AttackRange);
-    //}
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, enemyStatus.AttackRange);
+    }
 }

@@ -59,6 +59,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InGame/MutantBoss.unity
     guid: 59c010f820fc2bd48a63d4f81eac4ec8
+  - enabled: 1
+    path: Assets/Scenes/InGame/EnemyTest.unity
+    guid: fc347dda45159614a918ac037df5884e
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: b94ceb995c3c00749b5b4b6670612fe9, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: f0b69038378ded74abf7fff240a25782, type: 2}
