@@ -15741,6 +15741,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48749091b9161fc43abdb195f31b05f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Guns:
+  - {fileID: 8610580873015053894, guid: f89050d0cf4778d4ab935024f37f3dbf, type: 3}
+  - {fileID: 8908570677130191007, guid: 4c242d4a2e0140b46882ea49b5415a5f, type: 3}
+  - {fileID: 957440376217073740, guid: e82a1964760b3f049ad2152b46100e1e, type: 3}
+  - {fileID: 7497899917569704801, guid: 809cc8e39340d284c98b2f67b30e6d3d, type: 3}
+  - {fileID: 3664656900031661938, guid: f971f6b360a2f364da62c49d31f0dce2, type: 3}
+  - {fileID: 6841279124519385517, guid: a0fb95b247ffba740bdcd20b0f042d7a, type: 3}
+  - {fileID: 5145270904821135593, guid: 953deaf6e5addeb428f42db42b076a18, type: 3}
+  - {fileID: 2885810101745016864, guid: 623bcdfc21c8ed840940ff0f8b7c4e87, type: 3}
+  - {fileID: 7671611903071276468, guid: ff8c287c3d6d276409504d9a6c9e03c4, type: 3}
+  - {fileID: 5705033578257814602, guid: d889c5b0f9aa23843babcac7a74dd81d, type: 3}
 --- !u!1 &1253868916
 GameObject:
   m_ObjectHideFlags: 0

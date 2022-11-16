@@ -7,6 +7,8 @@ public class DebugMod : MonoBehaviour
     //입력을 나누기 위해 디버그 변수
     public static bool isDebug;
 
+    public Gun[] Guns;
+
     private void Awake()
     {
         var obj = FindObjectsOfType<DebugMod>();
@@ -30,6 +32,91 @@ public class DebugMod : MonoBehaviour
             Item();
             Event();
             Ability();
+            SetGun();
+        }
+    }
+    void SetGun()
+    {
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            PlayerData.instance.currentGunList[0] = Guns[0];
+        }
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            PlayerData.instance.currentGunList[0] = Guns[1];
+        }
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            PlayerData.instance.currentGunList[0] = Guns[2];
+        }
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            PlayerData.instance.currentGunList[0] = Guns[3];
+        }
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            PlayerData.instance.currentGunList[0] = Guns[4];
+        }
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            PlayerData.instance.currentGunList[0] = Guns[5];
+        }
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad6))
+        {
+            PlayerData.instance.currentGunList[0] = Guns[6];
+        }
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad7))
+        {
+            PlayerData.instance.currentGunList[0] = Guns[7];
+        }
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad8))
+        {
+            PlayerData.instance.currentGunList[0] = Guns[8];
+        }
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            PlayerData.instance.currentGunList[0] = Guns[9];
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            PlayerData.instance.currentGunList[1] = Guns[0];
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            PlayerData.instance.currentGunList[1] = Guns[1];
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            PlayerData.instance.currentGunList[1] = Guns[2];
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad3))
+        {
+            PlayerData.instance.currentGunList[1] = Guns[3];
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            PlayerData.instance.currentGunList[1] = Guns[4];
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad5))
+        {
+            PlayerData.instance.currentGunList[1] = Guns[5];
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad6))
+        {
+            PlayerData.instance.currentGunList[1] = Guns[6];
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad7))
+        {
+            PlayerData.instance.currentGunList[1] = Guns[7];
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad8))
+        {
+            PlayerData.instance.currentGunList[1] = Guns[8];
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            PlayerData.instance.currentGunList[1] = Guns[9];
         }
     }
 
