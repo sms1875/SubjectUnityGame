@@ -10654,12 +10654,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Scout_Thruster: k \nScout_Jetpack: j\nScout_Barricade: h\nScout_Drill:
-    y\nScout_Jumppad: u\nScout_Drone: i\nScout_Raider: o\n\nWeaponeAR1: LAlt + 1
-    or LShift + 1\nWeaponeAR2: LAlt + 2 or LShift + 2\nWeaponeDMR1: LAlt + 3 or LShift
-    + 3\nWeaponeDMR2: LAlt + 4 or LShift + 4\nWeaponeHG1: LAlt + 5 or LShift + 5\nWeaponeLMG:
-    LAlt + 6 or LShift + 6\nWeaponeSG1: LAlt + 7 or LShift + 7\nWeaponeSG2: LAlt
-    + 8 or LShift + 8\nWeaponeSMG: LAlt + 9 or LShift + 9\nWeaponeSR1: LAlt + 0 or
-    LShift + 0"
+    y\nScout_Jumppad: u\nScout_Drone: i\nScout_Raider: o\n\nWeaponeAR1: LAlt + 0
+    or LShift + 0\nWeaponeAR2: LAlt + 1 or LShift + 1\nWeaponeDMR1: LAlt + 2 or LShift
+    + 2\nWeaponeDMR2: LAlt + 3 or LShift + 3\nWeaponeHG1: LAlt + 4 or LShift + 4\nWeaponeLMG:
+    LAlt + 5 or LShift + 5\nWeaponeSG1: LAlt + 6 or LShift + 6\nWeaponeSG2: LAlt
+    + 7 or LShift + 7\nWeaponeSMG: LAlt + 8 or LShift + 8\nWeaponeSR1: LAlt + 9 or
+    LShift + 9"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -64291,16 +64291,16 @@ MonoBehaviour:
 
     ChessMap: =
 
-    
+
 
     NonCombatEvent
 
     1: F1
 
-    2:
-    F2
+    2: F2
 
-    3: F3
+    3:
+    F3
 
     4: F4'
   m_isRightToLeft: 0

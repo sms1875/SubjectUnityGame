@@ -29,93 +29,137 @@ public class DebugMod : MonoBehaviour
         // 디버그 상태일 시, 키 입력 받기
         if (isDebug)
         {
+            if(Input.GetKey(KeyCode.LeftAlt)|| Input.GetKey(KeyCode.LeftShift))
+            {
+                SetGun();
+                return;
+            }
             Item();
             Event();
             Ability();
-            SetGun();
         }
     }
     void SetGun()
     {
-        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad0))
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Alpha0))
         {
+            if (PlayerData.instance.currentGunList[1] == Guns[0]) return;
+
             PlayerData.instance.currentGunList[0] = Guns[0];
         }
-        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Alpha1))
         {
+            if (PlayerData.instance.currentGunList[1] == Guns[1]) return;
+
             PlayerData.instance.currentGunList[0] = Guns[1];
         }
-        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad2))
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Alpha2))
         {
+            if (PlayerData.instance.currentGunList[1] == Guns[2]) return;
+
             PlayerData.instance.currentGunList[0] = Guns[2];
         }
-        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad3))
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Alpha3))
         {
+            if (PlayerData.instance.currentGunList[1] == Guns[3]) return;
+
             PlayerData.instance.currentGunList[0] = Guns[3];
         }
-        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad4))
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Alpha4))
         {
+            if (PlayerData.instance.currentGunList[1] == Guns[4]) return;
+
             PlayerData.instance.currentGunList[0] = Guns[4];
         }
-        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad5))
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Alpha5))
         {
+            if (PlayerData.instance.currentGunList[1] == Guns[5]) return;
+
             PlayerData.instance.currentGunList[0] = Guns[5];
         }
-        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad6))
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Alpha6))
         {
+            if (PlayerData.instance.currentGunList[1] == Guns[6]) return;
+
             PlayerData.instance.currentGunList[0] = Guns[6];
         }
-        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad7))
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Alpha7))
         {
+            if (PlayerData.instance.currentGunList[1] == Guns[7]) return;
+
             PlayerData.instance.currentGunList[0] = Guns[7];
         }
-        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad8))
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Alpha8))
         {
+            if (PlayerData.instance.currentGunList[1] == Guns[8]) return;
+
             PlayerData.instance.currentGunList[0] = Guns[8];
         }
-        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Keypad9))
+        if (Input.GetKey(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.Alpha9))
         {
+            if (PlayerData.instance.currentGunList[1] == Guns[9]) return;
+
             PlayerData.instance.currentGunList[0] = Guns[9];
         }
 
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad0))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha0))
         {
+            if (PlayerData.instance.currentGunList[0] == Guns[0]) return;
+
             PlayerData.instance.currentGunList[1] = Guns[0];
         }
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha1))
         {
+            if (PlayerData.instance.currentGunList[0] == Guns[1]) return;
+
             PlayerData.instance.currentGunList[1] = Guns[1];
         }
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad2))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha2))
         {
+            if (PlayerData.instance.currentGunList[0] == Guns[2]) return;
+
             PlayerData.instance.currentGunList[1] = Guns[2];
         }
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad3))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha3))
         {
+            if (PlayerData.instance.currentGunList[0] == Guns[3]) return;
+
             PlayerData.instance.currentGunList[1] = Guns[3];
         }
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad4))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha4))
         {
+            if (PlayerData.instance.currentGunList[0] == Guns[4]) return;
+
             PlayerData.instance.currentGunList[1] = Guns[4];
         }
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad5))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha5))
         {
+            if (PlayerData.instance.currentGunList[0] == Guns[5]) return;
+
             PlayerData.instance.currentGunList[1] = Guns[5];
         }
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad6))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha6))
         {
+            if (PlayerData.instance.currentGunList[0] == Guns[6]) return;
+
             PlayerData.instance.currentGunList[1] = Guns[6];
         }
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad7))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha7))
         {
+            if (PlayerData.instance.currentGunList[0] == Guns[7]) return;
+
             PlayerData.instance.currentGunList[1] = Guns[7];
         }
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad8))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha8))
         {
+            if (PlayerData.instance.currentGunList[0] == Guns[8]) return;
+
             PlayerData.instance.currentGunList[1] = Guns[8];
         }
-        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Keypad9))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha9))
         {
+            if (PlayerData.instance.currentGunList[0] == Guns[9]) return;
+
             PlayerData.instance.currentGunList[1] = Guns[9];
         }
     }
