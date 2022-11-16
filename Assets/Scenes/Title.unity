@@ -186,13 +186,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventSceneSize: 10
-  MonsterSceneSize: 15
+  MonsterSceneSize: 0
   EventSceneList: 
-  MonsterSceneList: 
   playerStartingPoint_X: 0
   playerStartingPoint_Y: 0
-  bossX: 0
-  bossY: 0
   mapInit: 0
   elite_Knight_Location_X: 0
   elite_Knight_Location_Y: 0
@@ -203,7 +200,6 @@ MonoBehaviour:
   elite_Queen_Location_X: 0
   elite_Queen_Location_Y: 0
   elite_Cnt: 0
-  wall: {fileID: 0}
 --- !u!114 &84671222
 MonoBehaviour:
   m_ObjectHideFlags: 0
