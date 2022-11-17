@@ -355,7 +355,7 @@ public class MapManager : MonoBehaviour
                                     MapData.instance.elite_Knight_Location_X = knight_Player[k, 0];
                                     MapData.instance.elite_Knight_Location_Y = knight_Player[k, 1];
                                     MapData.instance._tile[MapData.instance.elite_Knight_Location_X, MapData.instance.elite_Knight_Location_Y] = TileType.Enemy_Elite_Knight;
-                                    enemy_Elite[0].transform.position = new Vector3(MapData.instance.elite_Knight_Location_X * 10, 0, MapData.instance.elite_Knight_Location_Y * 10);
+                                    enemy_Elite[0].transform.localPosition = new Vector3(MapData.instance.elite_Knight_Location_X * 10, 0, MapData.instance.elite_Knight_Location_Y * 10);
                                     break;
                                     // 나이트가 한턴 뒤에 플레이어를 잡을 수 있을 때 
                                     //맵에서 실제로 이동하는거 구현
@@ -686,7 +686,7 @@ public class MapManager : MonoBehaviour
                             else
                             {
                                 MapData.instance._tile[MapData.instance.elite_Rook_Location_X, MapData.instance.elite_Rook_Location_Y] = TileType.Enemy_Elite_Rook;
-                                enemy_Elite[1].transform.Translate(new Vector3(MapData.instance.elite_Rook_Location_X * 10, 0, MapData.instance.elite_Rook_Location_Y * 10));
+                                enemy_Elite[1].transform.localPosition = new Vector3(MapData.instance.elite_Rook_Location_X * 10, 0, MapData.instance.elite_Rook_Location_Y * 10);
                                 /*for (int popp = 0; popp < array_Nums.Length; popp++)
                                 {
                                     Debug.Log("배열 " + popp + "번째 원소 : " + array_Nums[popp]);
@@ -872,7 +872,7 @@ public class MapManager : MonoBehaviour
 
 
                                 MapData.instance._tile[MapData.instance.elite_Bishop_Location_X, MapData.instance.elite_Bishop_Location_Y] = TileType.Enemy_Elite_Bishop;
-                                enemy_Elite[1].transform.Translate(new Vector3(MapData.instance.elite_Bishop_Location_X * 10, 0, MapData.instance.elite_Bishop_Location_Y * 10));
+                                enemy_Elite[1].transform.localPosition  =new Vector3(MapData.instance.elite_Bishop_Location_X * 10, 0, MapData.instance.elite_Bishop_Location_Y * 10);
 
                             }
                         }
@@ -1185,7 +1185,7 @@ public class MapManager : MonoBehaviour
                                 else
                                 {
                                     MapData.instance._tile[MapData.instance.elite_Queen_Location_X, MapData.instance.elite_Queen_Location_Y] = TileType.Enemy_Elite_Rook;
-                                    enemy_Elite[3].transform.Translate(new Vector3(MapData.instance.elite_Queen_Location_X * 10, 0, MapData.instance.elite_Queen_Location_Y * 10));
+                                    enemy_Elite[3].transform.localPosition  = new Vector3(MapData.instance.elite_Queen_Location_X * 10, 0, MapData.instance.elite_Queen_Location_Y * 10);
                                 }
 
 
@@ -1328,7 +1328,7 @@ public class MapManager : MonoBehaviour
 
 
                                     MapData.instance._tile[MapData.instance.elite_Queen_Location_X, MapData.instance.elite_Queen_Location_Y] = TileType.Enemy_Elite_Queen;
-                                    enemy_Elite[3].transform.Translate(new Vector3(MapData.instance.elite_Queen_Location_X * 10, 0, MapData.instance.elite_Queen_Location_Y * 10));
+                                    enemy_Elite[3].transform.localPosition = new Vector3(MapData.instance.elite_Queen_Location_X * 10, 0, MapData.instance.elite_Queen_Location_Y * 10);
                                 }
                             }
                         }
