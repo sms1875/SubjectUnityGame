@@ -324,6 +324,7 @@ public class MapManager : MonoBehaviour
                     Elite_CheckPlayer("Knight");
                     if (Knight_Check)
                     {
+                        
                         int x = playerNowPoint_X;
                         int y = playerNowPoint_Y;
                         int xx = MapData.instance.elite_Knight_Location_X;
@@ -332,7 +333,8 @@ public class MapManager : MonoBehaviour
                         var player_Knight = new int[,] { { x - 2, y + 1 }, { x - 2, y - 1 }, { x - 1, y + 2 }, { x - 1, y - 2 }, { x + 1, y + 2 }, { x + 1, y - 2 }, { x + 2, y - 1 }, { x + 2, y + 1 } };
                         var knight_Player = new int[,] { { xx - 2, yy + 1 }, { xx - 2, yy - 1 }, { xx - 1, yy + 2 }, { xx - 1, yy - 2 }, { xx + 1, yy + 2 }, { xx + 1, yy - 2 }, { xx + 2, yy - 1 }, { xx + 2, yy + 1 } };
 
-                        int randomA = Random.Range(0, 4);
+                        
+
                         for (int k = 0; k < 8; k++)
                         {
                             if (knight_Player[k, 0] >= 0 && knight_Player[k, 0] < _size && knight_Player[k, 1] >= 0 && knight_Player[k, 1] < _size)
@@ -359,6 +361,28 @@ public class MapManager : MonoBehaviour
                                     break;
                                     // 나이트가 한턴 뒤에 플레이어를 잡을 수 있을 때 
                                     //맵에서 실제로 이동하는거 구현
+                                }
+                                else if (k == 7)
+                                {
+                                    int rCnt = 0;
+                                    while (rCnt<30)
+                                    {
+                                        
+
+                                        int randomA = Random.Range(0, 7);
+                                        if (knight_Player[randomA, 0] >= 0 && knight_Player[randomA, 0] < _size && knight_Player[randomA, 1] >= 0 && knight_Player[randomA, 1] < _size
+                                            && MapData.instance._tile[knight_Player[randomA, 0], knight_Player[randomA, 1]] != TileType.Wall)
+                                            
+                                        {
+                                            MapData.instance.elite_Knight_Location_X = knight_Player[randomA, 0];
+                                            MapData.instance.elite_Knight_Location_Y = knight_Player[randomA, 1];
+                                            MapData.instance._tile[MapData.instance.elite_Knight_Location_X, MapData.instance.elite_Knight_Location_Y] = TileType.Enemy_Elite_Knight;
+                                            enemy_Elite[0].transform.localPosition = new Vector3(MapData.instance.elite_Knight_Location_X * 10, 0, MapData.instance.elite_Knight_Location_Y * 10);
+                                            break;
+                                        }
+                                        rCnt++;
+
+                                    }
                                 }
                                 /*else if (k == 7
                                     && MapData.instance._tile[knight_Player[randomA, 0], knight_Player[randomA, 1]] != TileType.Wall)
@@ -1370,15 +1394,22 @@ public class MapManager : MonoBehaviour
                 {
                     for (int j = -2; j < 3; j++)
                     {
+                        
                         if (MapData.instance.elite_Knight_Location_X + i < _size && MapData.instance.elite_Knight_Location_Y + j < _size && MapData.instance.elite_Knight_Location_X + i >= 0 && MapData.instance.elite_Knight_Location_Y + j >= 0)
                         {
                             if (MapData.instance._tile[MapData.instance.elite_Knight_Location_X + i, MapData.instance.elite_Knight_Location_Y + j] == TileType.Player)
                             {
+                               
                                 Knight_Check = true;
                                 Debug.Log("나이트 : 플레이어 인식");
                                 break;
                             }
-                            else Knight_Check = false;
+
+                            else
+                            {
+                                
+                                Knight_Check = false;
+                            }
                         }
                     }
                     if (Knight_Check) break;
