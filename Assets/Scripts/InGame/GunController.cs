@@ -29,9 +29,13 @@ public class GunController : MonoBehaviour
 
     public static GunController instance;
 
+    //플레이어 머리
+    private CameraController cameraController;
+
     private void Awake()
     {
         GunController.instance = this;
+        cameraController = GetComponentInChildren<CameraController>();
     }
     void Start()
     {
@@ -210,7 +214,6 @@ public class GunController : MonoBehaviour
 
     private void Fire()
     {
-      
         if (Input.GetButton("Fire1") && !isFire)
         {
             if (isReload&& currentGun.name == "SG1")
@@ -243,7 +246,7 @@ public class GunController : MonoBehaviour
             currentGun.currentBulletCount--;//총알감소
 
             //PlaySE(currentGun.fire_Sound); // 사운드
-            //StartCoroutine(RetroActionCoroutine()); // 반동
+            StartCoroutine(RetroActionCoroutine()); // 반동
             /*
             while (!weaponAnim.GetCurrentAnimatorStateInfo(0).IsName("armature_" + currentGun.name + "_Fire"))//공격중
             {
@@ -251,6 +254,28 @@ public class GunController : MonoBehaviour
             }*/
             yield return new WaitForSeconds(currentGun.fireRate);
             isFire = false;
+        }
+    }
+
+    private IEnumerator RetroActionCoroutine()
+    {
+        PlayerController.instance.OnShake(0.15f, currentGun.retroActionForce, 1f);
+
+        float aspect = Random.Range(-1f, 1f);
+        float currentTime = 0f;
+        while (isFire)
+        {
+            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + currentGun.retroActionForce * aspect * Time.deltaTime, 0);
+            cameraController.BoundY(currentGun.retroActionForce * Time.deltaTime);
+
+            if (currentTime >= 0.2f)
+            {
+                yield break;
+            }
+
+            currentTime += Time.deltaTime;
+
+            yield return null;
         }
     }
 

@@ -22,4 +22,9 @@ public class CameraController : MonoBehaviour
         transform.localEulerAngles = new Vector3(-mouseY, 0, 0);
 
     }
+
+    public void BoundY(float value)
+    {
+        mouseY += value;
+    }
 }

@@ -511,7 +511,7 @@ MonoBehaviour:
   currentBulletCount: 5
   maxBulletCount: 25
   carryBulletCount: 0
-  retroActionForce: 0
+  retroActionForce: 5
   retroActionFineSightForce: 0
 --- !u!1001 &5539964638965431674
 PrefabInstance:

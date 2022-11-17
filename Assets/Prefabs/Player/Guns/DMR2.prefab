@@ -232,7 +232,7 @@ MonoBehaviour:
   currentBulletCount: 15
   maxBulletCount: 90
   carryBulletCount: 0
-  retroActionForce: 0
+  retroActionForce: 1.9
   retroActionFineSightForce: 0
 --- !u!1 &3437888242033058804
 GameObject:

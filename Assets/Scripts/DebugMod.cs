@@ -409,6 +409,15 @@ public class DebugMod : MonoBehaviour
         }
 
         // Å×½ºÆ® ¸Ê
+        if (Input.GetKeyDown(KeyCode.F11))
+        {
+            ClosePannel();
+            MapData.instance.playerStartingPoint_X = MapManager.instance.playerNowPoint_X;
+            MapData.instance.playerStartingPoint_Y = MapManager.instance.playerNowPoint_Y;
+
+            LoadingSceneManager.LoadScene("Test");
+        }
+
         if (Input.GetKeyDown(KeyCode.F12))
         {
             ClosePannel();
